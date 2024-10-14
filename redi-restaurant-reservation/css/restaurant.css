@@ -319,29 +319,9 @@ strong {
 }
 
 
-
-.redi-restaurant-time-button[disabled="disabled"],
-
-.redi-restaurant-button[disabled="disabled"],
-
-input.disabled, button.disabled {
-
-    opacity: 0.4 !important;
-
-    filter: alpha(opacity=40) !important; /* For IE8 and earlier */
-
-
-
-}
-
-
-
-.redi-restaurant-time-button[select="select"], .redi-restaurant-button[select="select"], .redi-restaurant-duration-button[select="select"] {
-
+.redi-restaurant-time-button[select="select"], .redi-restaurant-button[select="select"], .redi-restaurant-duration-button[select="select"]{
     font-weight: bold !important;
-
     background-color: #DFF0D8 !important;
-
 }
 
 
@@ -589,4 +569,41 @@ form.userfeedback {
 #redi-restaurant-visit-cancel
 {
     background-color: red;
+}
+
+.redi-restaurant-time-button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.redi-restaurant-time-button.disabled {
+    background-color: #ccc;
+    color: #999;
+}
+
+.redi-restaurant-time-button[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    visibility: hidden;
+    transition: visibility 0s linear 0.2s, opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.redi-restaurant-time-button[data-tooltip].disabled:hover::after {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
 }

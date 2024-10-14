@@ -1,9 +1,11 @@
 <!-- ReDi Restaurant Reservation plugin version <?php echo $this->version?> -->
-<!-- Revision: 20240902 -->
+<!-- Revision: 20241013 -->
 <?php require_once(REDI_RESTAURANT_TEMPLATE.'cancel.php');?>
 <?php require_once(REDI_RESTAURANT_TEMPLATE.'modify.php');?>
 <script type="text/javascript">var plugin_name='ReDi Restaurant Reservation version <?php echo $this->version?>';var displayLeftSeats = <?php echo $displayLeftSeats ? 1 : 0; ?>;
+
 var redirect_to_confirmation_page = '<?php echo $redirect_to_confirmation_page; ?>';var timepicker = '<?php echo $timepicker;?>';var date_format = '<?php echo $calendar_date_format ?>';var timepicker_time_format ='<?php echo $timepicker_time_format;?>';var locale = '<?php echo $js_locale?>';var datepicker_locale = '<?php echo $datepicker_locale?>'; var timeshiftmode = '<?php echo $timeshiftmode; ?>'; var hidesteps = <?php echo $hidesteps ? 1 : 0; ?>; var apikeyid = '<?php echo $apiKeyId; ?>'; var waitlist='<?php echo $waitlist; ?>'; var maxDate = new Date();maxDate.setFullYear(maxDate.getFullYear() + 1); var min_persons='<?php echo $minPersons; ?>'; var max_persons = '<?php echo $maxPersons; ?>'; var large_group_message = '<?php echo (!empty($largeGroupsMessage))? __( 'More than [max] people', 'redi-restaurant-reservation' ) : '' ?>';  </script>
+
 
 <form id="redi-reservation" name="redi-reservation" method="post" action="?jquery_fail=true">
 	<?php if (isset($EnableCancelForm) && $EnableCancelForm): ?>
@@ -221,13 +223,12 @@ var redirect_to_confirmation_page = '<?php echo $redirect_to_confirmation_page; 
         <img id="step2load" style="display: none;" src="<?php echo REDI_RESTAURANT_PLUGIN_URL ?>img/ajax-loader.gif" alt=""/>
         <div id="step2errors" style="display: none;" class="redi-reservation-alert-error redi-reservation-alert"></div>
 
-		
-
 		<?php if ($hidesteps):?>
 			<input class="redi-restaurant-button button" type="submit" id="step2prev" value="<?php _e('Previous', 'redi-restaurant-reservation')?>">
 		<?php endif ?>
 		<div style="clear:both"></div>
 	</div>
+
 	<div id="step3" style="display: none;">
         <h4>
 			<?php _e( 'Step', 'redi-restaurant-reservation' ) ?> <?php echo ( $timeshiftmode !=='byshifts' || $hidesteps ) ? 3 : 2 ?>: <?php _e( 'Provide reservation details', 'redi-restaurant-reservation' ) ?>

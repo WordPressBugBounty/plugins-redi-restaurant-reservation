@@ -8,6 +8,8 @@ function addSpace(n) {
     });
 }
 
+
+
 function resetDatepickerToCurrentMonth() {
     var currentDate = new Date();
     jQuery('#redi-restaurant-startDate').datepicker('setDate', currentDate); // Set date to current date
@@ -40,6 +42,24 @@ var calendarDateTo;
 var calendarInitiated = false;
 
 jQuery(function () {
+
+    function getTimeByDate() {
+        var startDate = jQuery('#redi-restaurant-startDate');
+        var day1 = startDate.datepicker('getDate').getDate();
+        var month1 = startDate.datepicker('getDate').getMonth() + 1;
+        var year1 = startDate.datepicker('getDate').getFullYear();
+        var fullDate = year1 + '-' + zeroFill(month1) + '-' + zeroFill(day1);
+        if (timeshiftmode === 'byshifts') {
+            step1call(fullDate)
+        } else {
+            hideSteps();
+            jQuery('#redi-restaurant-startDateISO').val(fullDate);
+            step1call();
+        }
+        updatePersons();
+        toggleWaitList();
+    }
+
     jQuery('#step1button').show();
 
     jQuery('.disabled').on('click', function (e) {
@@ -150,7 +170,7 @@ jQuery(function () {
             }
             else {
                 // navigate to first available month
-                showFirstAvailableMonth();
+                showFirstAvailableMonthAndSelectDay();
             }
         }
     });
@@ -251,7 +271,32 @@ jQuery(function () {
     // Reset the current selected day
     jQuery('#redi-restaurant-startDate').val('');
 
+    jQuery('#redi-popup-close').click(function() {
+        jQuery('#redi-popup-dialog').hide();
+        return false;
+    });
+
+    // Close the popup if user clicks outside of the popup content
+    jQuery(window).click(function(event) {
+        if (jQuery(event.target).is('#redi-popup-dialog')) {
+            jQuery('#redi-popup-dialog').hide();
+            return false;
+        }
+    });
+
     jQuery(document).on('click', '.redi-restaurant-time-button', function () {
+
+        if (jQuery(this).hasClass('disabled'))
+        {
+            var popupText = jQuery(this).data("tooltip");
+            jQuery('#redi-popup-text').text(popupText); // Fallback text
+
+            // Show the popup dialog
+            jQuery('#redi-popup-dialog').show();
+
+            return false;
+        }
+
 
         jQuery('.redi-restaurant-time-button').each(function () {
             jQuery(this).removeAttr('select');
@@ -452,9 +497,7 @@ jQuery(function () {
         calendarInitiated = false;
         resetDatepickerToCurrentMonth();
 
-        showFirstAvailableMonth();
-
-        //loadDateInformation(calendarDateFrom, calendarDateTo);
+        showFirstAvailableMonthAndSelectDay();
 
         if (hidesteps) {
             jQuery('#step1buttons').hide('slow');
@@ -543,17 +586,6 @@ jQuery(function () {
 
 
         jQuery('#redi-date-block').show();
-
-        /*
-
-        // if date is selected, show times
-        if (jQuery('#redi-restaurant-startDate').datepicker('getDate') != null) {
-            var day1 = jQuery('#redi-restaurant-startDate').datepicker('getDate').getDate();
-            var month1 = jQuery('#redi-restaurant-startDate').datepicker('getDate').getMonth() + 1;
-            var year1 = jQuery('#redi-restaurant-startDate').datepicker('getDate').getFullYear();
-            var fullDate = year1 + '-' + zeroFill(month1) + '-' + zeroFill(day1)
-            step1call(fullDate);
-        }*/
     }
 
     function step1call(fullDate) {
@@ -661,11 +693,11 @@ jQuery(function () {
 
                                         var duration = b['Duration'];
 
-                                        html += '<button '
-                                            + 'data-reservation-duration="' + duration + '"'
-                                            + 'data-time-services-left="' + b['ServicesLeft'] + '"'
-                                            + (b['Available'] ? '' : 'disabled="disabled"')
-                                            + (b['Available'] ? '' : ' title="' + redi_restaurant_reservation.tooltip + '"') +
+                                        html += '<button ' +
+                                            'data-reservation-duration="' + duration + '"' +
+                                            'data-time-services-left="' + b['ServicesLeft'] + '"' +
+                                            //+ (b['Available'] ? '' : 'disabled="disabled"')
+                                            (b['Available'] ? '' : ' data-tooltip="' + b['Reason'] + '"') +
                                             ' class="redi-restaurant-time-button button ' + (b['Available'] ? '' : 'disabled') +
                                             ' ' + (b['DiscountClass'] ? b['DiscountClass'] : '') +
                                             '" value="' + b['StartTimeISO'] + '" ' +
@@ -798,22 +830,7 @@ jQuery(function () {
         }
     }
 
-    function getTimeByDate() {
-        var startDate = jQuery('#redi-restaurant-startDate');
-        var day1 = startDate.datepicker('getDate').getDate();
-        var month1 = startDate.datepicker('getDate').getMonth() + 1;
-        var year1 = startDate.datepicker('getDate').getFullYear();
-        var fullDate = year1 + '-' + zeroFill(month1) + '-' + zeroFill(day1);
-        if (timeshiftmode === 'byshifts') {
-            step1call(fullDate)
-        } else {
-            hideSteps();
-            jQuery('#redi-restaurant-startDateISO').val(fullDate);
-            step1call();
-        }
-        updatePersons();
-        toggleWaitList();
-    }
+
 
     function clickWaitListForm() {
         jQuery('#redi-reservation').toggle("slide");
@@ -1407,6 +1424,95 @@ jQuery(function () {
         }, 'json');
     });
 
+
+    function showFirstAvailableMonthAndSelectDay() {
+
+        var placeId = jQuery('#placeID').val();
+        var guests = parseInt(jQuery('#persons').val()) + (jQuery('#children').val() === undefined ? 0 : parseInt(jQuery('#children').val()));
+    
+        if (guests == 0 || placeId == 0 || Number.isNaN(guests)) {
+            return;
+        }
+    
+        jQuery('#redi-date-block').show();
+        jQuery('#redi-restaurant-startDate').hide();
+        jQuery('#ui-datepicker-div').hide();
+        jQuery('#step1errors').hide();
+        jQuery('#date_info_load').show();
+        jQuery('#date_info_load').focus();
+    
+        // Helper function to get query parameter from URL
+        function getQueryParam(param) {
+            let urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+    
+        // Get the select-date query parameter
+        let selectDateParam = getQueryParam('select-date');
+        let dateValue = selectDateParam ? moment(selectDateParam, 'YYYY-MM-DD') : moment();
+
+        // Check if the date is in the past
+        if (dateValue.isBefore(moment())) {
+            dateValue = moment(); // Set to today's date if the selected date is in the future
+        }
+    
+        // Navigate to the first day of the month
+        var from = dateValue.clone().startOf('month');
+        var to = moment(from).add(1, 'month').startOf('month');
+    
+        (async function () {
+            let attempts = 0;
+            let currentMonth = moment().startOf('month');
+    
+            // Calculate the difference in months between the current month and the selected month
+            let monthDifference = from.diff(currentMonth, 'months');
+    
+            // Move the calendar to the correct month by clicking "next" or "prev"
+            if (monthDifference > 0) {
+                for (let i = 0; i < monthDifference; i++) {
+                    jQuery('.ui-datepicker-next').click();
+                }
+            } else if (monthDifference < 0) {
+                for (let i = 0; i < Math.abs(monthDifference); i++) {
+                    jQuery('.ui-datepicker-prev').click();
+                }
+            }
+    
+            // After navigating to the correct month, check for available dates
+            while (attempts < 6 && !await areThereAnyAvailableDaysInThisMonth(from, to, placeId)) {
+                console.log('No dates available in this month ' + from.format('MMMM YYYY') + ', navigating to next month');
+    
+                attempts++;
+                from = from.add(1, 'month').startOf('month');
+                to = moment(from).add(1, 'month').startOf('month');
+    
+                // Trigger next month click
+                jQuery('.ui-datepicker-next').click();
+            }
+    
+            if (attempts >= 3) {
+                console.log('Reached maximum number of attempts.');
+            }
+    
+            calendarInitiated = true;
+            jQuery('#date_info_load').hide();
+            jQuery('#redi-restaurant-startDate').datepicker("refresh");
+            jQuery('#redi-restaurant-startDate').show();
+    
+            // If a specific date is provided, select it
+            if (selectDateParam) {
+                // Set the date in the datepicker (this will select the date visually)
+                jQuery('#redi-restaurant-startDate').datepicker('setDate', dateValue.toDate());
+    
+                // Refresh the datepicker to reflect the changes
+                jQuery('#redi-restaurant-startDate').datepicker("refresh");
+    
+                // show available times for selected day
+                getTimeByDate();
+            }
+        })();
+    }
+    
 });
 
 function saveDateInformation(placeId, guests, dates) {
@@ -1489,59 +1595,7 @@ async function areThereAnyAvailableDaysInThisMonth(from, to, placeId) {
 }
 
 
-function showFirstAvailableMonth() {
-    
-    var placeId = jQuery('#placeID').val();
-    var guests = parseInt(jQuery('#persons').val()) + (jQuery('#children').val() === undefined ? 0 : parseInt(jQuery('#children').val()));
 
-    if (guests == 0 || placeId == 0 || Number.isNaN(guests)) {
-        return;
-    }
-    
-    jQuery('#redi-date-block').show();
-
-    jQuery('#redi-restaurant-startDate').hide();
-    jQuery('#ui-datepicker-div').hide();
-    jQuery('#step1errors').hide();
-
-    jQuery('#date_info_load').show();
-    jQuery('#date_info_load').focus();
-
-    var placeId = jQuery('#placeID').val();
-
-    // Get the date from the input field
-    var dateValue = jQuery('#redi-restaurant-startDateISO').val();
-    var from = moment(dateValue).startOf('month');
-    var to = moment(dateValue).add(1, 'month').startOf('month');
-
-    (async function () {
-        let attempts = 0; // Initialize attempt counter
-
-        while (attempts < 6 && !await areThereAnyAvailableDaysInThisMonth(from, to, placeId)) {
-            console.log('No dates available in this month ' + from.format('MMMM YYYY') + ', navigating to next month');
-
-            // Increment attempt counter
-            attempts++;
-
-            // Navigate to next month
-            from = from.add(1, 'month').startOf('month');
-            to = moment(from).add(1, 'month').startOf('month');
-
-            // Trigger the next month click
-            jQuery('.ui-datepicker-next').click();
-        }
-
-        if (attempts >= 3) {
-            console.log('Reached maximum number of attempts.');
-        }
-
-        calendarInitiated = true;
-
-        jQuery('#date_info_load').hide();
-        jQuery('#redi-restaurant-startDate').datepicker("refresh");
-        jQuery('#redi-restaurant-startDate').show();
-    })();
-}
 
 /********/
 
