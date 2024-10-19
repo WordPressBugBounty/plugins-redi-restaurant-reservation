@@ -269,12 +269,13 @@ In case you have any problems with plugin installation or you need some customiz
 
 == Changelog ==
 
+= 24.1015
+* Changed tooltip styles for disabled times, so that information can be shown on mobiles as well
+* Fixed Cross-Site Scripting vulnerability in setup wizard pages
+* Added query parameter support select-date to pre select reservation date in calendar
+
 = 24.0902
 * Added a parameter for place ID to the discount filter, allowing discounts to be defined for specific places.
-* + Changed tooltip styles for disabled times, so that information can be shown on mobiles as well
-* + Fixed Cross-Site Scripting vulnerability in setup wizard pages
-* + Added query parameter support select-date to pre select reservation date in calendar
-
 
 = 24.0730
 * Bugfux in plugin activation
