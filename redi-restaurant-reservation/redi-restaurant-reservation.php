@@ -3,7 +3,7 @@
     Plugin Name: ReDi Restaurant Reservation
     Plugin URI: https://landing.reservationdiary.eu
     Description: Get your restaurant business booming with the <strong>ReDi Restaurant Reservation plugin</strong>! Our plugin simplifies the reservation process and allows your clients to easily book online. With <strong>instant reservation confirmation</strong> and customizable settings, managing reservations has never been easier. Say goodbye to the hassle of manually confirming reservations and hello to the convenience of automatic confirmation. Try it out today and see the difference it can make in just a few clicks!
-    Version: 24.1015
+    Version: 24.1209
     Author: Reservation Diary
     Author URI: https://landing.reservationdiary.eu
     License: GPLv3 & Proprietary License
@@ -79,7 +79,7 @@ if (!class_exists('ReDiRestaurantReservation')) {
         use ReDiAPIHelperMethods;
 
         private $redi_notice;
-        public $version = '24.1015';
+        public $version = '24.1209';
         /**
          * @var string The options string name for this plugin
          */

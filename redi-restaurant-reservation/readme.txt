@@ -269,12 +269,15 @@ In case you have any problems with plugin installation or you need some customiz
 
 == Changelog ==
 
+= 24.1209
+* Added filter by open time name when provided as a parameter in the shortcode
+* Added the ability to place custom fields in any order on the reservation form, including before the first field
+* Fixed issue with the waitlist
+
 = 24.1015
 * Changed tooltip styles for disabled times, so that information can be shown on mobiles as well
 * Fixed Cross-Site Scripting vulnerability in setup wizard pages
 * Added query parameter support select-date to pre select reservation date in calendar
-+ Added filter by open time name when it's provided as a parameter in short code
-+ Added possibility to place custom fields on any order on the reservation form, even before first field
 
 = 24.0902
 * Added a parameter for place ID to the discount filter, allowing discounts to be defined for specific places.

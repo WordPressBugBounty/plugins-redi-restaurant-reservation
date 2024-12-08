@@ -622,7 +622,7 @@
                     <tr>
                         <th scope="row">
                             <label for="WaitList">
-                                <?php _e('Wait List', 'redi-restaurant-reservation'); ?>
+                                <?php _e('Enable Wait List', 'redi-restaurant-reservation'); ?>
                             </label>
                         </th>
                         <td style="vertical-align: top;">

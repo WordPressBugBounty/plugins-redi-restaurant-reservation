@@ -1,5 +1,5 @@
 <!-- ReDi Restaurant Reservation plugin version <?php echo $this->version?> -->
-<!-- Revision: 20241116 -->
+<!-- Revision: 20241209 -->
 <?php require_once(REDI_RESTAURANT_TEMPLATE.'cancel.php');?>
 <?php require_once(REDI_RESTAURANT_TEMPLATE.'modify.php');?>
 <script type="text/javascript">var plugin_name='ReDi Restaurant Reservation version <?php echo $this->version?>';var displayLeftSeats = <?php echo $displayLeftSeats ? 1 : 0; ?>;

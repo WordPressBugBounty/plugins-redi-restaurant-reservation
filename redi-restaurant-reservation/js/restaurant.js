@@ -1223,22 +1223,17 @@ jQuery(function () {
             error += redi_restaurant_reservation.email_missing + '<br/>';
         }
 
-        if (waitlist_itiUserPhone !== undefined) {
-            if (waitlist_itiUserPhone.getNumber() === '') {
-                error += redi_restaurant_reservation.phone_missing + '<br/>';
-            }
-            else if (!validatePhone(waitlist_itiUserPhone.getNumber())) {
-                error += redi_restaurant_reservation.phone_not_valid + '<br/>';
-            }
-        }
-        else {
+        var phone = jQuery('#waitlist-UserPhone').val();
 
-            if (jQuery('#waitlist-UserPhone').val() === '') {
-                error += redi_restaurant_reservation.phone_missing + '<br/>';
-            }
-            else if (!validatePhone(jQuery('#waitlist-UserPhone').val())) {
-                error += redi_restaurant_reservation.phone_not_valid + '<br/>';
-            }
+        if (waitlist_itiUserPhone !== undefined) {
+            phone = waitlist_itiUserPhone.getNumber();
+        }
+
+        if (phone === '') {
+            error += redi_restaurant_reservation.phone_missing + '<br/>';
+        }
+        else if (!validatePhone(phone)) {
+            error += redi_restaurant_reservation.phone_not_valid + '<br/>';
         }
 
         jQuery('.waitlist_field_required').each(function () {
@@ -1263,7 +1258,7 @@ jQuery(function () {
             'Guests': jQuery('#waitlist-persons').val(),
             'Name': jQuery('#waitlist-UserName').val(),
             'Email': jQuery('#waitlist-UserEmail').val(),
-            'Phone': jQuery('#waitlist-UserPhone').val(),
+            'Phone': phone,
             'placeID': jQuery('#waitlist-placeID').val(),
             'Time': jQuery('#waitlist-Time').val(),
         };
