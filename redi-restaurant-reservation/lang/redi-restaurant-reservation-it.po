@@ -5,14 +5,14 @@ msgstr ""
 "Project-Id-Version: ReDi Restaurant Reservation\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/redi-restaurant-reservation\n"
 "POT-Creation-Date: 2015-01-04 16:06+0200\n"
-"PO-Revision-Date: 2015-01-04 16:06+0200\n"
+"PO-Revision-Date: 2024-11-25 07:53+0000\n"
 "Last-Translator: Sergei Prokopov <info@reservationdiary.eu>\n"
-"Language-Team: ReDi team <info@reservationdiary.eu>\n"
+"Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
@@ -20,373 +20,351 @@ msgstr ""
 "X-Poedit-SearchPath-0: C:\\ProjectsCloudSync\\Wordpress\\redi-restaurant-"
 "reservation\\trunk\n"
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:249
-msgid ""
-"ReDi Restaurant Reservation plugin could not get an API key from the "
-"reservationdiary.eu server when it activated.<br/> You can try to fix this "
-"by going to the ReDi Restaurant Reservation \"options\" page. <br/>This will "
-"cause ReDi Restaurant Reservation plugin to retry fetching an API key for "
-"you. <br/>If you keep seeing this error it usually means that server where "
-"you host your web site can't connect to our reservationdiary.eu server. <br/"
-">You can try asking your WordPress host to allow your WordPress server to "
-"connect to api.reservationdiary.eu<br/>In case you can not solve this "
-"problem yourself, please contact us directly by <a href=\"mailto:"
-"info@reservationdiary.eu\">info@reservationdiary.eu</a>"
+#: redi-restaurant-reservation.php:664
+msgid " \"Min Persons\" should be lower than Max Persons"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:311
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/cancel.php:31
-msgid "Reservation has been successfully canceled."
+#: templates/admin_welcome_no_key.php:7
+msgid " Registration"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:316
-msgid "Reservation number is required"
+#: templates/admin_welcome_no_page.php:8
+msgid " Reservation page"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:340
-msgid "Min Persons should be lower than Max Persons"
+#: redi-restaurant-reservation.php:697
+msgid "\"Country\" is required"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:346
-msgid "Reservation time should be greater than 0"
+#: redi-restaurant-reservation.php:670
+msgid "\"Reservation time\" should be greater than 0"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:371
-msgid "Country is required"
+#: redi-restaurant-reservation.php:692
+msgid "\"Restaurant Name\" is required"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:797
-msgid "Reservation number can't be empty"
+#: redi-restaurant-reservation.php:681
+msgid "\"Subscription Email\" Field should be filled."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:798
-msgid "Name can't be empty"
-msgstr "Il campo \"Nome\" non può essere vuoto."
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:799
-msgid "Email can't be empty"
-msgstr "Il campo \"E-mail\" non può essere vuoto."
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:800
-msgid "Phone can't be empty"
-msgstr "Il campo \"Telefono\" non può essere vuoto."
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:801
-msgid "Reason can't be empty"
+#: redi-restaurant-reservation.php:686
+msgid "\"Subscription Name\" Field should be filled."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:822
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi.php:226
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi.php:232
-msgid ""
-"Online reservation service is not available at this time. Try again later or "
-"contact us directly."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:831
-msgid ""
-"Plugin failed to properly load javascript file, please check that jQuery is "
-"loaded and no javascript errors present."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:993
-msgid "Selected date or time is not valid."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:1202
-msgid "Yes"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/redi-restaurant-reservation.php:1203
-msgid "No"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:43
-msgid "Free package settings"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:45
-msgid "Basic package settings"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:47
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:400
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:411
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/cancel.php:3
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/cancel.php:22
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:12
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:30
-msgid "Cancel reservation"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:52
-msgid "Plugin Info"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:54
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:208
-msgid "Name"
-msgstr "Nome"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:55
-msgid "Version"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:56
-msgid "Authors"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:57
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:148
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/cancel.php:13
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:224
-msgid "Email"
-msgstr "Email"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:67
-msgid "Your settings have been saved!"
-msgstr "Impostazioni salvate!"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:90
-msgid "Common settings"
-msgstr "Impostazioni comuni"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:95
-msgid "Min persons per reservation"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:108
-msgid ""
-"Minimum number of persons allowed for each reservation. Drop down list of "
-"persons starts from this number."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:114
-msgid "Max persons per reservation"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:127
-msgid ""
-"Maximum number of persons allowed for each reservation. Drop down list of "
-"persons ends with this number."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:134
-msgid "Reservation time"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:142
-msgid ""
-"Duration of reservation in minutes. This is the time allocated for each "
-"reservation."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:149
-msgid "Alternative time step"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:154
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:155
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:156
-#, php-format
+#. %d is the number of minutes for the time step option in the dropdown menu
+#: templates/admin.php:567 templates/admin.php:571 templates/admin.php:575
+#: templates/admin.php:579 templates/admin.php:583 templates/admin.php:587
+#: templates/admin.php:591 templates/admin.php:595
 msgid "%d min"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:161
+#: templates/admin_ajaxed.php:417
+msgid "100 guests"
+msgstr ""
+
+#. %s is the HTML link to the setup wizard.
+#: functions/notice.php:51
+#, php-format
 msgid ""
-"Displays the available time with time step to the clients. For instance, if "
-"one selects 15 min time step, then alternative time will be 10:00, 10:15, "
-"10:30, etc."
+"<h3>ReDi Restaurant Reservation Plugin</h3> <p>Plugin is active but API key "
+"is not generated yet to use the plugin. Finilize setup wizard now for "
+"seamless bookings.</p> %s"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:168
-msgid "Send confirmation email to client"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:173
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:182
-msgid "From ReservationDiary.eu"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:174
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:181
-msgid "From WordPress email account"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:175
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:183
-msgid "Disable confirmation email"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:180
+#. %s is the HTML link to the setup wizard.
+#: functions/notice.php:75
+#, php-format
 msgid ""
-"The way you want confirmation email to be delivered to the client. It can be "
-"\"From WordPress email account\", \"From reservationdiary.eu\" or \"Disable "
-"confirmation email\"."
+"<h3>ReDi Restaurant Reservation Plugin</h3> <p>Plugin is active but you have "
+"not created a page with reservation form. Finilize setup wizard now for "
+"seamless bookings.</p> %s"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:181
+#. %s is the HTML link to the configuration page.
+#: functions/notice.php:98
+#, php-format
 msgid ""
-"the confirmation email will be sent out from your email set in WordPress. "
-"Sending from WordPress account setting will work only for Basic package "
-"clients."
+"<p>You have not made any changes to settings since you have installed the "
+"plugin. Finilize <b>ReDi Restaurant Reservation Plugin</b> setup now for "
+"seamless bookings. Visit the %1$s to finilize configuration and start "
+"impress your clients!</p> %2$s"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:182
+#: templates/admin.php:122
 msgid ""
-"the confirmation email will be sent out from info@reservationdiary.eu. When "
-"the client replies to confirmation email, you will receive it."
+"<strong>Attention</strong>: New settings are available for review and saving,"
+" please take a moment to update your preferences or fill out the required "
+"settings and click on the save button."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:183
-msgid "with this option, confirmation email is not sent to the client."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:190
-msgid "Max time before reservations"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:204
+#: templates/frontend.php:327
 msgid ""
-"Maximum time before the reservation is accepted. It can be anything from 1 "
-"month to 1 year."
+"A confirmation email has been sent to you, should you not receive it, please "
+"rest assured that your booking has been received and is confirmed. If you "
+"wish you may contact us by phone to confirm."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:211
-msgid "Frontend settings"
+#: templates/basicpackage.php:58
+msgid "Additional services (by request)"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:216
-msgid "Message for large groups"
+#: templates/admin_ajaxed.php:165
+msgid "Address"
+msgstr "Indirizzo"
+
+#: templates/admin_ajaxed.php:173
+msgid "Address of the restaurant is to be written here."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:224
-msgid ""
-"If this field is filled, the drop down menu of persons would show \"Large "
-"Groups\" and upon selection, the specified message would appear."
+#: templates/admin_ajaxed.php:599
+msgid "Allow SMS"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:231
-msgid "TimeShift Mode"
+#: templates/admin.php:70
+msgid "Allow to contact via Whatsapp"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:242
-msgid ""
-"Mode how available working hours presented to user so that they can choose "
-"time slots most convenient to them."
+#: templates/admin.php:69
+msgid "Allow to receive SMS"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:243
-msgid "Normal"
+#: templates/admin_welcome_no_key.php:20
+msgid "Allow to send information about the plugin"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:243
-msgid ""
-"In this mode, the user selects the desired time and the system verifies its "
-"availability to present five different alternative times to the customer."
+#: templates/admin_ajaxed.php:601
+msgid "Allow Whatsapp"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:244
-msgid "By shifts"
+#: templates/admin.php:559
+msgid "Alternative time step"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:244
-msgid ""
-"In this mode, the system automatically displays all the available times for "
-"the date selected without any manual time input."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:245
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:253
-msgid "Hide steps"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:245
-msgid ""
-"This option is meant only for the by shifts mode. It is meant for hiding the "
-"previous steps. The system would display all the available times for the "
-"specified date but upon selecting the available time, the previous steps are "
-"hidden and the next step is presented. It is a good mode for widgets "
-"specially."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:264
-msgid "Hide previous steps (only for timeshiftmode byshifts)"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:271
-msgid "Calendar type"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:282
-msgid ""
-"This field lets you select the style in which the calendar control is "
-"displayed. It can be either \"Show on click\" or \"Always show”."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:283
-msgid "Shown on click"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:283
-msgid ""
-"Selecting this option, the calendar is set to popup when the user clicks the "
-"calendar control."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:284
+#: templates/admin.php:310
 msgid "Always show"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:284
-msgid "This option sets the calendar control to display all the time."
+#: templates/basicpackage.php:4
+msgid "Api Information"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:291
-msgid "TimePicker type"
+#: templates/admin_welcome_no_key.php:33 templates/admin_welcome_no_key.php:38
+#: templates/admin_welcome_no_page.php:29
+#: templates/admin_welcome_no_page.php:34
+msgid "API Key"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:302
+#: redi-restaurant-reservation.php:574
+msgid "API key is successfully changed."
+msgstr ""
+
+#: redi-restaurant-reservation.php:2277
+msgid "Api key should be a GUID number."
+msgstr ""
+
+#: templates/basicpackage.php:5
+msgid "ApiKey"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1441
 msgid ""
-"This field lets you select the way time picker is displayed. You can choose "
-"from \"jQuery plugin\" and \"HTML dropdown\"."
+"Apologies for the inconvenience, but we encountered an issue while trying to "
+"make your reservation. It seems there was a technical glitch on our end. Our "
+"team is actively working to resolve this issue. Please try again in a few "
+"minutes, and if the problem persists, feel free to reach out to our customer "
+"support for assistance. Additionally, if you could please send a screenshot "
+"of the error message to {emailLink}, it would greatly help us in diagnosing "
+"and resolving the issue more efficiently. We appreciate your patience and "
+"cooperation. Response:"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:303
-msgid "jQuery plugin"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:303
+#: templates/basicpackage.php:21
 msgid ""
-"Time picker type if selected to be jQuery plugin, it is set to pop up with "
-"the hour and time."
+"Are you facing trouble configuring the plugin? Don't worry! We offer free "
+"personal assistance to help you out. You can schedule a session with us "
+"using Calendly or reach out to us via Skype, WhatsApp, or Facebook. We're "
+"here to provide the support you need."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:304
-msgid "HTML dropdown"
+#: redi-restaurant-reservation.php:704
+msgid "At least one opening time should be provided"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:304
+#: redi-restaurant-reservation.php:1440
+msgid "Available seats"
+msgstr ""
+
+#: templates/admin.php:466
+msgid "Available Time Appearance"
+msgstr ""
+
+#: templates/cancel.php:5 templates/modify.php:3 templates/modify.php:24
+msgid "Back to reservation page"
+msgstr ""
+
+#: templates/basicpackage.php:34
+msgid "Basic package functionality (paid version)"
+msgstr ""
+
+#: templates/admin_welcome_no_key.php:32 templates/admin_welcome_no_page.php:28
+msgid "Below is your API Key, please use it when you ask for a support. "
+msgstr ""
+
+#: templates/admin.php:66 templates/admin_ajaxed.php:605
+msgid "Birthday"
+msgstr ""
+
+#: templates/admin.php:72
+msgid "Birthday (dd/mm)"
+msgstr ""
+
+#: templates/basicpackage.php:45
 msgid ""
-"With this option selected, the Time Picker is shown to be simple dropdown "
-"for selecting the hour and time."
+"Blocked Time. Define time range when online reservation should not be "
+"accepted. Specify a reason why reservations are not accepted at this time to "
+"keep your clients happy."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:312
-msgid "Support us"
-msgstr "Supportaci"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:320
-msgid ""
-"If checkbox is checked, a logo of <b>\"Powered by ReDi\"</b> is displayed. "
-"Thank you for supporting us."
+#: templates/admin.php:514
+msgid "By shifts"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:328
+#: templates/admin.php:288
+msgid "Calendar type"
+msgstr ""
+
+#: templates/admin_welcome.php:25 templates/basicpackage.php:22
+msgid "Calendly"
+msgstr ""
+
+#: templates/admin.php:128 templates/admin.php:919 templates/admin.php:935
+#: templates/cancel.php:3 templates/cancel.php:47 templates/confirm.php:41
+#: templates/frontend.php:12
+msgid "Cancel reservation"
+msgstr ""
+
+#: templates/admin.php:690
+msgid "Captcha"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1439
+msgid "Captcha is not valid."
+msgstr ""
+
+#: templates/admin.php:706
+msgid "Captcha key"
+msgstr ""
+
+#: templates/basicpackage.php:13
+msgid "Change"
+msgstr ""
+
+#: templates/basicpackage.php:8
+msgid "Change API key"
+msgstr ""
+
+#: templates/frontend.php:239
+msgid "Change details"
+msgstr ""
+
+#: templates/frontend.php:173
+msgid "Check available time"
+msgstr "Verifica disponibilità orario"
+
+#: templates/admin_ajaxed.php:593
+msgid "Check box"
+msgstr ""
+
+#: redi-restaurant-reservation.php:2006 templates/frontend.php:99
+msgid "Children"
+msgstr ""
+
+#: templates/admin_ajaxed.php:150
+msgid "City"
+msgstr "Città"
+
+#: functions/notice.php:126
+msgid "Click here to open reservation page"
+msgstr ""
+
+#: templates/admin_ajaxed.php:344
+msgid "Close"
+msgstr "Chiuso"
+
+#: templates/admin.php:652
+msgid "Collect First and Last name"
+msgstr ""
+
+#: templates/admin.php:672
+msgid "Collect phone number with country code"
+msgstr ""
+
+#: templates/basicpackage.php:68
+msgid "Collect pre-payment for reservations."
+msgstr ""
+
+#: templates/admin.php:253
+msgid "Collect user experience feedback"
+msgstr ""
+
+#: templates/frontend.php:291 templates/modify.php:58
+msgid "Comment"
+msgstr "Commenti"
+
+#: functions/notice.php:102 functions/notice.php:103
+msgid "Configuration page"
+msgstr ""
+
+#: templates/confirm.php:40
+msgid "Confirm visit"
+msgstr ""
+
+#: templates/frontend_v2.php:68
+msgid "Confirmation"
+msgstr ""
+
+#: templates/admin.php:817
+msgid "Confirmation page"
+msgstr ""
+
+#: templates/admin_ajaxed.php:278
+msgid "Contact information"
+msgstr ""
+
+#: templates/basicpackage.php:20
+msgid "Contact Us"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1366 redi.php:285
+msgid "contact us directly"
+msgstr ""
+
+#: templates/admin_ajaxed.php:130
+msgid "Country"
+msgstr "Provincia"
+
+#: templates/admin.php:155
+msgid "Create a support ticket"
+msgstr ""
+
+#: templates/admin_ajaxed.php:98
+msgid "Current Place ID"
+msgstr ""
+
+#: templates/admin.php:749
+msgid "Current time"
+msgstr ""
+
+#: templates/frontend.php:464
+msgid "Custom field is required"
+msgstr ""
+
+#: templates/admin_ajaxed.php:496
 msgid "Custom fields"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:330
+#: templates/admin_ajaxed.php:501
 msgid ""
 "Custom fields are meant to allow users define additional fields for "
 "collecting more information from customers. You can choose the name of the "
@@ -394,292 +372,1259 @@ msgid ""
 "and the error message for the required field."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:331
+#: templates/admin.php:212
+msgid "Data Input Appearance"
+msgstr ""
+
+#: templates/confirm.php:16 templates/frontend.php:113
+#: templates/frontend.php:423 templates/frontend_v2.php:35
+#: templates/modify.php:28
+msgid "Date"
+msgstr "Data"
+
+#: templates/admin.php:319
+msgid "Date format"
+msgstr ""
+
+#: templates/admin_ajaxed.php:456 templates/admin_ajaxed.php:478
+msgid "Days"
+msgstr ""
+
+#: templates/admin.php:460
+msgid "Description for children dropdown"
+msgstr ""
+
+#: templates/admin.php:793 templates/admin.php:809
+msgid "Disable confirmation email"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1997
+msgid "Discount"
+msgstr ""
+
+#: templates/admin.php:544
+msgid "Display left seats"
+msgstr ""
+
+#: templates/admin.php:600
 msgid ""
-"NOTE: Name, Email and Phone are required fields of reservation form and do "
-"not need to be defined here as custom fields."
+"Displays the available time with time step to the clients. For instance, if "
+"one selects 15 min time step, then alternative time will be 10:00, 10:15, 10:"
+"30, etc."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:339
-msgid "Field name"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:344
-msgid "Field type"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:349
-msgid "Is required?"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:354
-msgid "Required error message"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:392
-msgid "Save Changes"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:404
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/cancel.php:8
-msgid "Reservation number"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin.php:407
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/cancel.php:18
-msgid "Reason"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:32
-msgid "Restaurant settings"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:37
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:15
-msgid "Place"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:51
+#: templates/basicpackage.php:64
 msgid ""
-"This field lets you edit settings for multiple places. Multiple places are "
-"available for Basic package users only."
+"Do you want to know what your client thinks about his last visit? We will "
+"collect it for you."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:57
-msgid "Current Place ID"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:61
+#: templates/basicpackage.php:71
 msgid ""
-"This <b>ID</b> associated with your place. The <b>ID</b> can be used as a "
-"short code for specifying the place of reservation. <br/>Example of "
-"shortcode:<br/><code style=\"font-style: normal; padding:0\">[redirestaurant "
-"placeid=\"0000\"]</code>"
+"Do you want to write your own module? We have an API. Contact us to get more "
+"information."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:68
-msgid "Restaurant name"
-msgstr "Nome ristorante"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:76
-msgid "The name of the restaurant is to be specified here."
+#: templates/admin_welcome.php:22
+msgid ""
+"Don't want to spend time delving into how the plugin works or figuring out "
+"the setup process? Sign up for a free personalized assistance call – our "
+"team is here to help you get started smoothly."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:83
-msgid "Country"
-msgstr "Provincia"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:88
-msgid "Select Country"
+#: templates/admin.php:329
+msgid "Dot"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:96
-msgid "The country of restaurant can be mentioned here."
+#: templates/admin_ajaxed.php:609
+msgid "DropDown"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:103
-msgid "City"
-msgstr "Città"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:111
-msgid "The restaurant city is to be specified in this field."
+#: templates/frontend.php:149
+msgid "Duration"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:118
-msgid "Address"
-msgstr "Indirizzo"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:126
-msgid "Address of the restaurant is to be written here."
+#: templates/admin_ajaxed.php:440
+msgid ""
+"Duration of reservation in minutes. This is the time allocated for each "
+"reservation so the reservation system can calculate availability. Enter here "
+"average time that guests stays in."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:133
-msgid "URL"
+#: templates/admin_ajaxed.php:470
+msgid "Early Bookings"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:141
-msgid "The website address of the restaurant."
-msgstr ""
+#: templates/admin_ajaxed.php:195 templates/admin_ajaxed.php:299
+#: templates/admin_welcome_no_key.php:14 templates/cancel.php:34
+#: templates/frontend.php:248 templates/frontend.php:278
+#: templates/frontend.php:442 templates/modify.php:13 templates/modify.php:54
+msgid "Email"
+msgstr "Email"
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:156
+#: templates/admin_ajaxed.php:203
 msgid "Email address for contacting the restaurant."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:163
+#: redi-restaurant-reservation.php:1431
+msgid "Email can't be empty"
+msgstr "Il campo \"E-mail\" non può essere vuoto."
+
+#: templates/admin_ajaxed.php:210
 msgid "Email CC"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:171
-msgid ""
-"The email addresses of recipients who should be sent the copies of "
-"reservation emails. You can separate multiple recipients using commas."
+#: redi-restaurant-reservation.php:2259
+msgid "Email is not valid."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:178
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:216
+#: redi-restaurant-reservation.php:2256
+msgid "Email is required."
+msgstr ""
+
+#: templates/basicpackage.php:49
+msgid "Email template customization for all supported languages."
+msgstr ""
+
+#: templates/admin.php:804
+msgid ""
+"Emails will be sent via SMTP server that is configured in Basic settings."
+msgstr ""
+
+#: templates/admin.php:221
+msgid "Enable cancel form"
+msgstr ""
+
+#: templates/admin.php:237
+msgid "Enable modify reservations"
+msgstr ""
+
+#: templates/admin.php:246
+msgid "Enable or Disable modify reservation."
+msgstr ""
+
+#: templates/admin.php:230
+msgid "Enable or Disable reservation cancel form."
+msgstr ""
+
+#: templates/admin.php:278
+msgid ""
+"Enable or Disable social network account login. When enabled clients can "
+"login with any social network accounts like Facebook and then reservation "
+"form will be pre-filled with personal information. Also if user logins with "
+"social network but does not complete the reservation, he will receive a "
+"reminder to finalize it. You need to install and setup plugin with name "
+"'Super Socializer' from WordPress directory."
+msgstr ""
+
+#: templates/admin.php:269
+msgid "Enable social network login"
+msgstr ""
+
+#: templates/admin.php:699
+msgid "Enable/Disable captcha on reservation form."
+msgstr ""
+
+#: templates/admin.php:449
+msgid "Enable/Disable children dropdown"
+msgstr ""
+
+#: templates/basicpackage.php:62
+msgid ""
+"Enhance your business experience by using our Facebook integration service "
+"where we try to provide you with profile pictures of your customers if found."
+" You can amaze your customer by knowing him by face when he visits you, "
+"especially at the time of first visit."
+msgstr ""
+
+#: templates/frontend.php:41
+msgid ""
+"ERROR: You need to install/activate dependant plugin Super Socializer plugin"
+msgstr ""
+
+#: templates/admin_welcome.php:29 templates/basicpackage.php:26
+msgid "facebook"
+msgstr ""
+
+#: redi-restaurant-reservation.php:856
+msgid "Failed to create the directory"
+msgstr ""
+
+#: templates/admin_ajaxed.php:513
+msgid "Field name"
+msgstr ""
+
+#: templates/admin_ajaxed.php:523
+msgid "Field type"
+msgstr ""
+
+#: functions/notice.php:137
+#, php-format
+msgid ""
+"Finally, one last step in <b>ReDi Restaurant Reservation Plugin</b> setup to "
+"impress your clients, make a test reservation. <b>%1$s</b>%2$s"
+msgstr ""
+
+#: templates/modify.php:15
+msgid "Find reservation"
+msgstr ""
+
+#: templates/frontend.php:256
+msgid "First Name"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1428
+msgid "First Name can't be empty"
+msgstr ""
+
+#: templates/admin.php:733
+msgid "Force users to provide a reason when canceling reservation."
+msgstr ""
+
+#: templates/frontend_v2.php:57
+msgid "Form"
+msgstr ""
+
+#: redi-restaurant-reservation.php:521
+msgid "Form security check failed with error: Nonce check failed."
+msgstr ""
+
+#: redi-restaurant-reservation.php:1914
+msgid ""
+"Form security check failed with error: Nonce check failed. Reservation form "
+"is not working today, please contact us directly."
+msgstr ""
+
+#: templates/admin.php:126
+msgid "Free package settings"
+msgstr ""
+
+#: templates/admin.php:789 templates/admin.php:803
+msgid "From Custom SMTP"
+msgstr ""
+
+#: templates/admin.php:787 templates/admin.php:806
+msgid "From ReservationDiary.eu"
+msgstr ""
+
+#: templates/admin.php:791 templates/admin.php:800
+msgid "From WordPress email account"
+msgstr ""
+
+#: templates/admin.php:837
+msgid "Frontend settings"
+msgstr ""
+
+#: templates/admin_ajaxed.php:603
+msgid "GDPR"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Get your restaurant business booming with the <strong>ReDi Restaurant "
+"Reservation plugin</strong>! Our plugin simplifies the reservation process "
+"and allows your clients to easily book online. With <strong>instant "
+"reservation confirmation</strong> and customizable settings, managing "
+"reservations has never been easier. Say goodbye to the hassle of manually "
+"confirming reservations and hello to the convenience of automatic "
+"confirmation. Try it out today and see the difference it can make in just a "
+"few clicks!"
+msgstr ""
+
+#: templates/confirm.php:34 templates/frontend.php:79
+#: templates/frontend_v2.php:24
+msgid "Guests"
+msgstr ""
+
+#: redi-restaurant-reservation.php:233
+msgid "Help"
+msgstr ""
+
+#: templates/admin.php:853
+msgid "Hide previous steps (only for timeshiftmode byshifts)"
+msgstr ""
+
+#: templates/admin.php:844
+msgid "Hide steps"
+msgstr ""
+
+#: templates/admin_ajaxed.php:455 templates/admin_ajaxed.php:477
+msgid "Hours"
+msgstr ""
+
+#: templates/admin.php:373
+msgid "HTML dropdown"
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://landing.reservationdiary.eu"
+msgstr ""
+
+#: templates/admin.php:324
+msgid "Hyphen"
+msgstr ""
+
+#: templates/admin.php:71
+msgid "I agree to the privacy policy"
+msgstr ""
+
+#: templates/admin.php:774
+msgid ""
+"If checkbox is checked then reservations will not be automatically confirmed."
+" You will receive email with reservation request and each reservation needs "
+"to be confirmed or rejected manually."
+msgstr ""
+
+#: templates/admin.php:552
+msgid ""
+"If checkbox is checked then seats left will be shown under selected time."
+msgstr ""
+
+#: templates/admin.php:870
+msgid ""
+"If checkbox is checked, a logo of <b>\"Powered by ReservationDiary.eu\"</b> "
+"is displayed. Thank you for supporting us."
+msgstr ""
+
+#: templates/admin.php:434
+msgid ""
+"If this field is filled, the drop down menu of persons would show \"Large "
+"Groups\" and upon selection, the specified message would appear."
+msgstr ""
+
+#: templates/basicpackage.php:69
+msgid ""
+"If you are building a catalogue of restaurants and looking for the perfect "
+"reservation plugin for it, we can provide it to you."
+msgstr ""
+
+#: templates/admin_ajaxed.php:377
+msgid ""
+"If you close next day at night then set closing time on a same day. For "
+"example 18:00 - 3:00"
+msgstr ""
+
+#: templates/admin_welcome_no_key.php:22
+msgid ""
+"If you have already an API key, you can skip this step and provide API key "
+"on next step."
+msgstr ""
+
+#: templates/admin.php:829
+msgid ""
+"If you want to customize confirmation page or have a separated page for "
+"marketing purposes, then select custom reservation confirmation page. If not "
+"specified, then built in confirmation page will be used."
+msgstr ""
+
+#: templates/basicpackage.php:74
+msgid ""
+"If you would like to add some new functionality or have any other queries, "
+"please contact us by email: "
+msgstr ""
+
+#: templates/admin.php:435 templates/admin.php:617
+msgid ""
+"In case you need to show it in multiple languages, then use following format "
+"[lang]Text[/lang]. Example: [en]Text[/en][es]Texto[/es]"
+msgstr ""
+
+#: templates/frontend.php:193 templates/frontend.php:356
+msgid ""
+"In case you would like to be notified when someone cancels reservation for "
+"this day, please fill <a class=\"link-waitlist-form\">this form</a>."
+msgstr ""
+
+#: templates/admin.php:830
+msgid ""
+"In order to display reservation id on that page, install plugin GET Params "
+"and add following short code: [display-get-param name=\"reservation_id\"]"
+msgstr ""
+
+#: templates/admin.php:515
+msgid ""
+"In this mode, the system automatically displays all the available times for "
+"the date selected without any manual time input."
+msgstr ""
+
+#: templates/admin.php:512
+msgid ""
+"In this mode, the user selects the desired time and the system verifies its "
+"availability to present five different alternative times to the customer."
+msgstr ""
+
+#: templates/admin_ajaxed.php:533
+msgid "Is printed?"
+msgstr ""
+
+#: templates/admin_ajaxed.php:528
+msgid "Is required?"
+msgstr ""
+
+#: templates/admin.php:370
+msgid "jQuery plugin"
+msgstr ""
+
+#: templates/admin_ajaxed.php:226
+msgid "Language"
+msgstr "Lingua"
+
+#: templates/admin_ajaxed.php:254
+msgid ""
+"Language for emails of clients depend on the user interface language "
+"selected."
+msgstr ""
+
+#: templates/admin_ajaxed.php:253
+msgid ""
+"Language for internal emails communication. It is specially used for admin "
+"emails. "
+msgstr ""
+
+#: templates/admin.php:887
+msgid "Language Path"
+msgstr ""
+
+#: templates/frontend.php:265
+msgid "Last Name"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1429
+msgid "Last Name can't be empty"
+msgstr ""
+
+#: templates/admin_ajaxed.php:447
+msgid "Late Bookings"
+msgstr ""
+
+#: templates/admin.php:878
+msgid "Localization"
+msgstr ""
+
+#: templates/frontend.php:31
+msgid "Login with your social media account"
+msgstr ""
+
+#: templates/frontend.php:309
+msgid "Make a reservation"
+msgstr "Conferma la prenotazione"
+
+#: templates/frontend.php:307
+msgid "Make a reservation request"
+msgstr ""
+
+#: templates/admin.php:723
+msgid "Mandatory Cancellation Reason"
+msgstr ""
+
+#: templates/admin.php:765
+msgid "Manual reservation"
+msgstr ""
+
+#: templates/admin.php:403
+msgid "Max persons per reservation"
+msgstr ""
+
+#: templates/admin_ajaxed.php:391
+msgid "Maximum number of guests"
+msgstr ""
+
+#: templates/admin.php:417
+msgid ""
+"Maximum number of persons allowed for each reservation. Drop down list of "
+"persons ends with this number."
+msgstr ""
+
+#: templates/admin_ajaxed.php:484
+msgid "Maximum time before the reservation can be accepted."
+msgstr ""
+
+#: templates/admin.php:425
+msgid "Message for large groups"
+msgstr ""
+
+#: templates/admin.php:383
+msgid "Min persons per reservation"
+msgstr ""
+
+#: templates/admin.php:397
+msgid ""
+"Minimum number of persons allowed for each reservation. Drop down list of "
+"persons starts from this number."
+msgstr ""
+
+#: templates/admin_ajaxed.php:454
+msgid "Minutes"
+msgstr ""
+
+#: templates/admin.php:509
+msgid ""
+"Mode how available working hours presented to user so that they can choose "
+"time slots most convenient to them."
+msgstr ""
+
+#: templates/frontend.php:16 templates/modify.php:2
+msgid "Modify reservation"
+msgstr ""
+
+#: templates/admin_ajaxed.php:411
+msgid "Monthly guest reservation limit"
+msgstr ""
+
+#: templates/admin_ajaxed.php:479
+msgid "Months"
+msgstr ""
+
+#. %s is the number of guests.
+#: templates/frontend.php:93
+#, php-format
+msgid "More than %s Guests"
+msgstr ""
+
+#: templates/frontend.php:7
+msgid "More than [max] people"
+msgstr ""
+
+#: templates/admin_ajaxed.php:381
+msgid ""
+"Multiple open and close times are available in Basic package. If times are "
+"configured in Basic package, then this table is ignored."
+msgstr ""
+
+#: templates/admin.php:142 templates/admin_ajaxed.php:286
+#: templates/cancel.php:27 templates/frontend.php:242
+#: templates/frontend.php:258 templates/frontend.php:437
+#: templates/modify.php:11 templates/modify.php:43
+msgid "Name"
+msgstr "Nome"
+
+#: redi-restaurant-reservation.php:1427
+msgid "Name can't be empty"
+msgstr "Il campo \"Nome\" non può essere vuoto."
+
+#: redi-restaurant-reservation.php:1430
+msgid "Name or Phone or Email can't be empty"
+msgstr ""
+
+#: templates/admin.php:147
+msgid "News"
+msgstr ""
+
+#: templates/admin.php:62 templates/admin_ajaxed.php:597
+msgid "Newsletter"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1435 templates/admin_welcome_no_page.php:41
+msgid "Next"
+msgstr ""
+
+#: templates/admin_welcome.php:18
+msgid ""
+"Next step is to configure the plugin, please watch following videos and "
+"click on Next to open Settings page"
+msgstr ""
+
+#: templates/frontend.php:82
+msgid "No. of Guests"
+msgstr ""
+
+#: templates/admin.php:511
+msgid "Normal"
+msgstr ""
+
+#: redi-restaurant-reservation.php:579
+msgid "Not a valid API key provided."
+msgstr ""
+
+#: templates/admin_ajaxed.php:505
+msgid ""
+"NOTE: Complex custom fields like Options and Dropdown can be configured in "
+"Basic package settings."
+msgstr ""
+
+#: templates/admin_ajaxed.php:463
+msgid ""
+"NOTE: If you define Open Time in basic package, then this setting will be "
+"ignored. Use open times settings to define Late Bookings."
+msgstr ""
+
+#: templates/admin_ajaxed.php:503
+msgid ""
+"NOTE: Name, Email, Phone and Comments are required fields of reservation "
+"form and do not need to be defined here as custom fields."
+msgstr ""
+
+#: templates/admin_ajaxed.php:641
+msgid "Note: To send SMS messages an extra addon needs to be purchased."
+msgstr ""
+
+#: templates/admin.php:715
+msgid "Obtain your captcha key from Google."
+msgstr ""
+
+#: redi-restaurant-reservation.php:1364
+msgid ""
+"Online reservation service is not available at this time. Try again later or"
+msgstr ""
+
+#. %s is a placeholder for a dynamic link.
+#: redi.php:288
+#, php-format
+msgid ""
+"Online reservation service is not available at this time. Try again later or "
+"%s"
+msgstr ""
+
+#: templates/admin_ajaxed.php:341
+msgid "Open"
+msgstr "Aperto"
+
+#: functions/notice.php:47 functions/notice.php:79
+msgid "Open setup wizard"
+msgstr ""
+
+#: templates/basicpackage.php:41
+msgid ""
+"Open times. This option will enable you to choose between various working "
+"hours whichever is most convenient to you."
+msgstr ""
+
+#: templates/basicpackage.php:38
+msgid "Open upcoming reservations"
+msgstr ""
+
+#: templates/admin_ajaxed.php:607
+msgid "Option"
+msgstr ""
+
+#: templates/admin.php:607
+msgid "Override fully booked message text"
+msgstr ""
+
+#: templates/admin_welcome_no_page.php:13
+msgid "Page name"
+msgstr ""
+
+#: redi-restaurant-reservation.php:2342
+msgid "Page name is required"
+msgstr ""
+
+#: templates/frontend.php:428 templates/modify.php:32
+msgid "Persons"
+msgstr "Numero persone"
+
+#: templates/admin_ajaxed.php:261 templates/cancel.php:19
+#: templates/frontend.php:245 templates/frontend.php:271
+#: templates/frontend.php:447 templates/modify.php:8 templates/modify.php:47
 msgid "Phone"
 msgstr "Telefono"
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:186
+#: redi-restaurant-reservation.php:1432
+msgid "Phone can't be empty"
+msgstr "Il campo \"Telefono\" non può essere vuoto."
+
+#: redi-restaurant-reservation.php:1433
+msgid "Phone number is not valid"
+msgstr ""
+
+#: templates/admin_ajaxed.php:78 templates/frontend.php:53
+#: templates/frontend_v2.php:13
+msgid "Place"
+msgstr ""
+
+#: templates/basicpackage.php:54
+msgid ""
+"Please allow 1 business day for us to confirm your payment and upgrade your "
+"account."
+msgstr ""
+
+#: functions/notice.php:134
+msgid ""
+"Please create a reservation page and add this <b>[redirestaurant]</b> "
+"shortcode to that page."
+msgstr ""
+
+#: templates/admin_welcome_no_key.php:37 templates/admin_welcome_no_page.php:33
+msgid "Please provide your API Key in order to continue using plugin"
+msgstr ""
+
+#: templates/admin_welcome_no_key.php:13
+msgid "Please provide your email address to generate API Key"
+msgstr ""
+
+#: redi-restaurant-reservation.php:675
+msgid "Please select value from \"Monthly guest reservation limit\""
+msgstr ""
+
+#: templates/admin.php:757
+msgid ""
+"Please verify you current time. This is important as this time is taken and "
+"used in reservation logic. In case time is differnet than your current time, "
+"please change time zone in Settings -> General -> Time Zone"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1374
+msgid ""
+"Plugin failed to properly load javascript file, please check that jQuery is "
+"loaded and no javascript errors present."
+msgstr ""
+
+#: templates/admin.php:135
+msgid "Plugin Info"
+msgstr ""
+
+#: templates/frontend.php:494
+msgid "Powered by"
+msgstr "Powered by"
+
+#: templates/frontend.php:433
+msgid "Preferred time"
+msgstr ""
+
+#: templates/frontend.php:227 templates/frontend.php:303
+msgid "Previous"
+msgstr ""
+
+#: templates/admin.php:65
+msgid "Privacy policy"
+msgstr ""
+
+#: templates/frontend.php:234
+msgid "Provide reservation details"
+msgstr "Dettagli della prenotazione"
+
+#: redi-restaurant-reservation.php:1438
+msgid "Provided time is not in valid format."
+msgstr ""
+
+#: templates/admin.php:173
+msgid "Rate the plugin, help us grow"
+msgstr ""
+
+#: templates/admin.php:929 templates/cancel.php:40
+msgid "Reason"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1434
+msgid "Reason can't be empty"
+msgstr ""
+
+#: templates/admin_welcome.php:12
+msgid "ReDi Reservation plugin:"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1137 redi-restaurant-reservation.php:1138
+#: redi-restaurant-reservation.php:1193 redi-restaurant-reservation.php:1194
+#: redi-restaurant-reservation.php:1202 redi-restaurant-reservation.php:1203
+msgid "ReDi Reservations"
+msgstr ""
+
+#. Name of the plugin
+msgid "ReDi Restaurant Reservation"
+msgstr ""
+
+#: templates/admin.php:142
+msgid "Redi Restaurant Reservation"
+msgstr ""
+
+#: redi-restaurant-reservation.php:588
+msgid ""
+"ReDi Restaurant Reservation plugin could not get an API key from the "
+"reservationdiary.eu server when it activated.\n"
+"                        <br/> You can try to fix this by going to the ReDi "
+"Restaurant Reservation \"options\" page.\n"
+"                        <br/>This will cause ReDi Restaurant Reservation "
+"plugin to retry fetching an API key for you.\n"
+"                        <br/>If you keep seeing this error it usually means "
+"that server where you host your web site can't connect to our "
+"reservationdiary.eu server.\n"
+"                        <br/>You can try asking your WordPress host to allow "
+"your WordPress server to connect to api.reservationdiary.eu\n"
+"                        <br/>In case you can not solve this problem yourself,"
+" please contact us directly by <a href=\"mailto:info@reservationdiary.eu\">"
+"info@reservationdiary.eu</a>"
+msgstr ""
+
+#: templates/admin_welcome.php:15
+msgid "ReDi restaurant reservation plugin is ready to use"
+msgstr ""
+
+#: templates/frontend.php:476
+msgid "Register to Wait List"
+msgstr ""
+
+#: templates/basicpackage.php:66
+msgid "Remind your customer about upcoming reservation via Email or by SMS"
+msgstr ""
+
+#: templates/admin.php:61 templates/admin_ajaxed.php:595
+msgid "Reminder"
+msgstr ""
+
+#: templates/admin_ajaxed.php:538
+msgid "Required error message"
+msgstr ""
+
+#. Author of the plugin
+msgid "Reservation Diary"
+msgstr ""
+
+#: templates/admin_ajaxed.php:430
+msgid "Reservation duration"
+msgstr ""
+
+#: redi.php:285
+msgid "Reservation form is not working"
+msgstr ""
+
+#: templates/admin.php:642
+msgid "Reservation Form settings"
+msgstr ""
+
+#: redi-restaurant-reservation.php:510 templates/cancel.php:57
+#: templates/confirm.php:55
+msgid "Reservation has been successfully canceled."
+msgstr ""
+
+#: templates/modify.php:72
+msgid "Reservation has been successfully updated."
+msgstr ""
+
+#: functions/feedback.php:93
+msgid "Reservation id is empty."
+msgstr ""
+
+#: templates/frontend.php:188 templates/frontend.php:362
+msgid ""
+"Reservation is not available on selected day. Please select another day."
+msgstr ""
+
+#: redi-restaurant-reservation.php:1390
+msgid "Reservation is not found."
+msgstr ""
+
+#: templates/admin.php:925 templates/cancel.php:12 templates/confirm.php:12
+#: templates/modify.php:6
+msgid "Reservation number"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1426
+msgid "Reservation number can't be empty"
+msgstr ""
+
+#: redi-restaurant-reservation.php:553
+msgid "Reservation number is required"
+msgstr ""
+
+#: templates/admin_ajaxed.php:384
+msgid "Reservation restrictions"
+msgstr ""
+
+#: templates/admin.php:741
+msgid "Reservation settings"
+msgstr ""
+
+#: redi-restaurant-reservation.php:2123
+msgid "Reservation that is canceled can not be modified."
+msgstr ""
+
+#: redi-restaurant-reservation.php:1177 redi-restaurant-reservation.php:1178
+msgid "Reservations"
+msgstr ""
+
+#: templates/admin_ajaxed.php:115
+msgid "Restaurant name"
+msgstr "Nome ristorante"
+
+#: templates/admin_ajaxed.php:69
+msgid "Restaurant settings"
+msgstr ""
+
+#: templates/admin.php:912
+msgid "Save Changes"
+msgstr ""
+
+#: templates/frontend.php:211
+msgid "Select available time"
+msgstr "Seleziona orario"
+
+#: templates/admin_ajaxed.php:135
+msgid "Select Country"
+msgstr ""
+
+#: templates/frontend.php:69
+msgid "Select guests, date and time"
+msgstr ""
+
+#: templates/admin_ajaxed.php:416
+msgid "Select monthly guest reservation limit"
+msgstr ""
+
+#: templates/frontend.php:56
+msgid "Select place"
+msgstr ""
+
+#: templates/frontend.php:50
+msgid "Select place, guests, date and time"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1722
+msgid "Selected date or time is not valid."
+msgstr ""
+
+#: templates/admin.php:308
+msgid ""
+"Selecting this option, the calendar is set to popup when the user clicks the "
+"calendar control."
+msgstr ""
+
+#: templates/basicpackage.php:47
+msgid "Send client reservation confirmation emails from WordPress account."
+msgstr ""
+
+#: templates/admin.php:781
+msgid "Send confirmation email to client"
+msgstr ""
+
+#: templates/admin.php:68
+msgid "Send me newsletter and promotions"
+msgstr ""
+
+#: templates/admin.php:67
+msgid "Send me reservation reminder"
+msgstr ""
+
+#: templates/admin.php:138
+msgid "sergei"
+msgstr ""
+
+#: templates/admin_ajaxed.php:379
+msgid "Set Open and Close fields to blank if restaurant is closed."
+msgstr ""
+
+#: redi-restaurant-reservation.php:232 redi-restaurant-reservation.php:1155
+#: redi-restaurant-reservation.php:1156
+msgid "Settings"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1163 redi-restaurant-reservation.php:1164
+msgid "Settings $"
+msgstr ""
+
+#: templates/admin_ajaxed.php:28
+msgid "Settings that have already been changed will be lost."
+msgstr ""
+
+#: templates/admin_ajaxed.php:34
+msgid ""
+"Settings that have already been changed will be lost. Are you sure you want "
+"to continue?"
+msgstr ""
+
+#: redi-restaurant-reservation.php:232
+msgid "Settins"
+msgstr ""
+
+#: templates/basicpackage.php:39
+msgid "Setup maximum available seats for online reservation by week day"
+msgstr ""
+
+#: templates/admin.php:525
+msgid "Show end reservation time"
+msgstr ""
+
+#: templates/admin.php:307
+msgid "Shown on click"
+msgstr ""
+
+#: templates/admin_welcome.php:28 templates/basicpackage.php:25
+msgid "skype"
+msgstr ""
+
+#: templates/admin.php:334
+msgid "Slash"
+msgstr ""
+
+#: templates/admin.php:63
+msgid "SMS"
+msgstr ""
+
+#: templates/admin_ajaxed.php:461
+msgid ""
+"Specify how late customers can make their booking in hours. For example, the "
+"current time is 10:00 and this setting is set to 3 hours then the first time,"
+" when the reservation will be accepted is 13:00."
+msgstr ""
+
+#: templates/admin_ajaxed.php:375
+msgid "Specify time in 24h format (00:00 - 23:59)."
+msgstr ""
+
+#: templates/admin_ajaxed.php:322
+msgid ""
+"Stay in the loop! Subscribe to receive valuable updates, tips, and "
+"recommendations related to our plugin. By checking this box, you agree to "
+"receive occasional emails with important announcements, helpful insights, "
+"and suggestions to enhance your experience with our plugin. Don't miss out "
+"on the latest features and improvements – opt in now!"
+msgstr ""
+
+#: templates/frontend.php:50 templates/frontend.php:69
+#: templates/frontend.php:211 templates/frontend.php:234
+msgid "Step"
+msgstr "Passo"
+
+#: templates/basicpackage.php:30
+msgid "Submit an issue or suggest a feature"
+msgstr ""
+
+#: templates/admin_ajaxed.php:312
+msgid "Subscribe to newsletter"
+msgstr ""
+
+#: templates/basicpackage.php:43
+msgid ""
+"Support for multiple places. Number of places depends on number of "
+"subscriptions."
+msgstr ""
+
+#: templates/admin.php:861
+msgid "Support us"
+msgstr "Supportaci"
+
+#: redi-restaurant-reservation.php:1170 redi-restaurant-reservation.php:1171
+msgid "Test reservation"
+msgstr ""
+
+#: templates/admin_ajaxed.php:591
+msgid "Text field"
+msgstr ""
+
+#: templates/admin_ajaxed.php:518
+msgid "Text on form"
+msgstr ""
+
+#: templates/admin.php:616
+msgid ""
+"Text that will be displayed when there are no available time for selected "
+"day/time."
+msgstr ""
+
+#: functions/feedback.php:89
+msgid "Thank you for your feedback."
+msgstr ""
+
+#: templates/frontend.php:317
+msgid "Thank you for your reservation request."
+msgstr ""
+
+#: templates/frontend.php:319
+msgid "Thank you for your reservation."
+msgstr "Grazie per aver confermato la prenotazione"
+
+#: templates/admin.php:807
+msgid ""
+"The confirmation email will be sent out from info@reservationdiary.eu. When "
+"the client replies to confirmation email, you will receive it."
+msgstr ""
+
+#: templates/admin.php:801
+msgid ""
+"The confirmation email will be sent out from your email set in WordPress."
+msgstr ""
+
+#: templates/admin_ajaxed.php:269
 msgid ""
 "The contact number of restaurant. It could have the format [area code] "
 "[phone number]"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:193
-msgid "Short description"
-msgstr "Descrizione breve"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:201
-msgid "Short description about your restaurant."
+#: templates/admin_ajaxed.php:143
+msgid "The country of restaurant can be mentioned here."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:208
-msgid "Long description"
-msgstr "Descrizione completa"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:216
+#: templates/admin_ajaxed.php:218
 msgid ""
-"Detailed description about your restaurant. This can include anything you "
-"would want the customers to know about your restaurant features and "
-"offerings."
+"The email addresses of recipients who should be sent the copies of "
+"reservation emails. You can separate multiple recipients using commas."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:223
-msgid "Hours before reservation"
-msgstr ""
-"Orario minimo prima dell'arrivo del cliente per accettare la prenotazione"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:231
+#: templates/admin.php:262
 msgid ""
-"This is the number of minimum hours before which a reservation can be "
-"accepted from a client. For example, the current time is 10:00 and the "
-"setting for Hours before reservation is set to 3 hours then the next time, "
-"when the reservation will be accepted is 13:00."
+"The enabled feedback collection option allows users of the reservation form "
+"to provide valuable input for improving the plugin. By keeping this option "
+"enabled, you can continuously enhance the plugin based on user feedback, "
+"ensuring an exceptional reservation experience for restaurant visitors."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:239
-msgid "Catalog"
-msgstr "Catalogo"
+#: templates/admin_ajaxed.php:123
+msgid "The name of the restaurant is to be specified here."
+msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:247
+#: templates/admin_ajaxed.php:158
+msgid "The restaurant city is to be specified in this field."
+msgstr ""
+
+#: templates/admin.php:343
 msgid ""
-"This check box if checked, the restaurant details are published to the "
-"catalog of <a target=\"_blank\" href=\"http://reservationdiary.eu"
-"\">reservationdiary.eu</a>. If you do not want it to be published, keep the "
-"box unchecked. Clients can find your restaurant from one more location."
+"The way date format is displayed on the date control. You can select from a "
+"drop down list of different date formats."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:253
-msgid "Maximum number of guests"
+#: templates/admin.php:798
+msgid ""
+"The way you want confirmation email to be delivered to the client. It can be "
+"\"From WordPress email account\", \"From reservationdiary.eu\", \"Custom "
+"SMTP\" or \"Disable confirmation email\"."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:266
+#: templates/admin_ajaxed.php:188
+msgid "The website address of the restaurant."
+msgstr ""
+
+#: templates/frontend.php:341 templates/frontend.php:350
+msgid "There are no more reservation can be made for this day."
+msgstr ""
+
+#: redi-restaurant-reservation.php:1437
+msgid "There are no more reservations can be made for selected day."
+msgstr ""
+
+#: templates/admin_ajaxed.php:105
+msgid ""
+"This <b>ID</b> associated with your place. The <b>ID</b> can be used as a "
+"short code for specifying the place of reservation in case of multiple "
+"restaurants. <br/>Example of shortcode:"
+msgstr ""
+
+#: templates/admin_ajaxed.php:92
+msgid ""
+"This field lets you edit settings for multiple places. Multiple places are "
+"available for Basic package users only."
+msgstr ""
+
+#: templates/admin.php:305
+msgid ""
+"This field lets you select the style in which the calendar control is "
+"displayed. It can be either \"Show on click\" or \"Always show”."
+msgstr ""
+
+#: templates/admin.php:368
+msgid ""
+"This field lets you select the way time picker is displayed. You can choose "
+"from \"jQuery plugin\" and \"HTML dropdown\"."
+msgstr ""
+
+#: templates/admin.php:483
+msgid ""
+"This is how the available time will be shown. This setting is taken from "
+"generic WordPress settings. You can change it in Settings -> General -> Time "
+"Format"
+msgstr ""
+
+#: templates/admin_ajaxed.php:404
 msgid ""
 "This is the number of maximum persons in restaurant at any time. System will "
 "check automatically availability of free seats and will not allow to go "
 "beyond this number."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:272
-msgid ""
-"NOTE: Reducing number of maximum guests will remove existing reservations "
-"associated with seats that are being removed from the system."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:275
-msgid "Working time"
-msgstr "Orari"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:282
-msgid "Open"
-msgstr "Aperto"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:285
-msgid "Close"
-msgstr "Chiuso"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:314
-msgid ""
-"You can specify the working time of restaurant by setting the opening time "
-"and closing time for each day of the week."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:316
-msgid "Specify time in 24h format (00:00 - 23:59)."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:318
-msgid ""
-"If you close next day at night then set closing time on a same day. For "
-"example 18:00 - 3:00"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:320
-msgid "Set Open and Close fields to blank if restaurant is closed."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:322
-msgid "Multiple open and close times are available in Basic package."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:326
-msgid "Email Configuration"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:332
-msgid "Language"
-msgstr "Lingua"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:354
-msgid ""
-"Language for internal emails communication. It is specially used for admin "
-"emails. "
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:355
-msgid ""
-"Language for emails of clients depend on the user interface language "
-"selected."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:363
-msgid "Date format"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:368
-msgid "Hyphen"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:373
-msgid "Dot"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:378
-msgid "Slash"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/admin_ajaxed.php:387
-msgid ""
-"The way date format is displayed on the date control. You can select from a "
-"drop down list of different date formats."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:4
-msgid "ApiKey:"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:6
+#: templates/basicpackage.php:16
 msgid ""
 "This is your registration key. Please use it when you send request for "
 "support."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:9
-msgid "Basic package functionality (paid version)"
+#: templates/admin.php:311
+msgid "This option sets the calendar control to display all the time."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:12
+#: redi-restaurant-reservation.php:1436
+msgid "This time is fully booked"
+msgstr ""
+
+#: templates/confirm.php:28 templates/frontend.php:124
+#: templates/frontend.php:217 templates/frontend_v2.php:46
+#: templates/modify.php:29
+msgid "Time"
+msgstr "Orario"
+
+#: templates/admin.php:474
+msgid "Time format"
+msgstr ""
+
+#: templates/admin.php:371
+msgid ""
+"Time picker type if selected to be jQuery plugin, it is set to pop up with "
+"the hour and time."
+msgstr ""
+
+#: templates/admin.php:351
+msgid "TimePicker type"
+msgstr ""
+
+#: templates/admin.php:492
+msgid "TimeShift Mode"
+msgstr ""
+
+#: templates/admin_welcome.php:23
+msgid ""
+"To schedule your session, simply click the image below: We provide "
+"complimentary one-on-one assistance for plugin setup. You can book a call "
+"with us through Calendly or reach out to us via Skype, Facebook ir Whatsapp. "
+"Links are below."
+msgstr ""
+
+#: redi-restaurant-reservation.php:219
+msgid "Try Premium"
+msgstr ""
+
+#: redi-restaurant-reservation.php:2115
+msgid ""
+"Unable to find reservation with provided information. Please verify that "
+"provided reservation number and phone or name or email is correct."
+msgstr ""
+
+#: templates/admin_ajaxed.php:418
+msgid "Unlimited"
+msgstr ""
+
+#: templates/modify.php:23 templates/modify.php:65
+msgid "Update reservation"
+msgstr ""
+
+#: templates/admin_ajaxed.php:180
+msgid "URL"
+msgstr ""
+
+#: templates/admin.php:153
+msgid "User guide"
+msgstr ""
+
+#: templates/admin.php:143
+msgid "Version"
+msgstr ""
+
+#: templates/admin.php:214 templates/admin.php:467 templates/admin.php:643
+#: templates/admin.php:742 templates/admin.php:838 templates/admin.php:880
+msgid "Video Tutorial"
+msgstr ""
+
+#: templates/admin_ajaxed.php:72 templates/admin_ajaxed.php:332
+#: templates/admin_ajaxed.php:385 templates/admin_ajaxed.php:497
+msgid "Video tutorial"
+msgstr ""
+
+#: templates/admin.php:150
+msgid "Video tutorials"
+msgstr ""
+
+#: redi-restaurant-reservation.php:233
+msgid "View the help documentation for ReDi Restaurant Reservations plugin"
+msgstr ""
+
+#: templates/basicpackage.php:36
 msgid ""
 "View your upcoming reservations from your Mobile/Tablet PC and never miss "
 "your customer. This page should be open on a Tablet PC and so hostess can "
@@ -689,243 +1634,177 @@ msgid ""
 "details. Demo version can be accessed for 30 days using this link: "
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:12
-msgid "Open upcoming reservations"
+#: templates/confirm.php:3
+msgid "Visit confirmation"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:13
-msgid "Setup maximum available seats for online reservation by week day"
+#: templates/admin.php:715
+msgid "Visit Google site"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:14
-msgid ""
-"Open times. This option will enable you to choose between various working "
-"hours whichever is most convenient to you."
+#: templates/confirm.php:50
+msgid "Visit has been successfully confirmed."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:15
-msgid ""
-"Support for multiple places. Number of places depends on number of "
-"subscriptions."
+#: redi-restaurant-reservation.php:2101
+msgid "Visit not confimed by the guest."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:16
-msgid ""
-"Blocked Time. Define time range when online reservation should not be "
-"accepted. Specify a reason why reservations are not accepted at this time to "
-"keep your clients happy."
+#: templates/admin.php:625 templates/frontend.php:419
+msgid "Wait List"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:17
-msgid "Send client reservation confirmation emails from WordPress account."
+#: redi-restaurant-reservation.php:1185 redi-restaurant-reservation.php:1186
+msgid "Waiter Dashboard"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:18
-msgid "Email template customization for all supported languages."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:20
-msgid ""
-"Basic package price is 19 EUR per month per place. To subscribe please use "
-"following PayPal link:"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:21
-msgid "Subscribe to basic package"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:22
-msgid ""
-"Please allow 1 business day for us to confirm your payment and upgrade your "
-"account."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:26
-msgid ""
-"Use your Facebook account for your business. Make clients from your Facebook "
-"fans."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:26
-msgid "View presentation."
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:27
+#: templates/basicpackage.php:60
 msgid ""
 "We can offer you white labeled restaurant reservation application for "
 "Facebook Application, iPhone/iPad Application, Windows Phone Application or "
 "Android Application."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:28
+#: templates/frontend.php:325
 msgid ""
-"Enhance your business experience by using our Facebook integration service "
-"where we try to provide you with profile pictures of your customers if "
-"found. You can amaze your customer by knowing him by face when he visits "
-"you, especially at the time of first visit."
+"We wish to inform you that your booking request has been received. We "
+"are checking availability and will get back to you as soon as possible. "
+"Please wait confirmation of your reservation."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:29
+#: templates/confirm.php:4
 msgid ""
-"Do you want to know what your client thinks about his last visit? We will "
-"collect it for you."
+"We would like to know if you will be visiting us today. Please confirm or "
+"cancel your reservation by clicking the appropriate button below. If the "
+"reservation is not confirmed, we reserve the right to cancel it from our "
+"side."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:30
-msgid "Remind your customer about upcoming reservation via Email or by SMS"
+#: templates/admin_welcome.php:32
+msgid "We're here to provide the support you need."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:31
-msgid "Collect pre-payment for reservations."
+#: templates/admin_ajaxed.php:338
+msgid "Weekday"
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:32
+#: redi-restaurant-reservation.php:1147 redi-restaurant-reservation.php:1148
+msgid "Welcome"
+msgstr ""
+
+#: templates/frontend.php:25
+msgid "Welcome back"
+msgstr ""
+
+#: templates/admin_welcome_no_key.php:3 templates/admin_welcome_no_page.php:3
+msgid "Welcome to the ReDi Restaurant Reservation plugin"
+msgstr ""
+
+#: templates/frontend.php:408
+msgid "What we can do better?"
+msgstr ""
+
+#: templates/admin.php:64
+msgid "Whatsapp"
+msgstr ""
+
+#: templates/admin_welcome.php:30 templates/basicpackage.php:27
+msgid "whatsapp"
+msgstr ""
+
+#: templates/admin.php:682
 msgid ""
-"If you are building a catalogue of restaurants and looking for the perfect "
-"reservation plugin for it, we can provide it to you."
+"When enabled guests has to enter their phone number with country code. This "
+"is most useful when there is a good amount of foreign visitors. Also this "
+"option has to be enabled when SMS addon is in use, as SMS Providers requires "
+"full phone number."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:33
+#: templates/admin.php:536
 msgid ""
-"Do you want to write your own module? We have an API. Contact us to get more "
-"information."
+"When this enabled, start and end of reservation time will be displayed. This "
+"is useful when you want to inform the guest about fixed reservation time "
+"frame."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:35
+#: templates/admin.php:634
 msgid ""
-"If you would like to add some new functionality or have any other queries, "
-"please contact us by email: "
+"When this option is enabled, guest will have an opportunity to fill out Wait "
+"List form in case it's fully booked. Then if someone cancels reservation, "
+"this guest can be contacted and offered a reservation."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:39
+#: templates/admin.php:663
 msgid ""
-"If you need to manage more complex reservations, please check our ReDi "
-"Reservation plugin too."
+"When this option is enabled, then guest has to provide first and last name "
+"separately when filling reservation form. Otherwise Name is collected in a "
+"single field."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/basicpackage.php:40
+#: templates/admin.php:897
 msgid ""
-"Open Improve your restaurant’s turnaround time by allowing the clients to "
-"call a waiter using their smart phones. Create a mobile web page with our QR "
-"Code Waiter Calling System plugin."
+"When translating the plugin, save translations in a separate folder outside "
+"the plugin directory. Then, provide the file path with translated strings in "
+"this setting to avoid issues with updates."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/cancel.php:3
-msgid "Back to reservation page"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:10
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:27
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:149
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:203
-msgid "Step"
-msgstr "Passo"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:10
-msgid "Select place, date and time"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:27
-msgid "Select date and time"
-msgstr "Selezionare data e orario"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:34
-msgid "Date"
-msgstr "Data"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:46
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:90
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:153
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:168
-msgid "Time"
-msgstr "Orario"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:70
-msgid "Persons"
-msgstr "Numero persone"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:80
-#, php-format
-msgid "More than %s people"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:122
-msgid "Check available time"
-msgstr "Verifica disponibilità orario"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:129
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:192
+#: templates/admin.php:374
 msgid ""
-"Reservation is not available on selected day. Please select another day."
+"With this option selected, the Time Picker is shown to be simple dropdown "
+"for selecting the hour and time."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:149
-msgid "Select available time"
-msgstr "Seleziona orario"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:195
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:264
-msgid "Previous"
+#: templates/admin.php:810
+msgid "With this option, confirmation email is not sent to the client."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:203
-msgid "Provide reservation details"
-msgstr "Dettagli della prenotazione"
+#: templates/admin_ajaxed.php:331
+msgid "Working time"
+msgstr "Orari"
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:243
-msgid "Custom field is required"
-msgstr ""
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:256
-msgid "Comment"
-msgstr "Commenti"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:266
-msgid "Make a reservation"
-msgstr "Conferma la prenotazione"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:276
-msgid "Thank you for your reservation."
-msgstr "Grazie per aver confermato la prenotazione"
-
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:278
+#: templates/admin_welcome_no_page.php:12
 msgid ""
-"A confirmation email has been sent to you, "
-"should you not receive it, please rest assured that your booking has "
-"been received and is confirmed. If you wish you may contact us by phone to "
-"confirm."
+"You can create dedicated reservation page below, or you can skip this step "
+"and create page manually. When you create page manually, insert "
+"[redireservation] shortcode to the page."
 msgstr ""
 
-#: C:\ProjectsCloudSync\Wordpress\redi-restaurant-reservation\trunk/templates/frontend.php:285
-msgid "Powered by"
-msgstr "Powered by"
+#: templates/admin_ajaxed.php:373
+msgid ""
+"You can specify the working time of restaurant by setting the opening time "
+"and closing time for each day of the week."
+msgstr ""
 
-#~ msgid "Please support our plugin by publishing Reservation Diary logo"
-#~ msgstr ""
-#~ "Supporta il nostro plugin pubblicando il nostro logo Reservation Diary"
+#: redi-restaurant-reservation.php:2240 redi-restaurant-reservation.php:2289
+msgid "You do not have permission to access this call."
+msgstr ""
 
-#~ msgid "Url"
-#~ msgstr "Indirizzo internet"
+#: templates/admin_welcome.php:4
+msgid "You plugin is active. Your API Key is"
+msgstr ""
 
-#~ msgid "Minimum hours before reservation can be accepted from client"
-#~ msgstr "Orario minimo prima della prenotazione per accettazione del cliente"
+#: templates/admin_welcome.php:16
+msgid "Your API key is :"
+msgstr ""
 
-#~ msgid "Publish restaurant details to reservationdiary.eu catalog"
-#~ msgstr "Pubblica i dettagli del ristorante su reservationdiary.eu catalog"
+#: templates/frontend.php:485
+msgid ""
+"Your information has been saved successfully and you will be notified once "
+"there are available seats for requested date."
+msgstr ""
 
-#~ msgid "Available seats"
-#~ msgstr "Posti liberi"
+#: templates/frontend.php:334
+msgid "Your reservation number for reference:"
+msgstr ""
 
-#~ msgid "Language for admin emails"
-#~ msgstr "Lingua per email amministratore"
+#: templates/frontend.php:332
+msgid "Your reservation request number for reference:"
+msgstr ""
 
-#~ msgid ""
-#~ "We will create a confirmation and email it to you at the email address "
-#~ "you entered on the reservations form. You should receive your "
-#~ "confirmation by email shortly."
-#~ msgstr ""
-#~ "Confermiamo la vostra prenotazione. A breve arriverà nella email da voi "
-#~ "indicata il riepilogo della vostra preontazione"
+#: templates/admin.php:186
+msgid "Your settings have been saved!"
+msgstr "Impostazioni salvate!"
 
-#~ msgid "Date and time"
-#~ msgstr "Data e orario"
+#: templates/admin.php:441
+msgid "Сhildren selection"
+msgstr ""

@@ -213,11 +213,6 @@ if ( ! class_exists( 'ReDi' ) ) {
 			REDI_METHOD_GET, self::strParams( $params ) );
 		}
 
-		public function availabilityByShifts( $categoryID, $params ) {
-			return $this->request( REDI_RESTAURANT_API . REDI_API_RESERVATION . $this->ApiKey . '/' . $categoryID . '/availabilityByShifts/Person',
-			REDI_METHOD_GET, self::strParams( $params ) );
-		}
-
 		public function getCustomDurationAvailability( $categoryID, $params) {
 			return $this->request( REDI_RESTAURANT_API . REDI_API_RESERVATION . $this->ApiKey . '/' . $categoryID . '/guestsByStayDuration',
 			REDI_METHOD_GET, self::strParams( $params ) );

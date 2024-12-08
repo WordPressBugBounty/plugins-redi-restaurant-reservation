@@ -1,5 +1,5 @@
 <!-- ReDi Restaurant Reservation plugin version <?php echo $this->version?> -->
-<!-- Revision: 20241015 -->
+<!-- Revision: 20241116 -->
 <?php require_once(REDI_RESTAURANT_TEMPLATE.'cancel.php');?>
 <?php require_once(REDI_RESTAURANT_TEMPLATE.'modify.php');?>
 <script type="text/javascript">var plugin_name='ReDi Restaurant Reservation version <?php echo $this->version?>';var displayLeftSeats = <?php echo $displayLeftSeats ? 1 : 0; ?>;
@@ -233,8 +233,8 @@ var redirect_to_confirmation_page = '<?php echo $redirect_to_confirmation_page; 
         <h4>
 			<?php _e( 'Step', 'redi-restaurant-reservation' ) ?> <?php echo ( $timeshiftmode !=='byshifts' || $hidesteps ) ? 3 : 2 ?>: <?php _e( 'Provide reservation details', 'redi-restaurant-reservation' ) ?>
 		</h4>
-        
-        <div id="returned_user" <?php if(!$returned_user):?>style="display:none"<?php endif?>>
+        <div id="redi-form-fields-container">
+        <div data-display-order="-49" id="returned_user" <?php if(!$returned_user):?>style="display:none"<?php endif?>>
             <div>
                 <a id="notyou" href="" style="float: right;"> <?php _e('Change details','redi-restaurant-reservation');?></a>
             </div>
@@ -249,34 +249,35 @@ var redirect_to_confirmation_page = '<?php echo $redirect_to_confirmation_page; 
             </div>
         </div>	
         <div id="name_phone_email_form" <?php if($returned_user):?>style="display:none"<?php endif?>>
-			<div>
+
+			<div data-display-order="-39">
+
 				<?php if($enablefirstlastname == 'true'){ ?>
 				<label for="UserName"><?php _e('First Name', 'redi-restaurant-reservation');?>:<span class="redi_required"> *</span></label>
 				<?php }else{ ?>
 				<label for="UserName"><?php _e('Name', 'redi-restaurant-reservation');?>:<span class="redi_required"> *</span>
 				</label>
 				<?php } ?>
-				
-				<input type="text" value="<?php echo $username;?>" name="UserName" id="UserName" autocomplete="name">
+				<input type="text" value="<?php echo $username;?>" name="UserName" id="UserName" autocomplete="name" >
 			</div>
 			<?php if($enablefirstlastname == 'true'){ ?>
-			<div>
+			<div data-display-order="-29" >
 				<label for="UserLastName"><?php _e('Last Name', 'redi-restaurant-reservation');?>:<span class="redi_required"> *</span>
 				</label>
 				<input type="text" value="<?php echo $lname;?>" name="UserLastName" id="UserLastName" autocomplete="name">
 			</div>
 			<?php } ?>
-			<div>
+			<div data-display-order="-19">
 				<label for="intlTel"><?php _e('Phone', 'redi-restaurant-reservation');?>:<span class="redi_required"> *</span></label>
 				<input type="text" value="" name="intlTel" id="intlTel">
 			</div>
 			<div>		
 				<input type="hidden" value="<?php echo $phone ?>" name="UserPhone" id="UserPhone">
 			</div>
-			<div>
+			<div data-display-order="-9">
 				<label for="UserEmail"><?php _e('Email', 'redi-restaurant-reservation');?>:<span class="redi_required"> *</span>
 				</label>
-				<input type="text" value="<?php echo $email ?>" name="UserEmail" id="UserEmail" autocomplete="email">
+				<input type="text" value="<?php echo $email ?>" name="UserEmail" id="UserEmail" autocomplete="email" >
 			</div>
 		</div>
 
@@ -285,11 +286,12 @@ var redirect_to_confirmation_page = '<?php echo $redirect_to_confirmation_page; 
 		<div id="custom_fields_container"></div>		
 		<!-- /custom fields -->     
 		
-		<div>
+		<div data-display-order="50">
 			<label for="UserComments">
 				<?php _e('Comment', 'redi-restaurant-reservation');?>:
 			</label>
 			<textarea maxlength="250" rows="5" name="UserComments" id="UserComments" cols="20" class="UserComments"></textarea>
+		</div>
 		</div>
 
 		<?php if ($captcha):?>			

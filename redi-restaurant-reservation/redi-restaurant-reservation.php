@@ -63,7 +63,6 @@ if (!class_exists('ReDiRestaurantReservation')) {
         class AlternativeTime
         {
             const AlternativeTimeBlocks = 1;
-            const AlternativeTimeByShiftStartTime = 2;
             const AlternativeTimeByDay = 3;
         }
     }
@@ -158,7 +157,7 @@ if (!class_exists('ReDiRestaurantReservation')) {
             add_action('redi-reservation-send-confirmation-email-other', array($this, 'send_confirmation_email'));
             do_action('redi-reservation-after-init');
 
-            add_action('rest_api_init', array($this, 'register_places_api'));
+            add_action('rest_api_init', array($this, 'register_redi_api'));
 
       		// Add links to plugin listing
     		add_filter('plugin_action_links', array( $this, 'plugin_action_links' ), 10, 2);
@@ -167,6 +166,20 @@ if (!class_exists('ReDiRestaurantReservation')) {
             add_filter('pre_set_site_transient_update_plugin', array( $this, 'filter_plugin_updates'), 10, 2);
 
             ReDiRestaurantReservationDb::CreateCustomDatabase($this->table_name);
+
+            // Add script enqueue action
+            add_action('wp_enqueue_scripts', array($this, 'enqueue_frontend_scripts'));
+        }
+
+        /**
+         * Enqueue frontend scripts and styles
+         */
+        public function enqueue_frontend_scripts() {
+            wp_enqueue_script('redi-custom-fields', 
+                REDI_RESTAURANT_PLUGIN_URL . 'js/redi-custom-fields.js',
+                array('jquery'),
+                $this->version
+            );
         }
 
         function filter_plugin_updates( $value ) {
@@ -174,12 +187,26 @@ if (!class_exists('ReDiRestaurantReservation')) {
             return $value;
         }
 
-        public function register_places_api() {
-
+        public function register_redi_api() {
+            // Existing places endpoint
             register_rest_route('redi-restuaurant-api/v1', '/places', array(
                 'methods' => 'GET',
                 'callback' => array( $this, 'get_all_places' ),
                 'permission_callback' => '__return_true'
+            ));
+
+            // New custom fields endpoint with nested resource pattern
+            register_rest_route('redi-restuaurant-api/v1', '/places/(?P<place_id>\d+)/custom-fields', array(
+                'methods' => 'GET',
+                'callback' => array( $this, 'get_custom_fields' ),
+                'permission_callback' => '__return_true',
+                'args' => array(
+                    'place_id' => array(
+                        'validate_callback' => function($param) {
+                            return is_numeric($param);
+                        }
+                    )
+                )
             ));
         }
 
@@ -1099,8 +1126,7 @@ if (!class_exists('ReDiRestaurantReservation')) {
                 return;
             }
 
-            if ($this->ApiKey && ( get_option($this->_name . '_page_skip') == true || !empty(get_option($this->_name . '_page_title')) ) ) {
-                
+            if ($this->ApiKey && ( get_option($this->_name . '_page_skip') == true || !empty(get_option($this->_name . '_page_title')) )) {
                 global $wpdb;
                 
                 $query = "SELECT * FROM {$wpdb->prefix}{$this->table_name} LIMIT 1";
@@ -1161,7 +1187,7 @@ if (!class_exists('ReDiRestaurantReservation')) {
                     'redi_restaurant_admin_upcoming',
                     array(&$this, 'redi_restaurant_admin_upcoming'));
             }
-            elseif( !empty( $this->ApiKey ) && empty(get_option($this->_name . '_page_title')) && ( get_option($this->_name . '_page_skip') != true ) && ( !isset($_GET['api_key']) && !isset($_GET['email_skip']) )  ){
+            elseif( !empty( $this->ApiKey ) && empty(get_option($this->_name . '_page_title')) && ( get_option($this->_name . '_page_skip') != true ) && ( !isset($_GET['api_key']) && !isset($_GET['email_skip'])  )){
                 add_menu_page(
                     __('ReDi Reservations', 'redi-restaurant-reservation'),
                     __( 'ReDi Reservations', 'redi-restaurant-reservation') . $exclamation,
@@ -1374,6 +1400,7 @@ if (!class_exists('ReDiRestaurantReservation')) {
                         'locale' => get_locale(),
                         'apikeyid' => $apiKeyId,
                         'ajaxurl' => admin_url('admin-ajax.php'),
+                        'rest_url' => rest_url('redi-restuaurant-api/v1/')
                     ));
 
                 wp_enqueue_script('confirm-visit');
@@ -1416,8 +1443,10 @@ if (!class_exists('ReDiRestaurantReservation')) {
                     'endreservationtime' => $this->GetOption('EndReservationTime'),
                     'countrycode' => $this->GetOption('CountryCode', true),
                     'cancel_reason_mandatory' => $this->GetOption('MandatoryCancellationReason', true),
+                    'display_time_shift' => $this->GetOption('timeshift'),
                     'locale' => get_locale(),
-                    'apikeyid' => $apiKeyId
+                    'apikeyid' => $apiKeyId,
+                    'rest_url' => rest_url('redi-restuaurant-api/v1/')
                 ));
 
                 if ($this->GetOption("skin") == 'v2')
@@ -1746,10 +1775,6 @@ if (!class_exists('ReDiRestaurantReservation')) {
                         $query = $this->redi->query($categoryID, $params);
                         break;
 
-                    case AlternativeTime::AlternativeTimeByShiftStartTime:
-                        $query = $this->redi->availabilityByShifts($categoryID, $params);
-                        break;
-
                     case AlternativeTime::AlternativeTimeByDay:
                         $params['ReservationDuration'] = ReDiTime::getReservationTime($persons, (int)$post['duration']);
                         $query = $this->redi->availabilityByDay($categoryID, $params);
@@ -1791,7 +1816,6 @@ if (!class_exists('ReDiRestaurantReservation')) {
                 $query['alternativeTime'] = $alternativeTime;
                 switch ($alternativeTime) {
                     case AlternativeTime::AlternativeTimeBlocks: // pass thought
-                    case AlternativeTime::AlternativeTimeByShiftStartTime:
                         foreach ($query as $q) {
                             $q->Select = ($startTimeISO == $q->StartTime && $q->Available);
                             $q->StartTimeISO = $q->StartTime;
@@ -2063,84 +2087,7 @@ if (!class_exists('ReDiRestaurantReservation')) {
 
                     break;
 
-                case 'get_custom_fields':
-                    
-                    $html = '';
-                    $custom_fields = $this->redi->getCustomField(self::lang(), $placeID);
-                    foreach ( $custom_fields as $custom_field ) {
-                        $html .= '<div>
-                            <label for="field_'.$custom_field->Id.'">'.$custom_field->Text;
-                                if( isset( $custom_field->Required) && $custom_field->Required ) {
-                                    $html .= '
-                                    <span class="redi_required"> *</span>
-                                    <input type="hidden" id="field_'.$custom_field->Id.'_message" value="'.( ( !empty( $custom_field->Message ) ) ? ( $custom_field->Message ) : ( __( 'Custom field is required', 'redi-restaurant-reservation' ) ) ).'">';
-                                }
-                            $html .= '</label>';
-                            
-                            $input_field_type = 'text'; 
-                            switch( $custom_field->Type ) {
-                                case 'options': 
-                                    $input_field_type = 'radio';
-                                    break;
-                                case 'dropdown': 
-                                    $input_field_type = 'dropdown';
-                                    break;
-                                case 'newsletter':
-                                case 'reminder':
-                                case 'allowsms':
-                                case 'checkbox':
-                                case 'allowwhatsapp':
-                                case 'gdpr':
-                                    $input_field_type = 'checkbox'; 
-                            }
-                         
-                            if ( $input_field_type == 'text' || $input_field_type == 'checkbox' ) {
-                                $html .= '<input type="'.$input_field_type.'" value="" id="field_'.$custom_field->Id.'" name="field_'.$custom_field->Id.'"';
-
-                                if( isset( $custom_field->Required ) && $custom_field->Required ) {
-                                    $html .= ' class="field_required"';
-                                }
-
-                                if (isset ($custom_field->Default) && $custom_field->Default == 'True')
-                                {
-                                    $html .= ' checked';
-                                }
-
-                                $html .= '>';
-
-                            } elseif ( $input_field_type =='radio' ) {
-                                $field_values = explode( ',', $custom_field->Values );
-
-                                foreach ( $field_values as $field_value ) {
-                                    if( $field_value ) {
-                                        $html .= '<input type="'.$input_field_type.'" value="'.$field_value.'" name="field_'.$custom_field->Id.'" id="field_'.$custom_field->Id.'_'.$field_value.'" class="redi-radiobutton';
-                                        
-                                        if( isset( $custom_field->Required ) && $custom_field->Required ) {
-                                            $html .= ' field_required';
-                                        } 
-                                        $html .= '"><label class="redi-radiobutton-label" for="field_'.$custom_field->Id.'_'.$field_value.'">'.$field_value.'</label><br/>';
-                                    }
-                                }
-
-                            } elseif ( $custom_field->Type == 'dropdown' ) {
-                                $field_values = explode( ',', $custom_field->Values );
-                                $html .= '<select id="field_'.$custom_field->Id.'" name="field_'.$custom_field->Id.'"';
-
-                                if( isset( $custom_field->Required ) && $custom_field->Required ) {
-                                    $html .= ' class="field_required"';
-                                }                          
-                                $html .= '>
-                                    <option value="">Select</option>';
-                                    foreach ( $field_values as $field_value ) {
-                                        if( $field_value ) $html .= '<option value="'.$field_value.'">'.$field_value.'</option>';
-                                    }
-                                $html .= '</select>';
-                            }                                               
-                        $html .= '</div>';
-                    }
-                    echo wp_json_encode($html);
-                    break;
-                case 'cancel':
+case 'cancel':
                     $this->cancelReservationWithReason(mb_substr(sanitize_text_field(self::GetPost('Reason', '')), 0, 250));
                     break;
 
@@ -2505,7 +2452,10 @@ if (!class_exists('ReDiRestaurantReservation')) {
             return str_replace('_', '-', $l);
         }
     }
-}
+} // End of class exists check
+
+// Initialize plugin
 new ReDiRestaurantReservation();
 
+// Register activation hook
 register_activation_hook(__FILE__, array('ReDiRestaurantReservation', 'install'));

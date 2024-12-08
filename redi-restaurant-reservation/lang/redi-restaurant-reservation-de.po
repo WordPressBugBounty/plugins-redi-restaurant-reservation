@@ -7,83 +7,220 @@ msgstr ""
 "Project-Id-Version: ReDi Restaurant Reservation\n"
 "Language: de\n"
 "POT-Creation-Date: 2022-01-26 21:22+0000\n"
-"PO-Revision-Date: 2022-01-26 21:31+0000\n"
+"PO-Revision-Date: 2024-11-25 07:55+0000\n"
 "Last-Translator: Bistro Lisboa\n"
 "Language-Team: German\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Report-Msgid-Bugs-To: \n"
 "X-Loco-Version: 2.5.5; wp-5.8.3"
 
-#: templates/admin.php:544 templates/admin.php:546 templates/admin.php:548 
-#: templates/admin.php:550 templates/admin.php:552 templates/admin.php:554
+#: redi-restaurant-reservation.php:664
+msgid " \"Min Persons\" should be lower than Max Persons"
+msgstr ""
+
+#: templates/admin_welcome_no_key.php:7
+msgid " Registration"
+msgstr ""
+
+#: templates/admin_welcome_no_page.php:8
+#, fuzzy
+#| msgid "Reservation time"
+msgid " Reservation page"
+msgstr "Reservierungszeit"
+
+#: redi-restaurant-reservation.php:697
+msgid "\"Country\" is required"
+msgstr ""
+
+#: redi-restaurant-reservation.php:670
+msgid "\"Reservation time\" should be greater than 0"
+msgstr ""
+
+#: redi-restaurant-reservation.php:692
+msgid "\"Restaurant Name\" is required"
+msgstr ""
+
+#: redi-restaurant-reservation.php:681
+msgid "\"Subscription Email\" Field should be filled."
+msgstr ""
+
+#: redi-restaurant-reservation.php:686
+msgid "\"Subscription Name\" Field should be filled."
+msgstr ""
+
+#. %d is the number of minutes for the time step option in the dropdown menu
+#: templates/admin.php:567 templates/admin.php:571 templates/admin.php:575
+#: templates/admin.php:579 templates/admin.php:583 templates/admin.php:587
+#: templates/admin.php:591 templates/admin.php:595
 msgid "%d min"
 msgstr "%d min"
 
-#: templates/admin_ajaxed.php:267
+#: templates/admin_ajaxed.php:417
+msgid "100 guests"
+msgstr ""
+
+#. %s is the HTML link to the setup wizard.
+#: functions/notice.php:51
+#, php-format
+msgid ""
+"<h3>ReDi Restaurant Reservation Plugin</h3> <p>Plugin is active but API key "
+"is not generated yet to use the plugin. Finilize setup wizard now for "
+"seamless bookings.</p> %s"
+msgstr ""
+
+#. %s is the HTML link to the setup wizard.
+#: functions/notice.php:75
+#, php-format
+msgid ""
+"<h3>ReDi Restaurant Reservation Plugin</h3> <p>Plugin is active but you have "
+"not created a page with reservation form. Finilize setup wizard now for "
+"seamless bookings.</p> %s"
+msgstr ""
+
+#. %s is the HTML link to the configuration page.
+#: functions/notice.php:98
+#, php-format
+msgid ""
+"<p>You have not made any changes to settings since you have installed the "
+"plugin. Finilize <b>ReDi Restaurant Reservation Plugin</b> setup now for "
+"seamless bookings. Visit the %1$s to finilize configuration and start "
+"impress your clients!</p> %2$s"
+msgstr ""
+
+#: templates/admin.php:122
+msgid ""
+"<strong>Attention</strong>: New settings are available for review and saving,"
+" please take a moment to update your preferences or fill out the required "
+"settings and click on the save button."
+msgstr ""
+
+#: templates/frontend.php:327
+msgid ""
+"A confirmation email has been sent to you, should you not receive it, please "
+"rest assured that your booking has been received and is confirmed. If you "
+"wish you may contact us by phone to confirm."
+msgstr ""
+"Vielen Dank für Deine Reservierung. Eine E-Mail-Bestätigung ist schon auf "
+"dem Weg zu Dir. Solltest Du sie nicht innerhalb der nächsten Minuten "
+"empfangen, prüfe bitte Deinen Spam-Ordner. Deine Reservierung ist aber auf "
+"jeden Fall bestätigt und in unserem System unter der Reservierungsnummer "
+"hinterlegt. Wir freuen uns auf Deinen Besuch!“"
+
+#: templates/basicpackage.php:58
+msgid "Additional services (by request)"
+msgstr ""
+
+#: templates/admin_ajaxed.php:165
 msgid "Address"
 msgstr "Adresse"
 
-#: templates/admin_ajaxed.php:275
+#: templates/admin_ajaxed.php:173
 msgid "Address of the restaurant is to be written here."
 msgstr "Trage die Adresse des Restaurants hier ein."
 
-#: templates/basicpackage.php:23
-msgid ""
-"After you install Loco Translate plugin click this link to navigate to page "
-"with translations <a href=\"admin.php?name=redi-restaurant-"
-"reservation%2Fredi-restaurant-reservation."
-"php&type=plugin&poedit=plugins%2Fredi-restaurant-reservation%2Flang%2Fredi-"
-"restaurant-reservation-ru.po&page=loco-translate\" target=\"blank\">Redi "
-"translation</a>"
-msgstr ""
-"Nach der Installation des Plugins klicke bitte auf den nachfolgenden Link um "
-"mit der Übersetzung zu beginnen <a href=\"admin.php?name=redi-restaurant-"
-"reservation%2Fredi-restaurant-reservation."
-"php&type=plugin&poedit=plugins%2Fredi-restaurant-reservation%2Flang%2Fredi-"
-"restaurant-reservation-ru.po&page=loco-translate\" target=\"blank\">Redi "
-"Übersetzungen</a>"
-
-#: templates/admin_ajaxed.php:171
+#: templates/admin_ajaxed.php:599
 msgid "Allow SMS"
 msgstr "Erlaube SMS"
 
-#: templates/admin.php:64
+#: templates/admin.php:70
+msgid "Allow to contact via Whatsapp"
+msgstr ""
+
+#: templates/admin.php:69
 msgid "Allow to receive SMS"
 msgstr "SMS-Nachrichten erlauben"
 
-#: templates/admin.php:538
+#: templates/admin_welcome_no_key.php:20
+msgid "Allow to send information about the plugin"
+msgstr ""
+
+#: templates/admin_ajaxed.php:601
+msgid "Allow Whatsapp"
+msgstr ""
+
+#: templates/admin.php:559
 msgid "Alternative time step"
 msgstr "Alternative Zeitauswahl"
 
-#: templates/admin.php:254
+#: templates/admin.php:310
 msgid "Always show"
 msgstr "Immer anzeigen"
 
 #: templates/basicpackage.php:4
+msgid "Api Information"
+msgstr ""
+
+#: templates/admin_welcome_no_key.php:33 templates/admin_welcome_no_key.php:38
+#: templates/admin_welcome_no_page.php:29
+#: templates/admin_welcome_no_page.php:34
+msgid "API Key"
+msgstr ""
+
+#: redi-restaurant-reservation.php:574
+msgid "API key is successfully changed."
+msgstr ""
+
+#: redi-restaurant-reservation.php:2277
+msgid "Api key should be a GUID number."
+msgstr ""
+
+#: templates/basicpackage.php:5
 msgid "ApiKey"
 msgstr "API-Schlüssel"
 
-#: templates/admin.php:138
-msgid "Authors"
-msgstr "Autoren"
+#: redi-restaurant-reservation.php:1441
+msgid ""
+"Apologies for the inconvenience, but we encountered an issue while trying to "
+"make your reservation. It seems there was a technical glitch on our end. Our "
+"team is actively working to resolve this issue. Please try again in a few "
+"minutes, and if the problem persists, feel free to reach out to our customer "
+"support for assistance. Additionally, if you could please send a screenshot "
+"of the error message to {emailLink}, it would greatly help us in diagnosing "
+"and resolving the issue more efficiently. We appreciate your patience and "
+"cooperation. Response:"
+msgstr ""
 
-#: templates/cancel.php:3 templates/modify.php:3 templates/modify.php:24
+#: templates/basicpackage.php:21
+msgid ""
+"Are you facing trouble configuring the plugin? Don't worry! We offer free "
+"personal assistance to help you out. You can schedule a session with us "
+"using Calendly or reach out to us via Skype, WhatsApp, or Facebook. We're "
+"here to provide the support you need."
+msgstr ""
+
+#: redi-restaurant-reservation.php:704
+msgid "At least one opening time should be provided"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1440
+msgid "Available seats"
+msgstr ""
+
+#: templates/admin.php:466
+msgid "Available Time Appearance"
+msgstr ""
+
+#: templates/cancel.php:5 templates/modify.php:3 templates/modify.php:24
 msgid "Back to reservation page"
 msgstr "Zurück zur Reservierungsseite"
 
-#: templates/basicpackage.php:29
+#: templates/basicpackage.php:34
 msgid "Basic package functionality (paid version)"
 msgstr "Basic-Paket Funktionen (kostenpflichtig)"
 
-#: templates/admin_ajaxed.php:175 templates/admin.php:61
+#: templates/admin_welcome_no_key.php:32 templates/admin_welcome_no_page.php:28
+msgid "Below is your API Key, please use it when you ask for a support. "
+msgstr ""
+
+#: templates/admin.php:66 templates/admin_ajaxed.php:605
 msgid "Birthday"
 msgstr "Geburtstag"
 
-#: templates/admin.php:66
+#: templates/admin.php:72
 msgid "Birthday (dd/mm)"
 msgstr "Geburtstag (tt/mm)"
 
-#: templates/basicpackage.php:41
+#: templates/basicpackage.php:45
 msgid ""
 "Blocked Time. Define time range when online reservation should not be "
 "accepted. Specify a reason why reservations are not accepted at this time to "
@@ -93,104 +230,145 @@ msgstr ""
 "akzeptiert werden sollen. Du kannst auch einen Grund angeben, der deinen "
 "Gästen angezeigt wird."
 
-#: templates/admin.php:367
+#: templates/admin.php:514
 msgid "By shifts"
 msgstr "Nach Schichten"
 
-#: templates/admin.php:232
+#: templates/admin.php:288
 msgid "Calendar type"
 msgstr "Kalendertyp"
 
-#: templates/cancel.php:3 templates/cancel.php:19 templates/admin.php:112 
-#: templates/admin.php:732 templates/admin.php:746 templates/frontend.php:10
+#: templates/admin_welcome.php:25 templates/basicpackage.php:22
+msgid "Calendly"
+msgstr ""
+
+#: templates/admin.php:128 templates/admin.php:919 templates/admin.php:935
+#: templates/cancel.php:3 templates/cancel.php:47 templates/confirm.php:41
+#: templates/frontend.php:12
 msgid "Cancel reservation"
 msgstr "Reservierung stornieren"
 
-#: templates/admin.php:657
+#: templates/admin.php:690
 msgid "Captcha"
 msgstr "Captcha"
 
-#: templates/admin.php:673
+#: redi-restaurant-reservation.php:1439
+msgid "Captcha is not valid."
+msgstr ""
+
+#: templates/admin.php:706
 msgid "Captcha key"
 msgstr "Captcha Schlüssel"
 
-#: templates/basicpackage.php:12
+#: templates/basicpackage.php:13
 msgid "Change"
 msgstr "Ändern"
 
-#: templates/basicpackage.php:7
+#: templates/basicpackage.php:8
 msgid "Change API key"
 msgstr "Ändere API Schlüssel"
 
-#: templates/frontend.php:224
+#: templates/frontend.php:239
 msgid "Change details"
 msgstr "Details ändern"
 
-#: templates/frontend.php:158
+#: templates/frontend.php:173
 msgid "Check available time"
 msgstr "Verfügbare Zeit prüfen"
 
-#: templates/admin_ajaxed.php:165
+#: templates/admin_ajaxed.php:593
 msgid "Check box"
 msgstr "Kontrollkästchen"
 
-#: templates/frontend.php:137
+#: redi-restaurant-reservation.php:2006 templates/frontend.php:99
 msgid "Children"
 msgstr "Kinder"
 
-#: templates/admin_ajaxed.php:252
+#: templates/admin_ajaxed.php:150
 msgid "City"
 msgstr "Stadt"
 
-#: templates/admin_welcome_no_key.php:48 templates/admin_welcome.php:11
-msgid "Cleck here for more videos about plugin"
-msgstr "Klicke hier für mehr Videos über das Plugin"
+#: functions/notice.php:126
+msgid "Click here to open reservation page"
+msgstr ""
 
-#: templates/admin_ajaxed.php:389
+#: templates/admin_ajaxed.php:344
 msgid "Close"
 msgstr "Geschlossen"
 
-#: templates/admin.php:376
+#: templates/admin.php:652
 msgid "Collect First and Last name"
 msgstr "Unterscheide zwischen Vor- und Nachname"
 
-#: templates/admin.php:416
+#: templates/admin.php:672
 msgid "Collect phone number with country code"
 msgstr "Telefonnummer mit Ländercode verlangen"
 
-#: templates/basicpackage.php:65
+#: templates/basicpackage.php:68
 msgid "Collect pre-payment for reservations."
 msgstr "Verlange Vorauszahlungen für Reservierungen"
 
-#: templates/modify.php:58 templates/frontend.php:274
+#: templates/admin.php:253
+msgid "Collect user experience feedback"
+msgstr ""
+
+#: templates/frontend.php:291 templates/modify.php:58
 msgid "Comment"
 msgstr "Kommentar"
 
-#: templates/admin.php:597
+#: functions/notice.php:102 functions/notice.php:103
+msgid "Configuration page"
+msgstr ""
+
+#: templates/confirm.php:40
+msgid "Confirm visit"
+msgstr ""
+
+#: templates/frontend_v2.php:68
+msgid "Confirmation"
+msgstr ""
+
+#: templates/admin.php:817
 msgid "Confirmation page"
 msgstr "Bestätigungsseite"
 
-#: redi.php:287
+#: templates/admin_ajaxed.php:278
+msgid "Contact information"
+msgstr ""
+
+#: templates/basicpackage.php:20
+msgid "Contact Us"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1366 redi.php:285
 msgid "contact us directly"
 msgstr "Kontaktieren Sie uns direkt."
 
-#: templates/admin_ajaxed.php:232
+#: templates/admin_ajaxed.php:130
 msgid "Country"
 msgstr "Land"
 
-#: templates/admin_ajaxed.php:57
+#: templates/admin.php:155
+msgid "Create a support ticket"
+msgstr ""
+
+#: templates/admin_ajaxed.php:98
 msgid "Current Place ID"
 msgstr "Derzeitige Platz ID"
 
-#: templates/frontend.php:388
+#: templates/admin.php:749
+msgid "Current time"
+msgstr ""
+
+#: templates/frontend.php:464
 msgid "Custom field is required"
 msgstr "\"Benutzerdefiniertes Feld\" ist erforderlich"
 
-#: templates/admin_ajaxed.php:71
+#: templates/admin_ajaxed.php:496
 msgid "Custom fields"
 msgstr "Benutzerdefinierte Felder"
 
-#: templates/admin_ajaxed.php:73
+#: templates/admin_ajaxed.php:501
 msgid ""
 "Custom fields are meant to allow users define additional fields for "
 "collecting more information from customers. You can choose the name of the "
@@ -201,35 +379,41 @@ msgstr ""
 "Informationen abzufragen. Du kann den Feld-Namen und den Feld-Typ auswählen "
 "und einstellen, ob das Feld ausgefüllt werden muss."
 
-#: templates/admin.php:174
+#: templates/admin.php:212
 msgid "Data Input Appearance"
 msgstr "Aussehen der Dateneingabe"
 
-#: templates/modify.php:28 templates/frontend.php:68 templates/frontend.php:344
+#: templates/confirm.php:16 templates/frontend.php:113
+#: templates/frontend.php:423 templates/frontend_v2.php:35
+#: templates/modify.php:28
 msgid "Date"
 msgstr "Datum"
 
-#: templates/admin_ajaxed.php:467
+#: templates/admin.php:319
 msgid "Date format"
 msgstr "Datumsformat"
 
-#: templates/admin.php:623
+#: templates/admin_ajaxed.php:456 templates/admin_ajaxed.php:478
 msgid "Days"
 msgstr "Tage"
 
-#: templates/admin.php:337
+#: templates/admin.php:460
 msgid "Description for children dropdown"
 msgstr "Beschreibung für Kinderbezogene Drop-down-Liste"
 
-#: templates/admin.php:576 templates/admin.php:589
+#: templates/admin.php:793 templates/admin.php:809
 msgid "Disable confirmation email"
 msgstr "Deaktiviere Bestätigungs-E-Mail"
 
-#: templates/admin.php:490
+#: redi-restaurant-reservation.php:1997
+msgid "Discount"
+msgstr ""
+
+#: templates/admin.php:544
 msgid "Display left seats"
 msgstr "Freie Plätze anzeigen"
 
-#: templates/admin.php:559
+#: templates/admin.php:600
 msgid ""
 "Displays the available time with time step to the clients. For instance, if "
 "one selects 15 min time step, then alternative time will be 10:00, 10:15, 10:"
@@ -240,7 +424,7 @@ msgstr ""
 "werden die verfügbaren Zeiten wie folgt dargestellt: 10:00, 10:15, 10:30, "
 "etc."
 
-#: templates/basicpackage.php:61
+#: templates/basicpackage.php:64
 msgid ""
 "Do you want to know what your client thinks about his last visit? We will "
 "collect it for you."
@@ -248,7 +432,7 @@ msgstr ""
 "Möchtest du wissen, was deine Gäste über ihren letzten Besuch in deinem "
 "Restaurant denken? Wir fragen deine Gäste für dich."
 
-#: templates/basicpackage.php:68
+#: templates/basicpackage.php:71
 msgid ""
 "Do you want to write your own module? We have an API. Contact us to get more "
 "information."
@@ -256,70 +440,89 @@ msgstr ""
 "Möchtest du dein eigenes Modul einbinden? Wir haben eine API-Schnittstelle. "
 "Kontaktiere uns gerne für weitere Informationen."
 
-#: templates/admin_ajaxed.php:477
+#: templates/admin_welcome.php:22
+msgid ""
+"Don't want to spend time delving into how the plugin works or figuring out "
+"the setup process? Sign up for a free personalized assistance call – our "
+"team is here to help you get started smoothly."
+msgstr ""
+
+#: templates/admin.php:329
 msgid "Dot"
 msgstr "Punkt"
 
-#: templates/admin_ajaxed.php:179
+#: templates/admin_ajaxed.php:609
 msgid "DropDown"
 msgstr "Drop-down-Liste"
 
-#: templates/frontend.php:104
+#: templates/frontend.php:149
 msgid "Duration"
 msgstr "Zeitdauer"
 
-#: templates/admin.php:515
+#: templates/admin_ajaxed.php:440
 msgid ""
 "Duration of reservation in minutes. This is the time allocated for each "
-"reservation."
+"reservation so the reservation system can calculate availability. Enter here "
+"average time that guests stays in."
 msgstr ""
-"Reservierungszeitraum in Minuten. Diese Zeit wird standardmäßig für jede "
-"Reservierung hinterlegt."
 
-#: templates/admin.php:616
+#: templates/admin_ajaxed.php:470
 msgid "Early Bookings"
 msgstr "Frühe Buchungen"
 
-#: templates/admin_ajaxed.php:297 templates/cancel.php:14 
-#: templates/modify.php:13 templates/modify.php:54 templates/admin.php:132 
-#: templates/frontend.php:233 templates/frontend.php:262 
-#: templates/frontend.php:366
+#: templates/admin_ajaxed.php:195 templates/admin_ajaxed.php:299
+#: templates/admin_welcome_no_key.php:14 templates/cancel.php:34
+#: templates/frontend.php:248 templates/frontend.php:278
+#: templates/frontend.php:442 templates/modify.php:13 templates/modify.php:54
 msgid "Email"
 msgstr "Email"
 
-#: templates/admin_ajaxed.php:305
+#: templates/admin_ajaxed.php:203
 msgid "Email address for contacting the restaurant."
 msgstr "Kontakt E-Mail-Adresse des Restaurants."
 
-#: templates/admin_ajaxed.php:312
+#: redi-restaurant-reservation.php:1431
+msgid "Email can't be empty"
+msgstr ""
+
+#: templates/admin_ajaxed.php:210
 msgid "Email CC"
 msgstr "E-Mail CC"
 
-#: templates/admin_ajaxed.php:430
-msgid "Email Configuration"
-msgstr "E-Mail Konfiguration"
+#: redi-restaurant-reservation.php:2259
+msgid "Email is not valid."
+msgstr ""
 
-#: templates/basicpackage.php:45
+#: redi-restaurant-reservation.php:2256
+msgid "Email is required."
+msgstr ""
+
+#: templates/basicpackage.php:49
 msgid "Email template customization for all supported languages."
 msgstr "E-Mail Vorlage für alle unterstützten Sprachen anpassen."
 
-#: templates/admin.php:181
+#: templates/admin.php:804
+msgid ""
+"Emails will be sent via SMTP server that is configured in Basic settings."
+msgstr ""
+
+#: templates/admin.php:221
 msgid "Enable cancel form"
 msgstr "Stornierungsform aktivieren"
 
-#: templates/admin.php:197
+#: templates/admin.php:237
 msgid "Enable modify reservations"
 msgstr "Reservierungsänderungen akrivieren"
 
-#: templates/admin.php:206
+#: templates/admin.php:246
 msgid "Enable or Disable modify reservation."
 msgstr "Reservierungsänderungen akrivieren/deaktivieren."
 
-#: templates/admin.php:190
+#: templates/admin.php:230
 msgid "Enable or Disable reservation cancel form."
 msgstr "Stornierungsform für Reservierungen aktivieren/deaktivieren"
 
-#: templates/admin.php:222
+#: templates/admin.php:278
 msgid ""
 "Enable or Disable social network account login. When enabled clients can "
 "login with any social network accounts like Facebook and then reservation "
@@ -336,19 +539,19 @@ msgstr ""
 "ihren Social-Media Account. Für diese Option wird das Plugin 'Super "
 "Socializier' aus der Wordpress Plugin-Datenbank benötigt."
 
-#: templates/admin.php:213
+#: templates/admin.php:269
 msgid "Enable social network login"
 msgstr "Anmeldung über soziale Netzwerke aktivieren"
 
-#: templates/admin.php:666
+#: templates/admin.php:699
 msgid "Enable/Disable captcha on reservation form."
 msgstr "Captcha für Reservierungsform aktivieren/deaktivieren"
 
-#: templates/admin.php:326
+#: templates/admin.php:449
 msgid "Enable/Disable children dropdown"
 msgstr "Kinderbezogene Drop-down-Liste aktivieren/deaktivieren"
 
-#: templates/basicpackage.php:59
+#: templates/basicpackage.php:62
 msgid ""
 "Enhance your business experience by using our Facebook integration service "
 "where we try to provide you with profile pictures of your customers if found."
@@ -360,81 +563,139 @@ msgstr ""
 "Adresse an (sofern sie gefunden werden können). So erkennst du deine Gäste "
 "schon beim Betreten deines Restaurants - schon beim ersten Besuch!"
 
-#: templates/admin_ajaxed.php:85
+#: templates/frontend.php:41
+msgid ""
+"ERROR: You need to install/activate dependant plugin Super Socializer plugin"
+msgstr ""
+
+#: templates/admin_welcome.php:29 templates/basicpackage.php:26
+msgid "facebook"
+msgstr ""
+
+#: redi-restaurant-reservation.php:856
+msgid "Failed to create the directory"
+msgstr ""
+
+#: templates/admin_ajaxed.php:513
 msgid "Field name"
 msgstr "Feld-Name"
 
-#: templates/admin_ajaxed.php:95
+#: templates/admin_ajaxed.php:523
 msgid "Field type"
 msgstr "Feld-Typ"
+
+#: functions/notice.php:137
+#, php-format
+msgid ""
+"Finally, one last step in <b>ReDi Restaurant Reservation Plugin</b> setup to "
+"impress your clients, make a test reservation. <b>%1$s</b>%2$s"
+msgstr ""
 
 #: templates/modify.php:15
 msgid "Find reservation"
 msgstr "Reservierung suchen"
 
-#: templates/basicpackage.php:25
-msgid "Find text you want to change, change it and press save"
-msgstr ""
-"Finde den Text den du ändern möchtest, editiere ihn und klicke auf speichern"
-
-#: templates/frontend.php:239
+#: templates/frontend.php:256
 msgid "First Name"
 msgstr "Vorname"
 
-#: templates/admin.php:110
+#: redi-restaurant-reservation.php:1428
+msgid "First Name can't be empty"
+msgstr ""
+
+#: templates/admin.php:733
+msgid "Force users to provide a reason when canceling reservation."
+msgstr ""
+
+#: templates/frontend_v2.php:57
+msgid "Form"
+msgstr ""
+
+#: redi-restaurant-reservation.php:521
+msgid "Form security check failed with error: Nonce check failed."
+msgstr ""
+
+#: redi-restaurant-reservation.php:1914
+msgid ""
+"Form security check failed with error: Nonce check failed. Reservation form "
+"is not working today, please contact us directly."
+msgstr ""
+
+#: templates/admin.php:126
 msgid "Free package settings"
 msgstr "Einstellungen des kostenlosen Pakets"
 
-#: templates/admin.php:572 templates/admin.php:586
+#: templates/admin.php:789 templates/admin.php:803
+msgid "From Custom SMTP"
+msgstr ""
+
+#: templates/admin.php:787 templates/admin.php:806
 msgid "From ReservationDiary.eu"
 msgstr "Von ReservationDiary.eu"
 
-#: templates/admin.php:574 templates/admin.php:583
+#: templates/admin.php:791 templates/admin.php:800
 msgid "From WordPress email account"
 msgstr "Vom WordPress E-Mail-Account"
 
-#: templates/admin.php:636
+#: templates/admin.php:837
 msgid "Frontend settings"
 msgstr "Frontend Einstellungen"
 
-#: templates/admin_ajaxed.php:173
+#: templates/admin_ajaxed.php:603
 msgid "GDPR"
 msgstr "GDPR"
 
-#: templates/frontend.php:119
+#. Description of the plugin
+msgid ""
+"Get your restaurant business booming with the <strong>ReDi Restaurant "
+"Reservation plugin</strong>! Our plugin simplifies the reservation process "
+"and allows your clients to easily book online. With <strong>instant "
+"reservation confirmation</strong> and customizable settings, managing "
+"reservations has never been easier. Say goodbye to the hassle of manually "
+"confirming reservations and hello to the convenience of automatic "
+"confirmation. Try it out today and see the difference it can make in just a "
+"few clicks!"
+msgstr ""
+
+#: templates/confirm.php:34 templates/frontend.php:79
+#: templates/frontend_v2.php:24
 msgid "Guests"
 msgstr "Gäste"
 
-#: templates/admin.php:450
+#: redi-restaurant-reservation.php:233
+msgid "Help"
+msgstr ""
+
+#: templates/admin.php:853
 msgid "Hide previous steps (only for timeshiftmode byshifts)"
 msgstr "Verstecke vorherige Schritte (nur für den Anzeigemodus \"byshifts\")"
 
-#: templates/admin.php:435
+#: templates/admin.php:844
 msgid "Hide steps"
 msgstr "Schritte verstecken"
 
-#: templates/admin.php:622
+#: templates/admin_ajaxed.php:455 templates/admin_ajaxed.php:477
 msgid "Hours"
 msgstr "Stunden"
 
-#: templates/admin.php:479
+#: templates/admin.php:373
 msgid "HTML dropdown"
 msgstr "HTML Kontextmenü"
 
 #. URI of the plugin
 #. Author URI of the plugin
-msgid "http://reservationdiary.eu"
-msgstr "http://reservationdiary.eu"
+msgid "https://landing.reservationdiary.eu"
+msgstr ""
 
-#: templates/admin_ajaxed.php:472
+#: templates/admin.php:324
 msgid "Hyphen"
 msgstr "Bindestrich"
 
-#: templates/admin.php:65
+#: templates/admin.php:71
 msgid "I agree to the privacy policy"
 msgstr "Ich stimme den Datenschutzbestimmungen zu"
 
-#: templates/admin.php:531
+#: templates/admin.php:774
 msgid ""
 "If checkbox is checked then reservations will not be automatically confirmed."
 " You will receive email with reservation request and each reservation needs "
@@ -445,18 +706,18 @@ msgstr ""
 "Reservierungsanfrage welche sie jeweils manuell bestätigen oder ablehnen "
 "müssen."
 
-#: templates/admin.php:498
+#: templates/admin.php:552
 msgid ""
 "If checkbox is checked then seats left will be shown under selected time."
 msgstr ""
 "Wenn Kontrollkästchen angekreuzt ist, werden die freie Plätze unter "
 "ausgewählter Zeit angezeigt."
 
-#: templates/admin.php:714
+#: templates/admin.php:870
 #, fuzzy
 #| msgid ""
-#| "If checkbox is checked, a logo of <b>\"Powered by ReDi\"</b> is displayed. "
-#| "Thank you for supporting us."
+#| "If checkbox is checked, a logo of <b>\"Powered by ReDi\"</b> is displayed."
+#| " Thank you for supporting us."
 msgid ""
 "If checkbox is checked, a logo of <b>\"Powered by ReservationDiary.eu\"</b> "
 "is displayed. Thank you for supporting us."
@@ -464,7 +725,7 @@ msgstr ""
 "Wenn aktiviert, wird ein Logo mit <b>\"Powered by ReDi\"</b> eingeblendet. "
 "Danke für deinen Support!"
 
-#: templates/admin.php:312
+#: templates/admin.php:434
 msgid ""
 "If this field is filled, the drop down menu of persons would show \"Large "
 "Groups\" and upon selection, the specified message would appear."
@@ -473,7 +734,7 @@ msgstr ""
 "eine Option \"große Gruppen\" und bei Auswahl dieses Punktes die "
 "eingestellte Nachricht angezeigt."
 
-#: templates/basicpackage.php:66
+#: templates/basicpackage.php:69
 msgid ""
 "If you are building a catalogue of restaurants and looking for the perfect "
 "reservation plugin for it, we can provide it to you."
@@ -481,7 +742,7 @@ msgstr ""
 "Wenn du mehrere Restaurants besitzt und nach einer perfekten Lösung für eine "
 "Reservierungsseite suchst, haben wir was für dich."
 
-#: templates/admin_ajaxed.php:422
+#: templates/admin_ajaxed.php:377
 msgid ""
 "If you close next day at night then set closing time on a same day. For "
 "example 18:00 - 3:00"
@@ -489,7 +750,13 @@ msgstr ""
 "Wenn du am nächsten Tag zur Nachtzeit schließt, dann wähle die Nachtzeit, "
 "als wäre sie am gleichen Tag (z.B. 18:00 - 3:00 Uhr)"
 
-#: templates/admin.php:609
+#: templates/admin_welcome_no_key.php:22
+msgid ""
+"If you have already an API key, you can skip this step and provide API key "
+"on next step."
+msgstr ""
+
+#: templates/admin.php:829
 msgid ""
 "If you want to customize confirmation page or have a separated page for "
 "marketing purposes, then select custom reservation confirmation page. If not "
@@ -500,7 +767,7 @@ msgstr ""
 "\"benutzerdefinierte Bestätigungsseite\". Wenn nicht ausgewählt, wird die "
 "integrierte (automatische) Bestätigungsseite benutzt."
 
-#: templates/basicpackage.php:71
+#: templates/basicpackage.php:74
 msgid ""
 "If you would like to add some new functionality or have any other queries, "
 "please contact us by email: "
@@ -508,17 +775,13 @@ msgstr ""
 "Wenn du weitere Funktionen benötigst oder Verbesserungsvorschläge hast, "
 "hören wir gerne von dir. Schick uns einfach eine E-Mail:"
 
-#: templates/basicpackage.php:76
+#: templates/admin.php:435 templates/admin.php:617
 msgid ""
-"Improve your restaurant’s turnaround time by allowing the clients to call a "
-"waiter using their smart phones. Create a mobile web page with our QR Code "
-"Waiter Calling System plugin."
+"In case you need to show it in multiple languages, then use following format "
+"[lang]Text[/lang]. Example: [en]Text[/en][es]Texto[/es]"
 msgstr ""
-"Verbessere die Wartezeit in deinem Restaurant und erlaube den Kunden den "
-"Kellner über ihr Mobiltelefon zu rufen. Richte einfach eine Mobile-Webpage "
-"mit unserem QR-Code Kellnerruf Plugin ein."
 
-#: templates/frontend.php:178 templates/frontend.php:327
+#: templates/frontend.php:193 templates/frontend.php:356
 msgid ""
 "In case you would like to be notified when someone cancels reservation for "
 "this day, please fill <a class=\"link-waitlist-form\">this form</a>."
@@ -527,11 +790,7 @@ msgstr ""
 "wird, trage dich bitte in die <a class=\"link-waitlist-form\">Warteliste</a> "
 "ein."
 
-#: templates/basicpackage.php:19
-msgid "In order to change text or translation"
-msgstr "um Texte oder Übersetzungen zu ändern"
-
-#: templates/admin.php:610
+#: templates/admin.php:830
 msgid ""
 "In order to display reservation id on that page, install plugin GET Params "
 "and add following short code: [display-get-param name=\"reservation_id\"]"
@@ -540,7 +799,7 @@ msgstr ""
 "installieren Sie den GET Params Plugin und geben die Short-Kode:  [display-"
 "get-param name=\"reservation_id\"] ein."
 
-#: templates/admin.php:368
+#: templates/admin.php:515
 msgid ""
 "In this mode, the system automatically displays all the available times for "
 "the date selected without any manual time input."
@@ -548,7 +807,7 @@ msgstr ""
 "In diesem Modus zeigt das System automatisch alle verfügbaren Zeiten für den "
 "gewählten Tag an, ohne das eine Uhrzeit manuell eingegeben werden muss."
 
-#: templates/admin.php:365
+#: templates/admin.php:512
 msgid ""
 "In this mode, the user selects the desired time and the system verifies its "
 "availability to present five different alternative times to the customer."
@@ -556,23 +815,23 @@ msgstr ""
 "In diesem Modus wählt der Gast die gewünschte Zeit, das System überprüft die "
 "Verfügbarkeit und zeigt fünf alternative Uhrzeiten an."
 
-#: templates/admin_ajaxed.php:105
+#: templates/admin_ajaxed.php:533
 msgid "Is printed?"
 msgstr "Wurde gedruckt?"
 
-#: templates/admin_ajaxed.php:100
+#: templates/admin_ajaxed.php:528
 msgid "Is required?"
 msgstr "Ist erforderlich?"
 
-#: templates/admin.php:476
+#: templates/admin.php:370
 msgid "jQuery plugin"
 msgstr "jQuery Plugin"
 
-#: templates/admin_ajaxed.php:436
+#: templates/admin_ajaxed.php:226
 msgid "Language"
 msgstr "Sprache"
 
-#: templates/admin_ajaxed.php:459
+#: templates/admin_ajaxed.php:254
 msgid ""
 "Language for emails of clients depend on the user interface language "
 "selected."
@@ -580,7 +839,7 @@ msgstr ""
 "Die E-Mail-Sprache ist abhängig von der eingestellten Sprache im "
 "Benutzeraccount."
 
-#: templates/admin_ajaxed.php:458
+#: templates/admin_ajaxed.php:253
 msgid ""
 "Language for internal emails communication. It is specially used for admin "
 "emails. "
@@ -588,35 +847,55 @@ msgstr ""
 "Sprache für interne E-Mail-Kommunikation. Diese wird hauptsächlich für die "
 "Admininistrator-E-Mails verwendet."
 
-#: templates/frontend.php:249
+#: templates/admin.php:887
+msgid "Language Path"
+msgstr ""
+
+#: templates/frontend.php:265
 msgid "Last Name"
 msgstr "Nachname"
 
-#: templates/admin_ajaxed.php:343
+#: redi-restaurant-reservation.php:1429
+msgid "Last Name can't be empty"
+msgstr ""
+
+#: templates/admin_ajaxed.php:447
 msgid "Late Bookings"
 msgstr "Späte Buchungen"
 
-#: templates/frontend.php:29
+#: templates/admin.php:878
+msgid "Localization"
+msgstr ""
+
+#: templates/frontend.php:31
 msgid "Login with your social media account"
 msgstr "Über soziale Netzwerke anmelden"
 
-#: templates/frontend.php:288
+#: templates/frontend.php:309
 msgid "Make a reservation"
 msgstr "Jetzt reservieren"
 
-#: templates/admin.php:522
+#: templates/frontend.php:307
+msgid "Make a reservation request"
+msgstr ""
+
+#: templates/admin.php:723
+msgid "Mandatory Cancellation Reason"
+msgstr ""
+
+#: templates/admin.php:765
 msgid "Manual reservation"
 msgstr "Manuelle Reservierung"
 
-#: templates/admin.php:281
+#: templates/admin.php:403
 msgid "Max persons per reservation"
 msgstr "Max. Personenanzahl pro Reservierung"
 
-#: templates/admin_ajaxed.php:360
+#: templates/admin_ajaxed.php:391
 msgid "Maximum number of guests"
 msgstr "Maximale Gästeanzahl"
 
-#: templates/admin.php:295
+#: templates/admin.php:417
 msgid ""
 "Maximum number of persons allowed for each reservation. Drop down list of "
 "persons ends with this number."
@@ -624,19 +903,19 @@ msgstr ""
 "Maximale Personenanzahl pro Reservierung. Die Drop-Down-Liste endet mit der "
 "eingestellten Personenanzahl."
 
-#: templates/admin.php:629
+#: templates/admin_ajaxed.php:484
 msgid "Maximum time before the reservation can be accepted."
 msgstr "Maximales Zeitraum bis die Reservierung angenommen werden kann."
 
-#: templates/admin.php:303
+#: templates/admin.php:425
 msgid "Message for large groups"
 msgstr "Nachricht für große Gruppen"
 
-#: templates/admin.php:261
+#: templates/admin.php:383
 msgid "Min persons per reservation"
 msgstr "Minimale Gästeanzahl pro Reservierung"
 
-#: templates/admin.php:275
+#: templates/admin.php:397
 msgid ""
 "Minimum number of persons allowed for each reservation. Drop down list of "
 "persons starts from this number."
@@ -644,7 +923,11 @@ msgstr ""
 "Minimale Personenanzahl pro Reservierung. Die Drop-Down-Liste startet mit "
 "der eingestellten Personenanzahl."
 
-#: templates/admin.php:362
+#: templates/admin_ajaxed.php:454
+msgid "Minutes"
+msgstr ""
+
+#: templates/admin.php:509
 msgid ""
 "Mode how available working hours presented to user so that they can choose "
 "time slots most convenient to them."
@@ -652,24 +935,29 @@ msgstr ""
 "Modus in welchem dem Benutzer die Arbeitsstunden angezeigt werden, so dass "
 "er diese nach seinen Wünschen auswählen kann."
 
-#: templates/modify.php:2 templates/frontend.php:14
+#: templates/frontend.php:16 templates/modify.php:2
 msgid "Modify reservation"
 msgstr "Reservierung ändern"
 
-#: templates/admin.php:624
+#: templates/admin_ajaxed.php:411
+msgid "Monthly guest reservation limit"
+msgstr ""
+
+#: templates/admin_ajaxed.php:479
 msgid "Months"
 msgstr "Monate"
 
-#: templates/frontend.php:131
+#. %s is the number of guests.
+#: templates/frontend.php:93
 #, php-format
 msgid "More than %s Guests"
 msgstr "Mehr als %s Gäste"
 
-#: templates/frontend.php:6
+#: templates/frontend.php:7
 msgid "More than [max] people"
 msgstr "Mehr als [max] Personen"
 
-#: templates/admin_ajaxed.php:426
+#: templates/admin_ajaxed.php:381
 msgid ""
 "Multiple open and close times are available in Basic package. If times are "
 "configured in Basic package, then this table is ignored."
@@ -677,29 +965,52 @@ msgstr ""
 "Mehrfache Öffnungszeiten an einem Tag sind im Basic-Paket verfügbar. Wenn "
 "Öffnungszeiten im Basic-Paket konfiguriert sind, ist diese Tabelle ignoriert."
 
-#: templates/cancel.php:12 templates/modify.php:11 templates/modify.php:43 
-#: templates/admin.php:119 templates/frontend.php:227 
-#: templates/frontend.php:241 templates/frontend.php:361
+#: templates/admin.php:142 templates/admin_ajaxed.php:286
+#: templates/cancel.php:27 templates/frontend.php:242
+#: templates/frontend.php:258 templates/frontend.php:437
+#: templates/modify.php:11 templates/modify.php:43
 msgid "Name"
 msgstr "Name"
 
-#: templates/admin.php:121
+#: redi-restaurant-reservation.php:1427
+msgid "Name can't be empty"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1430
+msgid "Name or Phone or Email can't be empty"
+msgstr ""
+
+#: templates/admin.php:147
 msgid "News"
 msgstr "Nachrichten"
 
-#: templates/admin_ajaxed.php:169 templates/admin.php:58
+#: templates/admin.php:62 templates/admin_ajaxed.php:597
 msgid "Newsletter"
 msgstr "Newsletter"
 
-#: templates/frontend.php:122
+#: redi-restaurant-reservation.php:1435 templates/admin_welcome_no_page.php:41
+msgid "Next"
+msgstr ""
+
+#: templates/admin_welcome.php:18
+msgid ""
+"Next step is to configure the plugin, please watch following videos and "
+"click on Next to open Settings page"
+msgstr ""
+
+#: templates/frontend.php:82
 msgid "No. of Guests"
 msgstr "Gästeanzahl"
 
-#: templates/admin.php:364
+#: templates/admin.php:511
 msgid "Normal"
 msgstr "Normal"
 
-#: templates/admin_ajaxed.php:77
+#: redi-restaurant-reservation.php:579
+msgid "Not a valid API key provided."
+msgstr ""
+
+#: templates/admin_ajaxed.php:505
 msgid ""
 "NOTE: Complex custom fields like Options and Dropdown can be configured in "
 "Basic package settings."
@@ -707,7 +1018,7 @@ msgstr ""
 "Achtung: komplexe Einstellungsbereiche wie Onpionen und Drop-down-Listen "
 "können im Basic-Paket konfiguriert werden."
 
-#: templates/admin_ajaxed.php:353
+#: templates/admin_ajaxed.php:463
 msgid ""
 "NOTE: If you define Open Time in basic package, then this setting will be "
 "ignored. Use open times settings to define Late Bookings."
@@ -716,7 +1027,7 @@ msgstr ""
 "definierst, werden die Einstellungen an dieser Stelle ignoriert. Benutze die "
 "Öffnungszeiten-Einstellungen um späte Buchungen zu definieren."
 
-#: templates/admin_ajaxed.php:75
+#: templates/admin_ajaxed.php:503
 msgid ""
 "NOTE: Name, Email, Phone and Comments are required fields of reservation "
 "form and do not need to be defined here as custom fields."
@@ -725,32 +1036,40 @@ msgstr ""
 "Reservierungsformulars und müssen nicht zusätzlich als benutzerdefinierte "
 "Felder angelegt werden."
 
-#: templates/admin_ajaxed.php:209
-msgid ""
-"Note: SMS messages and Reminders requires an extra addons to be purchased."
+#: templates/admin_ajaxed.php:641
+msgid "Note: To send SMS messages an extra addon needs to be purchased."
 msgstr ""
-"ACHTUNG: SMS Nachrichten und Erinnerungsfunktion benötigen ein "
-"kostenplfichtiges Zusatzmodul."
 
-#: templates/admin.php:682
+#: templates/admin.php:715
 msgid "Obtain your captcha key from Google."
 msgstr "Erhalten Sie Ihren Captcha-Schlüssel von Google."
 
+#: redi-restaurant-reservation.php:1364
+msgid ""
+"Online reservation service is not available at this time. Try again later or"
+msgstr ""
+
+#. %s is a placeholder for a dynamic link.
 #: redi.php:288
-#, fuzzy
+#, fuzzy, php-format
 #| msgid ""
-#| "Online reservation service is not available at this time. Try again later or"
+#| "Online reservation service is not available at this time. Try again later "
+#| "or"
 msgid ""
 "Online reservation service is not available at this time. Try again later or "
 "%s"
 msgstr ""
 "Online-Reservierungen sind zurzeit nicht verfügbar. Probieren Sie später."
 
-#: templates/admin_ajaxed.php:386
+#: templates/admin_ajaxed.php:341
 msgid "Open"
 msgstr "Offen"
 
-#: templates/basicpackage.php:37
+#: functions/notice.php:47 functions/notice.php:79
+msgid "Open setup wizard"
+msgstr ""
+
+#: templates/basicpackage.php:41
 msgid ""
 "Open times. This option will enable you to choose between various working "
 "hours whichever is most convenient to you."
@@ -758,34 +1077,50 @@ msgstr ""
 "Öffnungszeiten. Diese Option ermöglicht es dir verschiedenste Öffnungszeiten "
 "ganz nach deinen Bedürfnissen einzustellen."
 
-#: templates/basicpackage.php:34
+#: templates/basicpackage.php:38
 msgid "Open upcoming reservations"
 msgstr "Öffne anstehende Reservierungen"
 
-#: templates/admin_ajaxed.php:177
+#: templates/admin_ajaxed.php:607
 msgid "Option"
 msgstr "Option"
 
-#: templates/admin.php:641
+#: templates/admin.php:607
 msgid "Override fully booked message text"
 msgstr "Text, der angezeigt wird, wenn Plätze ausgebucht sind."
 
-#: templates/modify.php:32 templates/frontend.php:352
+#: templates/admin_welcome_no_page.php:13
+msgid "Page name"
+msgstr ""
+
+#: redi-restaurant-reservation.php:2342
+msgid "Page name is required"
+msgstr ""
+
+#: templates/frontend.php:428 templates/modify.php:32
 msgid "Persons"
 msgstr "Personen"
 
-#: templates/admin_ajaxed.php:327 templates/cancel.php:9 
-#: templates/modify.php:8 templates/modify.php:47 templates/admin.php:136 
-#: templates/frontend.php:230 templates/frontend.php:255 
-#: templates/frontend.php:371
+#: templates/admin_ajaxed.php:261 templates/cancel.php:19
+#: templates/frontend.php:245 templates/frontend.php:271
+#: templates/frontend.php:447 templates/modify.php:8 templates/modify.php:47
 msgid "Phone"
 msgstr "Mobilnummer"
 
-#: templates/admin_ajaxed.php:37 templates/frontend.php:51
+#: redi-restaurant-reservation.php:1432
+msgid "Phone can't be empty"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1433
+msgid "Phone number is not valid"
+msgstr ""
+
+#: templates/admin_ajaxed.php:78 templates/frontend.php:53
+#: templates/frontend_v2.php:13
 msgid "Place"
 msgstr "Platz"
 
-#: templates/basicpackage.php:50
+#: templates/basicpackage.php:54
 msgid ""
 "Please allow 1 business day for us to confirm your payment and upgrade your "
 "account."
@@ -793,68 +1128,131 @@ msgstr ""
 "Bitte gib uns einen Arbeitstag Zeit, um deine Zahlung zu verbuchen und "
 "deinen Account upzugraden."
 
-#: templates/basicpackage.php:21
+#: functions/notice.php:134
 msgid ""
-"Please install plugin <a href=\"plugin-install.php?"
-"tab=search&type=term&s=loco+translate\" target=\"_blank\">loco-translate</a>"
+"Please create a reservation page and add this <b>[redirestaurant]</b> "
+"shortcode to that page."
 msgstr ""
-"Bitte installiere das Plugin <a href=\"plugin-install.php?"
-"tab=search&type=term&s=loco+translate\" target=\"_blank\">loco-translate</a>"
 
-#: templates/admin_welcome_no_key.php:44 templates/admin_welcome.php:6
-msgid "Please watch our videos that helps you to setup plugin"
-msgstr "Bitte schaue unsere Erklärvideos zur Einrichtung des Plugins"
+#: templates/admin_welcome_no_key.php:37 templates/admin_welcome_no_page.php:33
+msgid "Please provide your API Key in order to continue using plugin"
+msgstr ""
 
-#: templates/admin.php:117
+#: templates/admin_welcome_no_key.php:13
+msgid "Please provide your email address to generate API Key"
+msgstr ""
+
+#: redi-restaurant-reservation.php:675
+msgid "Please select value from \"Monthly guest reservation limit\""
+msgstr ""
+
+#: templates/admin.php:757
+msgid ""
+"Please verify you current time. This is important as this time is taken and "
+"used in reservation logic. In case time is differnet than your current time, "
+"please change time zone in Settings -> General -> Time Zone"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1374
+msgid ""
+"Plugin failed to properly load javascript file, please check that jQuery is "
+"loaded and no javascript errors present."
+msgstr ""
+
+#: templates/admin.php:135
 msgid "Plugin Info"
 msgstr "Plugin Informationen"
 
-#: templates/frontend.php:418
+#: templates/frontend.php:494
 msgid "Powered by"
 msgstr "Bereitgestellt von"
 
-#: templates/frontend.php:357
+#: templates/frontend.php:433
 msgid "Preferred time"
 msgstr "Bevorzugte Uhrzeit"
 
-#: templates/frontend.php:213 templates/frontend.php:286
+#: templates/frontend.php:227 templates/frontend.php:303
 msgid "Previous"
 msgstr "Zurück"
 
-#: templates/admin.php:60
+#: templates/admin.php:65
 msgid "Privacy policy"
 msgstr "Datenschutzerklärung"
 
-#: templates/frontend.php:219
+#: templates/frontend.php:234
 msgid "Provide reservation details"
 msgstr "Deine Daten"
 
-#: templates/cancel.php:16 templates/admin.php:740
+#: redi-restaurant-reservation.php:1438
+msgid "Provided time is not in valid format."
+msgstr ""
+
+#: templates/admin.php:173
+msgid "Rate the plugin, help us grow"
+msgstr ""
+
+#: templates/admin.php:929 templates/cancel.php:40
 msgid "Reason"
 msgstr "Grund"
 
-#. Description of the plugin
-msgid "ReDi Reservation plugin for Restaurants"
-msgstr "ReDi Reservation Plugin für Restaurants"
+#: redi-restaurant-reservation.php:1434
+msgid "Reason can't be empty"
+msgstr ""
+
+#: templates/admin_welcome.php:12
+msgid "ReDi Reservation plugin:"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1137 redi-restaurant-reservation.php:1138
+#: redi-restaurant-reservation.php:1193 redi-restaurant-reservation.php:1194
+#: redi-restaurant-reservation.php:1202 redi-restaurant-reservation.php:1203
+msgid "ReDi Reservations"
+msgstr ""
 
 #. Name of the plugin
 msgid "ReDi Restaurant Reservation"
 msgstr "ReDi Restaurant Reservation"
 
-#: templates/frontend.php:400
+#: templates/admin.php:142
+msgid "Redi Restaurant Reservation"
+msgstr ""
+
+#: redi-restaurant-reservation.php:588
+msgid ""
+"ReDi Restaurant Reservation plugin could not get an API key from the "
+"reservationdiary.eu server when it activated.\n"
+"                        <br/> You can try to fix this by going to the ReDi "
+"Restaurant Reservation \"options\" page.\n"
+"                        <br/>This will cause ReDi Restaurant Reservation "
+"plugin to retry fetching an API key for you.\n"
+"                        <br/>If you keep seeing this error it usually means "
+"that server where you host your web site can't connect to our "
+"reservationdiary.eu server.\n"
+"                        <br/>You can try asking your WordPress host to allow "
+"your WordPress server to connect to api.reservationdiary.eu\n"
+"                        <br/>In case you can not solve this problem yourself,"
+" please contact us directly by <a href=\"mailto:info@reservationdiary.eu\">"
+"info@reservationdiary.eu</a>"
+msgstr ""
+
+#: templates/admin_welcome.php:15
+msgid "ReDi restaurant reservation plugin is ready to use"
+msgstr ""
+
+#: templates/frontend.php:476
 msgid "Register to Wait List"
 msgstr "In die Warteliste eintragen"
 
-#: templates/basicpackage.php:63
+#: templates/basicpackage.php:66
 msgid "Remind your customer about upcoming reservation via Email or by SMS"
 msgstr ""
 "Erinnere deine Gäste über anstehende Reservierungen per E-Mail und / oder SMS"
 
-#: templates/admin_ajaxed.php:167 templates/admin.php:57
+#: templates/admin.php:61 templates/admin_ajaxed.php:595
 msgid "Reminder"
 msgstr "Erinnerungsfunktion"
 
-#: templates/admin_ajaxed.php:110
+#: templates/admin_ajaxed.php:538
 msgid "Required error message"
 msgstr "Erforderliche Fehlermeldung"
 
@@ -862,11 +1260,20 @@ msgstr "Erforderliche Fehlermeldung"
 msgid "Reservation Diary"
 msgstr "Reservation Diary"
 
-#: redi.php:287
+#: templates/admin_ajaxed.php:430
+msgid "Reservation duration"
+msgstr ""
+
+#: redi.php:285
 msgid "Reservation form is not working"
 msgstr "Reservierungsform funktioniert nicht."
 
-#: templates/cancel.php:27
+#: templates/admin.php:642
+msgid "Reservation Form settings"
+msgstr ""
+
+#: redi-restaurant-reservation.php:510 templates/cancel.php:57
+#: templates/confirm.php:55
 msgid "Reservation has been successfully canceled."
 msgstr "Die Reservierung wurde erfolgreich storniert."
 
@@ -874,50 +1281,93 @@ msgstr "Die Reservierung wurde erfolgreich storniert."
 msgid "Reservation has been successfully updated."
 msgstr "Reservierung wurde erfolgreich aktualisiert."
 
-#: templates/frontend.php:173 templates/frontend.php:333
+#: functions/feedback.php:93
+msgid "Reservation id is empty."
+msgstr ""
+
+#: templates/frontend.php:188 templates/frontend.php:362
 msgid ""
 "Reservation is not available on selected day. Please select another day."
 msgstr ""
 "An diesem Tag kann keine Reservierung entgegengenommen werden. Bitte wähle "
 "einen anderen Tag aus."
 
-#: templates/cancel.php:7 templates/modify.php:6 templates/admin.php:736
+#: redi-restaurant-reservation.php:1390
+msgid "Reservation is not found."
+msgstr ""
+
+#: templates/admin.php:925 templates/cancel.php:12 templates/confirm.php:12
+#: templates/modify.php:6
 msgid "Reservation number"
 msgstr "Reservierungsnummer"
 
-#: templates/admin.php:505
-msgid "Reservation time"
-msgstr "Reservierungszeit"
+#: redi-restaurant-reservation.php:1426
+msgid "Reservation number can't be empty"
+msgstr ""
 
-#: templates/admin_ajaxed.php:217
+#: redi-restaurant-reservation.php:553
+msgid "Reservation number is required"
+msgstr ""
+
+#: templates/admin_ajaxed.php:384
+msgid "Reservation restrictions"
+msgstr ""
+
+#: templates/admin.php:741
+msgid "Reservation settings"
+msgstr ""
+
+#: redi-restaurant-reservation.php:2123
+msgid "Reservation that is canceled can not be modified."
+msgstr ""
+
+#: redi-restaurant-reservation.php:1177 redi-restaurant-reservation.php:1178
+msgid "Reservations"
+msgstr ""
+
+#: templates/admin_ajaxed.php:115
 msgid "Restaurant name"
 msgstr "Restaurantname"
 
-#: templates/admin_ajaxed.php:32
+#: templates/admin_ajaxed.php:69
 msgid "Restaurant settings"
 msgstr "Restauranteinstellungen"
 
-#: templates/admin.php:726
+#: templates/admin.php:912
 msgid "Save Changes"
 msgstr "Änderungen speichern"
 
-#: templates/frontend.php:196
+#: templates/frontend.php:211
 msgid "Select available time"
 msgstr "Wähle eine freie Zeit"
 
-#: templates/admin_ajaxed.php:237
+#: templates/admin_ajaxed.php:135
 msgid "Select Country"
 msgstr "Wähle Land"
 
-#: templates/frontend.php:62
-msgid "Select date and time"
-msgstr "Bitte wähle Datum und Uhrzeit"
-
-#: templates/frontend.php:48
-msgid "Select place, date and time"
+#: templates/frontend.php:69
+#, fuzzy
+#| msgid "Select place, date and time"
+msgid "Select guests, date and time"
 msgstr "Wähle Ort, Datum und Zeit"
 
-#: templates/admin.php:252
+#: templates/admin_ajaxed.php:416
+msgid "Select monthly guest reservation limit"
+msgstr ""
+
+#: templates/frontend.php:56
+msgid "Select place"
+msgstr ""
+
+#: templates/frontend.php:50
+msgid "Select place, guests, date and time"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1722
+msgid "Selected date or time is not valid."
+msgstr ""
+
+#: templates/admin.php:308
 msgid ""
 "Selecting this option, the calendar is set to popup when the user clicks the "
 "calendar control."
@@ -925,57 +1375,86 @@ msgstr ""
 "Wenn diese Option aktiviert ist, wird der Kalender in einem Pop-Up-Fenster "
 "geöffnet."
 
-#: templates/basicpackage.php:43
+#: templates/basicpackage.php:47
 msgid "Send client reservation confirmation emails from WordPress account."
 msgstr ""
 "Sendet dem Gast die Reservierungsbestätigung über den E-Mail-Account der "
 "WordPress-Seite."
 
-#: templates/admin.php:566
+#: templates/admin.php:781
 msgid "Send confirmation email to client"
 msgstr "Sende Reservierungsbestätigungs-E-Mail an den Gast"
 
-#: templates/admin.php:63
+#: templates/admin.php:68
 msgid "Send me newsletter and promotions"
 msgstr "Sende mir Newsletter und Angebote zu"
 
-#: templates/admin.php:62
+#: templates/admin.php:67
 msgid "Send me reservation reminder"
 msgstr "Sende mir eine Reservierungserinnerung"
 
-#: templates/admin_ajaxed.php:424
+#: templates/admin.php:138
+msgid "sergei"
+msgstr ""
+
+#: templates/admin_ajaxed.php:379
 msgid "Set Open and Close fields to blank if restaurant is closed."
 msgstr ""
 "Lösche \"Offen\"- und \"Geschlossen\"-Zeiten wenn das Restaurant geschlossen "
 "ist."
 
-#: templates/basicpackage.php:35
+#: redi-restaurant-reservation.php:232 redi-restaurant-reservation.php:1155
+#: redi-restaurant-reservation.php:1156
+msgid "Settings"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1163 redi-restaurant-reservation.php:1164
+msgid "Settings $"
+msgstr ""
+
+#: templates/admin_ajaxed.php:28
+msgid "Settings that have already been changed will be lost."
+msgstr ""
+
+#: templates/admin_ajaxed.php:34
+msgid ""
+"Settings that have already been changed will be lost. Are you sure you want "
+"to continue?"
+msgstr ""
+
+#: redi-restaurant-reservation.php:232
+msgid "Settins"
+msgstr ""
+
+#: templates/basicpackage.php:39
 msgid "Setup maximum available seats for online reservation by week day"
 msgstr ""
 "Stelle die maximale Sitzplatzanzahl für Online-Reservierungen pro Wochentag "
 "ein"
 
-#: templates/admin.php:396
+#: templates/admin.php:525
 msgid "Show end reservation time"
 msgstr "Zeige End-Reservierungszeit"
 
-#: templates/admin.php:251
+#: templates/admin.php:307
 msgid "Shown on click"
 msgstr "Beim Klicken anzeigen"
 
-#: templates/admin.php:135
-msgid "Skype"
+#: templates/admin_welcome.php:28 templates/basicpackage.php:25
+#, fuzzy
+#| msgid "Skype"
+msgid "skype"
 msgstr "Skype"
 
-#: templates/admin_ajaxed.php:482
+#: templates/admin.php:334
 msgid "Slash"
 msgstr "Schrägstrich"
 
-#: templates/admin.php:59
+#: templates/admin.php:63
 msgid "SMS"
 msgstr "SMS"
 
-#: templates/admin_ajaxed.php:351
+#: templates/admin_ajaxed.php:461
 msgid ""
 "Specify how late customers can make their booking in hours. For example, the "
 "current time is 10:00 and this setting is set to 3 hours then the first time,"
@@ -985,20 +1464,33 @@ msgstr ""
 "Einstellung von 3 Stunden kann eine Reservierung für 13:00 Uhr spätestens um "
 "10:00 Uhr vorgenommen werden)."
 
-#: templates/admin_ajaxed.php:420
+#: templates/admin_ajaxed.php:375
 msgid "Specify time in 24h format (00:00 - 23:59)."
 msgstr "Stelle die Zeit im 24-Stunden-Format ein (00:00 - 23:59)."
 
-#: templates/frontend.php:48 templates/frontend.php:62 
-#: templates/frontend.php:196 templates/frontend.php:219
+#: templates/admin_ajaxed.php:322
+msgid ""
+"Stay in the loop! Subscribe to receive valuable updates, tips, and "
+"recommendations related to our plugin. By checking this box, you agree to "
+"receive occasional emails with important announcements, helpful insights, "
+"and suggestions to enhance your experience with our plugin. Don't miss out "
+"on the latest features and improvements – opt in now!"
+msgstr ""
+
+#: templates/frontend.php:50 templates/frontend.php:69
+#: templates/frontend.php:211 templates/frontend.php:234
 msgid "Step"
 msgstr "Schritt"
 
-#: templates/admin.php:129
-msgid "Support"
-msgstr "Support"
+#: templates/basicpackage.php:30
+msgid "Submit an issue or suggest a feature"
+msgstr ""
 
-#: templates/basicpackage.php:39
+#: templates/admin_ajaxed.php:312
+msgid "Subscribe to newsletter"
+msgstr ""
+
+#: templates/basicpackage.php:43
 msgid ""
 "Support for multiple places. Number of places depends on number of "
 "subscriptions."
@@ -1006,19 +1498,23 @@ msgstr ""
 "Unterstützung für mehrere Plätze. Die Anzahl an Plätzen hängt von der Anzahl "
 "der gekauften Lizenzen ab."
 
-#: templates/admin.php:705
+#: templates/admin.php:861
 msgid "Support us"
 msgstr "Unterstütze uns"
 
-#: templates/admin_ajaxed.php:163
+#: redi-restaurant-reservation.php:1170 redi-restaurant-reservation.php:1171
+msgid "Test reservation"
+msgstr ""
+
+#: templates/admin_ajaxed.php:591
 msgid "Text field"
 msgstr "Textfeld"
 
-#: templates/admin_ajaxed.php:90
+#: templates/admin_ajaxed.php:518
 msgid "Text on form"
 msgstr "Feldname"
 
-#: templates/admin.php:650
+#: templates/admin.php:616
 msgid ""
 "Text that will be displayed when there are no available time for selected "
 "day/time."
@@ -1026,38 +1522,19 @@ msgstr ""
 "Text, der angezeigt wird, wenn es keine verfügbaren Zeiten für ausgewählten "
 "Tag gibt."
 
-#: templates/basicpackage.php:17
-msgid "Texts and Translations"
-msgstr "Texte und Übersetzungen"
+#: functions/feedback.php:89
+msgid "Thank you for your feedback."
+msgstr ""
 
-#: templates/frontend.php:295
+#: templates/frontend.php:317
+msgid "Thank you for your reservation request."
+msgstr ""
+
+#: templates/frontend.php:319
 msgid "Thank you for your reservation."
 msgstr "Vielen Dank für deine Reservierung"
 
-#: templates/frontend.php:302
-msgid ""
-"A confirmation email has been sent to you, "
-"should you not receive it, please rest assured that your booking has been "
-"received and is confirmed. If you wish you may contact us by phone to "
-"confirm."
-msgstr ""
-"Vielen Dank für Deine Reservierung. Eine E-Mail-Bestätigung ist schon auf "
-"dem Weg zu Dir. Solltest Du sie nicht innerhalb der nächsten Minuten "
-"empfangen, prüfe bitte Deinen Spam-Ordner. Deine Reservierung ist aber auf "
-"jeden Fall bestätigt und in unserem System unter der Reservierungsnummer "
-"hinterlegt. Wir freuen uns auf Deinen Besuch!“"
-
-#: templates/frontend.php:300
-msgid ""
-"Thank you for your reservation. We have received your request and will "
-"process it shortly. Please note that your reservation is not confirmed until "
-"you receive written confirmation from us."
-msgstr ""
-"Vielen Dank für deine Reservierungsanfrage. Wir werden diese "
-"schnellstmöglich bearbeiten. Bitte beachte, dass die Reservierung erst "
-"bestätigt ist, wenn wir dich mit einer weiteren E-Mail hierüber informieren."
-
-#: templates/admin.php:587
+#: templates/admin.php:807
 msgid ""
 "The confirmation email will be sent out from info@reservationdiary.eu. When "
 "the client replies to confirmation email, you will receive it."
@@ -1065,24 +1542,24 @@ msgstr ""
 "Die Reservierungsbesätigungs E-Mail wird von info@reservationdiary.eu "
 "versendet. Wenn der Kunde hierauf antwortet, erhalten Sie die E-Mail."
 
-#: templates/admin.php:584
+#: templates/admin.php:801
 msgid ""
 "The confirmation email will be sent out from your email set in WordPress."
 msgstr ""
 "Die Reservierungsbestätigung E-Mail wird auf Ihrem in WordPress hinterlegten "
 "E-Mail-Postfach versendet."
 
-#: templates/admin_ajaxed.php:335
+#: templates/admin_ajaxed.php:269
 msgid ""
 "The contact number of restaurant. It could have the format [area code] "
 "[phone number]"
 msgstr "Kontaktrufnummer (Format [Ortsvorwahl] [Rufnummer])"
 
-#: templates/admin_ajaxed.php:245
+#: templates/admin_ajaxed.php:143
 msgid "The country of restaurant can be mentioned here."
 msgstr "Land"
 
-#: templates/admin_ajaxed.php:320
+#: templates/admin_ajaxed.php:218
 msgid ""
 "The email addresses of recipients who should be sent the copies of "
 "reservation emails. You can separate multiple recipients using commas."
@@ -1090,15 +1567,23 @@ msgstr ""
 "Kopien der Reservierungsbestätigungs-E-Mails werden an dieser Adressen "
 "versendet (mehrere Adressen durch Kommata trennen)."
 
-#: templates/admin_ajaxed.php:225
+#: templates/admin.php:262
+msgid ""
+"The enabled feedback collection option allows users of the reservation form "
+"to provide valuable input for improving the plugin. By keeping this option "
+"enabled, you can continuously enhance the plugin based on user feedback, "
+"ensuring an exceptional reservation experience for restaurant visitors."
+msgstr ""
+
+#: templates/admin_ajaxed.php:123
 msgid "The name of the restaurant is to be specified here."
 msgstr "Die Name des Restaurants ist hier anzugeben."
 
-#: templates/admin_ajaxed.php:260
+#: templates/admin_ajaxed.php:158
 msgid "The restaurant city is to be specified in this field."
 msgstr "Stadt"
 
-#: templates/admin_ajaxed.php:491
+#: templates/admin.php:343
 msgid ""
 "The way date format is displayed on the date control. You can select from a "
 "drop down list of different date formats."
@@ -1106,29 +1591,38 @@ msgstr ""
 "Datumseinstellung. Du kannst aus einer Drop-Down-Liste zwischen "
 "verschiedenen Anzeigemöglichkeiten auswählen."
 
-#: templates/admin.php:581
+#: templates/admin.php:798
+#, fuzzy
+#| msgid ""
+#| "The way you want confirmation email to be delivered to the client. It can "
+#| "be \"From WordPress email account\", \"From reservationdiary.eu\" or "
+#| "\"Disable confirmation email\"."
 msgid ""
 "The way you want confirmation email to be delivered to the client. It can be "
-"\"From WordPress email account\", \"From reservationdiary.eu\" or \"Disable "
-"confirmation email\"."
+"\"From WordPress email account\", \"From reservationdiary.eu\", \"Custom "
+"SMTP\" or \"Disable confirmation email\"."
 msgstr ""
 "Wie sollen die Bestätigungs-E-Mail an die Gäste versandt werden? Du kannst "
 "sie über den in WordPress eingestellten E-Mail-Account oder über unseren "
 "Server (reservationdiary.eu) versenden lassen. Alternativ kannst du den "
 "Versand auch deaktiveren."
 
-#: templates/admin_ajaxed.php:290
+#: templates/admin_ajaxed.php:188
 msgid "The website address of the restaurant."
 msgstr "Webadresse"
 
-#: templates/frontend.php:312 templates/frontend.php:321
+#: templates/frontend.php:341 templates/frontend.php:350
 msgid "There are no more reservation can be made for this day."
 msgstr ""
 "An diesem Tag können online keine weiteren Reservierungen angenommen werden. "
 "Bitte rufe uns unter 02151/9421691 an und wir schauen gerne, ob wir noch "
 "einen Platz für dich und deine Begleitung finden können."
 
-#: templates/admin_ajaxed.php:61
+#: redi-restaurant-reservation.php:1437
+msgid "There are no more reservations can be made for selected day."
+msgstr ""
+
+#: templates/admin_ajaxed.php:105
 msgid ""
 "This <b>ID</b> associated with your place. The <b>ID</b> can be used as a "
 "short code for specifying the place of reservation in case of multiple "
@@ -1138,7 +1632,7 @@ msgstr ""
 "eines Shortcodes zum spezifizieren des Platzes genutzt werden. <br/>"
 "Beispiels Shortcode:"
 
-#: templates/admin_ajaxed.php:51
+#: templates/admin_ajaxed.php:92
 msgid ""
 "This field lets you edit settings for multiple places. Multiple places are "
 "available for Basic package users only."
@@ -1146,26 +1640,33 @@ msgstr ""
 "Über dieses Menü kannst du die Einstellungen für mehrere Standorte verändern."
 " Dies ist nur im Basic-Paket möglich."
 
-#: templates/admin.php:249
+#: templates/admin.php:305
 msgid ""
 "This field lets you select the style in which the calendar control is "
 "displayed. It can be either \"Show on click\" or \"Always show”."
 msgstr "Mit dieser Einstellung kannst du das Aussehen des Kalenders ändern."
 
-#: templates/admin.php:474
+#: templates/admin.php:368
 msgid ""
 "This field lets you select the way time picker is displayed. You can choose "
 "from \"jQuery plugin\" and \"HTML dropdown\"."
 msgstr "Mit dieser Einstellung kannst du die Art der Zeitauswahl definieren."
 
-#: templates/admin_ajaxed.php:373
+#: templates/admin.php:483
+msgid ""
+"This is how the available time will be shown. This setting is taken from "
+"generic WordPress settings. You can change it in Settings -> General -> Time "
+"Format"
+msgstr ""
+
+#: templates/admin_ajaxed.php:404
 msgid ""
 "This is the number of maximum persons in restaurant at any time. System will "
 "check automatically availability of free seats and will not allow to go "
 "beyond this number."
 msgstr "Dies ist die maximale Sitzplatzanzahl im Restaurant zu allen Zeiten. "
 
-#: templates/basicpackage.php:15
+#: templates/basicpackage.php:16
 msgid ""
 "This is your registration key. Please use it when you send request for "
 "support."
@@ -1173,15 +1674,25 @@ msgstr ""
 "Dies ist deine Registrierungsnummer. Bitte teile sie uns bei allen Anfragen "
 "mit."
 
-#: templates/admin.php:255
+#: templates/admin.php:311
 msgid "This option sets the calendar control to display all the time."
 msgstr "Diese Option aktiviert die dauerhafte Kalenderanzeige."
 
-#: templates/modify.php:29 templates/frontend.php:79 templates/frontend.php:202
+#: redi-restaurant-reservation.php:1436
+msgid "This time is fully booked"
+msgstr ""
+
+#: templates/confirm.php:28 templates/frontend.php:124
+#: templates/frontend.php:217 templates/frontend_v2.php:46
+#: templates/modify.php:29
 msgid "Time"
 msgstr "Zeit"
 
-#: templates/admin.php:477
+#: templates/admin.php:474
+msgid "Time format"
+msgstr ""
+
+#: templates/admin.php:371
 msgid ""
 "Time picker type if selected to be jQuery plugin, it is set to pop up with "
 "the hour and time."
@@ -1189,46 +1700,71 @@ msgstr ""
 "Wenn bei Zeitauswahl das jQuery-Plugin ausgewählt ist, wird in einem Pop-Up "
 "eine Stunden- und Minutenauswahl angezeigt."
 
-#: templates/admin.php:457
+#: templates/admin.php:351
 msgid "TimePicker type"
 msgstr "Zeitauswahl-Typ"
 
-#: templates/admin.php:345
+#: templates/admin.php:492
 msgid "TimeShift Mode"
 msgstr "TimeShift-Modus"
+
+#: templates/admin_welcome.php:23
+msgid ""
+"To schedule your session, simply click the image below: We provide "
+"complimentary one-on-one assistance for plugin setup. You can book a call "
+"with us through Calendly or reach out to us via Skype, Facebook ir Whatsapp. "
+"Links are below."
+msgstr ""
+
+#: redi-restaurant-reservation.php:219
+msgid "Try Premium"
+msgstr ""
+
+#: redi-restaurant-reservation.php:2115
+msgid ""
+"Unable to find reservation with provided information. Please verify that "
+"provided reservation number and phone or name or email is correct."
+msgstr ""
+
+#: templates/admin_ajaxed.php:418
+msgid "Unlimited"
+msgstr ""
 
 #: templates/modify.php:23 templates/modify.php:65
 msgid "Update reservation"
 msgstr "Reservierung aktualisieren"
 
-#: templates/admin_ajaxed.php:282
+#: templates/admin_ajaxed.php:180
 msgid "URL"
 msgstr "URL"
 
-#: templates/basicpackage.php:55
-msgid ""
-"Use your Facebook account for your business. Make clients from your Facebook "
-"fans."
+#: templates/admin.php:153
+msgid "User guide"
 msgstr ""
-"Nutze deinen Facebook-Account - generiere Kunden aus deinen Facebook-Fans."
 
-#: templates/admin.php:127
-msgid "User guideline"
-msgstr "Benutzerhandbuch"
-
-#: templates/admin.php:120
+#: templates/admin.php:143
 msgid "Version"
 msgstr "Version"
 
-#: templates/admin.php:125
+#: templates/admin.php:214 templates/admin.php:467 templates/admin.php:643
+#: templates/admin.php:742 templates/admin.php:838 templates/admin.php:880
+msgid "Video Tutorial"
+msgstr ""
+
+#: templates/admin_ajaxed.php:72 templates/admin_ajaxed.php:332
+#: templates/admin_ajaxed.php:385 templates/admin_ajaxed.php:497
+msgid "Video tutorial"
+msgstr ""
+
+#: templates/admin.php:150
 msgid "Video tutorials"
 msgstr "Erklärvideos"
 
-#: templates/basicpackage.php:56
-msgid "View presentation."
-msgstr "Zeige Präsentation."
+#: redi-restaurant-reservation.php:233
+msgid "View the help documentation for ReDi Restaurant Reservations plugin"
+msgstr ""
 
-#: templates/basicpackage.php:32
+#: templates/basicpackage.php:36
 msgid ""
 "View your upcoming reservations from your Mobile/Tablet PC and never miss "
 "your customer. This page should be open on a Tablet PC and so hostess can "
@@ -1246,15 +1782,31 @@ msgstr ""
 "neue Reservierung anlegen. Die Demo-Version kann 30 Tage unter diesem Link "
 "getestet werden:"
 
-#: templates/admin.php:682
+#: templates/confirm.php:3
+msgid "Visit confirmation"
+msgstr ""
+
+#: templates/admin.php:715
 msgid "Visit Google site"
 msgstr "Google site besuchen"
 
-#: templates/admin.php:689 templates/frontend.php:340
+#: templates/confirm.php:50
+msgid "Visit has been successfully confirmed."
+msgstr ""
+
+#: redi-restaurant-reservation.php:2101
+msgid "Visit not confimed by the guest."
+msgstr ""
+
+#: templates/admin.php:625 templates/frontend.php:419
 msgid "Wait List"
 msgstr "Warteliste"
 
-#: templates/basicpackage.php:57
+#: redi-restaurant-reservation.php:1185 redi-restaurant-reservation.php:1186
+msgid "Waiter Dashboard"
+msgstr ""
+
+#: templates/basicpackage.php:60
 msgid ""
 "We can offer you white labeled restaurant reservation application for "
 "Facebook Application, iPhone/iPad Application, Windows Phone Application or "
@@ -1263,18 +1815,65 @@ msgstr ""
 "Wir bieten auch Apps für Facebook, iPhone/iPad, Windows Phone und Android an."
 " Sprich uns gerne an."
 
-#: templates/frontend.php:23
+#: templates/frontend.php:325
+msgid ""
+"We wish to inform you that your booking request has been received. We "
+"are checking availability and will get back to you as soon as possible. "
+"Please wait confirmation of your reservation."
+msgstr ""
+
+#: templates/confirm.php:4
+msgid ""
+"We would like to know if you will be visiting us today. Please confirm or "
+"cancel your reservation by clicking the appropriate button below. If the "
+"reservation is not confirmed, we reserve the right to cancel it from our "
+"side."
+msgstr ""
+
+#: templates/admin_welcome.php:32
+msgid "We're here to provide the support you need."
+msgstr ""
+
+#: templates/admin_ajaxed.php:338
+msgid "Weekday"
+msgstr ""
+
+#: redi-restaurant-reservation.php:1147 redi-restaurant-reservation.php:1148
+msgid "Welcome"
+msgstr ""
+
+#: templates/frontend.php:25
 msgid "Welcome back"
 msgstr "Willkommen zurück"
 
-#: templates/admin.php:137
-msgid "WhatsApp"
+#: templates/admin_welcome_no_key.php:3 templates/admin_welcome_no_page.php:3
+msgid "Welcome to the ReDi Restaurant Reservation plugin"
+msgstr ""
+
+#: templates/frontend.php:408
+msgid "What we can do better?"
+msgstr ""
+
+#: templates/admin.php:64
+#, fuzzy
+#| msgid "WhatsApp"
+msgid "Whatsapp"
 msgstr "WhatsApp"
 
-#: templates/admin.php:427
+#: templates/admin_welcome.php:30 templates/basicpackage.php:27
+msgid "whatsapp"
+msgstr ""
+
+#: templates/admin.php:682
+#, fuzzy
+#| msgid ""
+#| "When enabled guests has to enter their phone number with country code. "
+#| "This is most useful when there is a good amount of foreing visitors. Also "
+#| "this option has to be enabled when SMS addon is in use, as SMS Providers "
+#| "requires full phone number."
 msgid ""
 "When enabled guests has to enter their phone number with country code. This "
-"is most useful when there is a good amount of foreing visitors. Also this "
+"is most useful when there is a good amount of foreign visitors. Also this "
 "option has to be enabled when SMS addon is in use, as SMS Providers requires "
 "full phone number."
 msgstr ""
@@ -1284,7 +1883,7 @@ msgstr ""
 "SMS-Addon genutzt wird, da der SMS Provider die Angabe der vollständigen "
 "Rufnummer mit vorangestelltem Ländercode benötigt."
 
-#: templates/admin.php:407
+#: templates/admin.php:536
 msgid ""
 "When this enabled, start and end of reservation time will be displayed. This "
 "is useful when you want to inform the guest about fixed reservation time "
@@ -1294,7 +1893,7 @@ msgstr ""
 "Reservierung angezeigt. Dies ist nützlich, wenn Gäste über einen "
 "festgelegten Reservierungszeitraum informiert werden sollen."
 
-#: templates/admin.php:698
+#: templates/admin.php:634
 msgid ""
 "When this option is enabled, guest will have an opportunity to fill out Wait "
 "List form in case it's fully booked. Then if someone cancels reservation, "
@@ -1304,7 +1903,7 @@ msgstr ""
 "der Tag schon ausreserviert ist. Wenn eine bestehende Reservierung storniert "
 "wird, kann der Gast kontaktiert und ihm eine Reservierung angeboten werden."
 
-#: templates/admin.php:387
+#: templates/admin.php:663
 msgid ""
 "When this option is enabled, then guest has to provide first and last name "
 "separately when filling reservation form. Otherwise Name is collected in a "
@@ -1314,7 +1913,14 @@ msgstr ""
 "Ausfüllen des Reservierungsformular angeben. Ansonsten wird nur ein Name "
 "gefordert."
 
-#: templates/admin.php:480
+#: templates/admin.php:897
+msgid ""
+"When translating the plugin, save translations in a separate folder outside "
+"the plugin directory. Then, provide the file path with translated strings in "
+"this setting to avoid issues with updates."
+msgstr ""
+
+#: templates/admin.php:374
 msgid ""
 "With this option selected, the Time Picker is shown to be simple dropdown "
 "for selecting the hour and time."
@@ -1322,27 +1928,42 @@ msgstr ""
 "Wenn diese Option aktiviert ist, wird die Zeitauswahl als Drop-Down-Menü "
 "(Stunden / Minuten) angezeigt."
 
-#: templates/admin.php:590
+#: templates/admin.php:810
 msgid "With this option, confirmation email is not sent to the client."
 msgstr ""
 "Mit dieser Option wird die E-Mail Benachrichtigung an den Kunden deaktiviert."
 
-#: templates/admin_ajaxed.php:379
+#: templates/admin_ajaxed.php:331
 msgid "Working time"
 msgstr "Öffnungszeiten"
 
-#: templates/admin_ajaxed.php:418
+#: templates/admin_welcome_no_page.php:12
+msgid ""
+"You can create dedicated reservation page below, or you can skip this step "
+"and create page manually. When you create page manually, insert "
+"[redireservation] shortcode to the page."
+msgstr ""
+
+#: templates/admin_ajaxed.php:373
 msgid ""
 "You can specify the working time of restaurant by setting the opening time "
 "and closing time for each day of the week."
 msgstr ""
 "Du kannst die Öffnungszeiten für jeden Wochentag individuell einstellen."
 
-#: templates/admin_welcome.php:2
+#: redi-restaurant-reservation.php:2240 redi-restaurant-reservation.php:2289
+msgid "You do not have permission to access this call."
+msgstr ""
+
+#: templates/admin_welcome.php:4
 msgid "You plugin is active. Your API Key is"
 msgstr "Dein Plugin ist aktiv. Dein API-Schlüssel lautet "
 
-#: templates/frontend.php:409
+#: templates/admin_welcome.php:16
+msgid "Your API key is :"
+msgstr ""
+
+#: templates/frontend.php:485
 msgid ""
 "Your information has been saved successfully and you will be notified once "
 "there are available seats for requested date."
@@ -1350,14 +1971,18 @@ msgstr ""
 "Deine Angaben wurden erfolgreich gespeichert und du wirst informiert wenn "
 "Plätze an dem gewählten Tag frei werden sollten."
 
-#: templates/frontend.php:306
+#: templates/frontend.php:334
 msgid "Your reservation number for reference:"
 msgstr "Bitte notiere dir deine Reservierungsnummer: "
 
-#: templates/admin.php:151
+#: templates/frontend.php:332
+msgid "Your reservation request number for reference:"
+msgstr ""
+
+#: templates/admin.php:186
 msgid "Your settings have been saved!"
 msgstr "Deine Einstellungen wurden gespeichert"
 
-#: templates/admin.php:318
+#: templates/admin.php:441
 msgid "Сhildren selection"
 msgstr "Kinderbezogene Einstellungen"

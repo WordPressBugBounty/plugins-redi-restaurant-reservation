@@ -666,7 +666,12 @@ jQuery(function () {
 
                             for (var availability in response) {
 
-                                if (response[availability]['Name'] !== undefined) {
+                                // Check if display_time_shift is set and matches Name, or if display_time_shift is not set
+                                var shouldRenderAll = typeof redi_restaurant_reservation.display_time_shift === 'undefined' || !redi_restaurant_reservation.display_time_shift;
+                                var nameMatches = response[availability]['Name'] && response[availability]['Name'].toLowerCase() === redi_restaurant_reservation.display_time_shift?.toLowerCase();
+                            
+                                if (shouldRenderAll || nameMatches) {
+                                    // Render available time(s)
                                     var html = '<div>';
 
                                     if (!hidesteps) {
@@ -846,21 +851,28 @@ jQuery(function () {
     }
 
     function getCustomFields() {
-
+        const placeId = jQuery('#placeID').val();
+        const customFieldsRenderer = ReDiCustomFields.getInstance();
+        
+        // Check if fields are already loaded for this place
+        if (customFieldsRenderer.isLoaded(placeId)) {
+            return;
+        }
+        
         jQuery('#RediCustomFields').show();
-
-        var data = {
-            action: 'redi_restaurant-submit',
-            get: 'get_custom_fields',
-            placeID: jQuery('#placeID').val(),
-            lang: locale,
-            apikeyid: apikeyid,
-        };
-
-        jQuery.post(redi_restaurant_reservation.ajaxurl, data, function (response) {
-            jQuery('#custom_fields_container').html(JSON.parse(response))
-            jQuery('#RediCustomFields').hide();
-        });
+        
+        jQuery.get(
+            `${redi_restaurant_reservation.rest_url}places/${placeId}/custom-fields`, 
+            {
+                placeID: placeId,
+                lang: locale,
+                apikeyid: apikeyid
+            },
+            function(response) {
+                customFieldsRenderer.renderFields(response, placeId);
+                jQuery('#RediCustomFields').hide();
+            }
+        );
     }
 
     //Cancel reservation
