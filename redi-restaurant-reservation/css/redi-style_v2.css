@@ -1,1301 +1,3631 @@
 @charset "UTF-8";
 
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+.redi-app {
+  --font: 'Inter';
+  --very-light-pink: #dedede;
+  --helper-2-warning-primary: #ff9f00;
+  --helper-3-negative-pimary: #ff3921;
+  --on-background-or-surface-1-primary: #171d29;
+  --accent-1-primary-1-default: #0072ff;
+  --helper-6-negative-secondary: rgba(255, 57, 33, 0.08);
+  --on-accent-1-primary: #ffffff;
+  --helper-4-positive-secondary: rgba(103, 221, 45, 0.08);
+  --background-2-overlay: rgba(23, 29, 41, 0.72);
+  --helper-5-warning-secondary: rgba(255, 159, 0, 0.08);
+  --additional-additional-1: #6866ff;
+  --additional-additional-2: #00c2ee;
+  --additional-additional-4: #96b2b8;
+  --surface-1-accent: rgba(23, 29, 41, 0.08);
+  --additional-additional-5: #f5b9b1;
+  --additional-additional-3: #dd6fbf;
+  --helper-1-positive-primary: #67dd2d;
+  --accent-3-tertiary-2-hover: #ebf4ff;
+  --accent-1-primary-2-hover: #0055d4;
+}
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+.has-redi-app {
+  padding: 0 !important;
+  margin: 0 auto !important;
+}
+
+.redi-app div,
+.redi-app span,
+.redi-app applet,
+.redi-app object,
+.redi-app iframe,
+.redi-app h1,
+.redi-app h2,
+.redi-app h3,
+.redi-app h4,
+.redi-app h5,
+.redi-app h6,
+.redi-app p,
+.redi-app blockquote,
+.redi-app pre,
+.redi-app a,
+.redi-app abbr,
+.redi-app acronym,
+.redi-app address,
+.redi-app big,
+.redi-app cite,
+.redi-app code,
+.redi-app del,
+.redi-app dfn,
+.redi-app em,
+.redi-app img,
+.redi-app ins,
+.redi-app kbd,
+.redi-app q,
+.redi-app s,
+.redi-app samp,
+.redi-app small,
+.redi-app strike,
+.redi-app strong,
+.redi-app sub,
+.redi-app sup,
+.redi-app tt,
+.redi-app var,
+.redi-app b,
+.redi-app u,
+.redi-app i,
+.redi-app center,
+.redi-app dl,
+.redi-app dt,
+.redi-app dd,
+.redi-app ol,
+.redi-app ul,
+.redi-app li,
+.redi-app fieldset,
+.redi-app form,
+.redi-app label,
+.redi-app legend,
+.redi-app table,
+.redi-app caption,
+.redi-app tbody,
+.redi-app tfoot,
+.redi-app thead,
+.redi-app tr,
+.redi-app th,
+.redi-app td,
+.redi-app article,
+.redi-app aside,
+.redi-app canvas,
+.redi-app details,
+.redi-app embed,
+.redi-app figure,
+.redi-app figcaption,
+.redi-app footer,
+.redi-app header,
+.redi-app hgroup,
+.redi-app menu,
+.redi-app nav,
+.redi-app output,
+.redi-app ruby,
+.redi-app section,
+.redi-app summary,
+.redi-app time,
+.redi-app mark,
+.redi-app audio,
+.redi-app video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+.redi-app article,
+.redi-app aside,
+.redi-app details,
+.redi-app figcaption,
+.redi-app figure,
+.redi-app footer,
+.redi-app header,
+.redi-app hgroup,
+.redi-app menu,
+.redi-app nav,
+.redi-app section {
+  display: block;
+}
+
+.redi-app ol,
+.redi-app ul {
+  list-style: none;
+}
 
 @font-face {
-  font-family: "redi-icons";
-  src: url("../fonts/redi-icons.eot?872796");
-  src: url("../fonts/redi-icons.eot?872796#iefix") format("embedded-opentype"), url("../fonts/redi-icons.woff2?872796") format("woff2"), url("../fonts/redi-icons.woff?872796") format("woff"), url("../fonts/redi-icons.ttf?872796") format("truetype"), url("../fonts/redi-icons.svg?872796#redi-icons") format("svg");
-  font-weight: normal;
+  font-family: 'Inter';
+  src: url('../fonts/v2/Inter-Regular.eot');
+  src: url('../fonts/v2/Inter-Regular.woff2') format('woff2'),
+    url('../fonts/v2/Inter-Regular.woff') format('woff'),
+    url('../fonts/v2/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/v2/Inter-Medium.eot');
+  src: url('../fonts/v2/Inter-Medium.woff2') format('woff2'),
+    url('../fonts/v2/Inter-Medium.woff') format('woff'),
+    url('../fonts/v2/Inter-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/v2/Inter-SemiBold.eot');
+  src: url('../fonts/v2/Inter-SemiBold.woff2') format('woff2'),
+    url('../fonts/v2/Inter-SemiBold.woff') format('woff'),
+    url('../fonts/v2/Inter-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/v2/Inter-Bold.eot');
+  src: url('../fonts/v2/Inter-Bold.woff2') format('woff2'),
+    url('../fonts/v2/Inter-Bold.woff') format('woff'),
+    url('../fonts/v2/Inter-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+.redi-app {
+  min-width: 320px;
+  max-width: unset !important;
+  width: 100% !important;
+  height: -moz-fit-content;
+  height: fit-content;
+  /* overflow: auto; */
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  scroll-behavior: smooth;
+  color: var(--on-background-or-surface-1-primary);
+  position: relative;
+}
+
+.redi-app::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #fff;
+}
+
+.redi-app,
+.redi-app * {
+  box-sizing: border-box;
+  text-transform: none;
+}
+
+.redi-app address {
   font-style: normal;
 }
 
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+.redi-app mark {
+  color: var(--accent-1-primary-1-default);
+  background-color: transparent;
+}
 
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+.redi-app img {
+  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
 
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'redi-icons';
-    src: url('../font/redi-icons.svg?872796#redi-icons') format('svg');
+.redi-app a:not(.redi-button):not(.redi-link) {
+  color: inherit;
+  transition: 0.3s;
+}
+
+.redi-app a:not(.redi-button):not(.redi-link):hover {
+  text-decoration-color: transparent;
+}
+
+.redi-app b,
+.redi-app strong {
+  font-weight: 600;
+}
+
+.redi-app button {
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.redi-h1,
+.redi-h2,
+.redi-h3,
+.redi-h4,
+.redi-h5 {
+  font-weight: 600;
+}
+
+.redi-h1 {
+  font-size: 48px;
+  line-height: 1.17;
+  letter-spacing: -0.4px;
+}
+
+.redi-h2 {
+  font-size: 36px;
+  line-height: 1.56;
+}
+
+.redi-h3 {
+  font-size: 30px;
+  line-height: 1.33;
+}
+
+@media (max-width: 834px) {
+  .redi-h3 {
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: 0.2px;
   }
 }
-*/
 
-[class^=icon-]:before,
-[class*=" icon-"]:before {
-  font-family: "redi-icons";
-  font-style: normal;
-  speak: never;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  /* margin-right: .2em; */
-  text-align: center;
-  /* opacity: .8; */
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  /* margin-left: .2em; */
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-  /* Font smoothing. That was taken from TWBS */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
-}
-
-.icon-arrow-left-small:before {
-  content: "\e800";
-}
-
-/* '' */
-
-.icon-arrow-left:before {
-  content: "\e801";
-}
-
-/* '' */
-
-.icon-arrow-right-big:before {
-  content: "\e802";
-}
-
-/* '' */
-
-.icon-arrow-right-small:before {
-  content: "\e803";
-}
-
-/* '' */
-
-.icon-arrow-right:before {
-  content: "\e804";
-}
-
-/* '' */
-
-.icon-arrow-up-big:before {
-  content: "\e805";
-}
-
-/* '' */
-
-.icon-arrow-up-small:before {
-  content: "\e806";
-}
-
-/* '' */
-
-.icon-arrow-up:before {
-  content: "\e807";
-}
-
-/* '' */
-
-.icon-attach:before {
-  content: "\e808";
-}
-
-/* '' */
-
-.icon-attention:before {
-  content: "\e809";
-}
-
-/* '' */
-
-.icon-backup:before {
-  content: "\e80a";
-}
-
-/* '' */
-
-.icon-bike:before {
-  content: "\e80b";
-}
-
-/* '' */
-
-.icon-bookmark-border:before {
-  content: "\e80c";
-}
-
-/* '' */
-
-.icon-bookmark:before {
-  content: "\e80d";
-}
-
-/* '' */
-
-.icon-bus:before {
-  content: "\e80e";
-}
-
-/* '' */
-
-.icon-calendar:before {
-  content: "\e80f";
-}
-
-/* '' */
-
-.icon-car:before {
-  content: "\e810";
-}
-
-/* '' */
-
-.icon-card:before {
-  content: "\e811";
-}
-
-/* '' */
-
-.icon-cart:before {
-  content: "\e812";
-}
-
-/* '' */
-
-.icon-chart-on-surface:before {
-  content: "\e813";
-}
-
-/* '' */
-
-.icon-chart:before {
-  content: "\e814";
-}
-
-/* '' */
-
-.icon-check-circle:before {
-  content: "\e815";
-}
-
-/* '' */
-
-.icon-check:before {
-  content: "\e816";
-}
-
-/* '' */
-
-.icon-chevron-down:before {
-  content: "\e817";
-}
-
-/* '' */
-
-.icon-chevron-left:before {
-  content: "\e818";
-}
-
-/* '' */
-
-.icon-chevron-right:before {
-  content: "\e819";
-}
-
-/* '' */
-
-.icon-chevron-up:before {
-  content: "\e81a";
-}
-
-/* '' */
-
-.icon-child:before {
-  content: "\e81b";
-}
-
-/* '' */
-
-.icon-cloud-done:before {
-  content: "\e81c";
-}
-
-/* '' */
-
-.icon-cloud-download:before {
-  content: "\e81d";
-}
-
-/* '' */
-
-.icon-cloud:before {
-  content: "\e81e";
-}
-
-/* '' */
-
-.icon-comments:before {
-  content: "\e81f";
-}
-
-/* '' */
-
-.icon-copy:before {
-  content: "\e820";
-}
-
-/* '' */
-
-.icon-cross-circle:before {
-  content: "\e821";
-}
-
-/* '' */
-
-.icon-cross:before {
-  content: "\e822";
-}
-
-/* '' */
-
-.icon-delete:before {
-  content: "\e823";
-}
-
-/* '' */
-
-.icon-dollar:before {
-  content: "\e824";
-}
-
-/* '' */
-
-.icon-double-check:before {
-  content: "\e825";
-}
-
-/* '' */
-
-.icon-download:before {
-  content: "\e826";
-}
-
-/* '' */
-
-.icon-edit:before {
-  content: "\e828";
-}
-
-/* '' */
-
-.icon-euro:before {
-  content: "\e829";
-}
-
-/* '' */
-
-.icon-eye-close:before {
-  content: "\e82a";
-}
-
-/* '' */
-
-.icon-eye:before {
-  content: "\e82b";
-}
-
-/* '' */
-
-.icon-flag:before {
-  content: "\e82c";
-}
-
-/* '' */
-
-.icon-folder:before {
-  content: "\e82d";
-}
-
-/* '' */
-
-.icon-gallery:before {
-  content: "\e82e";
-}
-
-/* '' */
-
-.icon-geo:before {
-  content: "\e82f";
-}
-
-/* '' */
-
-.icon-heart-line:before {
-  content: "\e830";
-}
-
-/* '' */
-
-.icon-heart:before {
-  content: "\e831";
-}
-
-/* '' */
-
-.icon-help:before {
-  content: "\e832";
-}
-
-/* '' */
-
-.icon-history:before {
-  content: "\e833";
-}
-
-/* '' */
-
-.icon-home:before {
-  content: "\e834";
-}
-
-/* '' */
-
-.icon-image:before {
-  content: "\e835";
-}
-
-/* '' */
-
-.icon-link:before {
-  content: "\e836";
-}
-
-/* '' */
-
-.icon-location:before {
-  content: "\e837";
-}
-
-/* '' */
-
-.icon-lock:before {
-  content: "\e838";
-}
-
-/* '' */
-
-.icon-mail:before {
-  content: "\e839";
-}
-
-/* '' */
-
-.icon-map:before {
-  content: "\e83a";
-}
-
-/* '' */
-
-.icon-mic-off:before {
-  content: "\e83b";
-}
-
-/* '' */
-
-.icon-mic:before {
-  content: "\e83c";
-}
-
-/* '' */
-
-.icon-minus:before {
-  content: "\e83d";
-}
-
-/* '' */
-
-.icon-mobile:before {
-  content: "\e83e";
-}
-
-/* '' */
-
-.icon-more-horiz:before {
-  content: "\e83f";
-}
-
-/* '' */
-
-.icon-more-vert:before {
-  content: "\e840";
-}
-
-/* '' */
-
-.icon-notifications-off:before {
-  content: "\e841";
-}
-
-/* '' */
-
-.icon-notifications:before {
-  content: "\e842";
-}
-
-/* '' */
-
-.icon-offer:before {
-  content: "\e843";
-}
-
-/* '' */
-
-.icon-new-tab:before {
-  content: "\e844";
-}
-
-/* '' */
-
-.icon-pause:before {
-  content: "\e845";
-}
-
-/* '' */
-
-.icon-phone:before {
-  content: "\e846";
-}
-
-/* '' */
-
-.icon-person:before {
-  content: "\e847";
-}
-
-/* '' */
-
-.icon-photo-camera:before {
-  content: "\e848";
-}
-
-/* '' */
-
-.icon-placeholder:before {
-  content: "\e849";
-}
-
-/* '' */
-
-.icon-play-circle:before {
-  content: "\e84a";
-}
-
-/* '' */
-
-.icon-play:before {
-  content: "\e84b";
-}
-
-/* '' */
-
-.icon-plus-circle:before {
-  content: "\e84c";
-}
-
-/* '' */
-
-.icon-plus:before {
-  content: "\e84d";
-}
-
-/* '' */
-
-.icon-profile:before {
-  content: "\e84e";
-}
-
-/* '' */
-
-.icon-qr:before {
-  content: "\e84f";
-}
-
-/* '' */
-
-.icon-refresh:before {
-  content: "\e850";
-}
-
-/* '' */
-
-.icon-restaurant:before {
-  content: "\e851";
-}
-
-/* '' */
-
-.icon-scan:before {
-  content: "\e852";
-}
-
-/* '' */
-
-.icon-run:before {
-  content: "\e853";
-}
-
-/* '' */
-
-.icon-search:before {
-  content: "\e854";
-}
-
-/* '' */
-
-.icon-send:before {
-  content: "\e855";
-}
-
-/* '' */
-
-.icon-settings:before {
-  content: "\e856";
-}
-
-/* '' */
-
-.icon-shield:before {
-  content: "\e857";
-}
-
-/* '' */
-
-.icon-signal-off:before {
-  content: "\e858";
-}
-
-/* '' */
-
-.icon-signal-on:before {
-  content: "\e859";
-}
-
-/* '' */
-
-.icon-star:before {
-  content: "\e85a";
-}
-
-/* '' */
-
-.icon-swap-horiz:before {
-  content: "\e85b";
-}
-
-/* '' */
-
-.icon-swap-vert-circle:before {
-  content: "\e85c";
-}
-
-/* '' */
-
-.icon-thumb-down:before {
-  content: "\e85d";
-}
-
-/* '' */
-
-.icon-thumb-up:before {
-  content: "\e85e";
-}
-
-/* '' */
-
-.icon-ticket:before {
-  content: "\e85f";
-}
-
-/* '' */
-
-.icon-touch-id:before {
-  content: "\e860";
-}
-
-/* '' */
-
-.icon-train:before {
-  content: "\e861";
-}
-
-/* '' */
-
-.icon-unfold-more:before {
-  content: "\e862";
-}
-
-/* '' */
-
-.icon-unfold-less:before {
-  content: "\e863";
-}
-
-/* '' */
-
-.icon-volume-off:before {
-  content: "\e864";
-}
-
-/* '' */
-
-.icon-volume:before {
-  content: "\e865";
-}
-
-/* '' */
-
-.icon-wallet:before {
-  content: "\e866";
-}
-
-/* '' */
-
-.icon-watch:before {
-  content: "\e867";
-}
-
-/* '' */
-
-.icon-wifi-off:before {
-  content: "\e868";
-}
-
-/* '' */
-
-.icon-2-people:before {
-  content: "\e86a";
-}
-
-/* '' */
-
-.icon-add-user:before {
-  content: "\e86b";
-}
-
-/* '' */
-
-.icon-arrow-down-big:before {
-  content: "\e86c";
-}
-
-/* '' */
-
-.icon-arrow-down:before {
-  content: "\e86d";
-}
-
-/* '' */
-
-.icon-arrow-drop-down:before {
-  content: "\e86e";
-}
-
-/* '' */
-
-.icon-arrow-left-big:before {
-  content: "\e86f";
-}
-
-/* '' */
-
-.icon-wifi:before {
-  content: "\e870";
-}
-
-/* '' */
-
-.icon-edit-1:before {
-  content: "\e871";
-}
-
-/* '' */
-
-.icon-earth:before {
-  content: "\e872";
-}
-
-/* '' */
-
-.redi-reservation-form {
-  clear: both;
-  margin: 0 auto;
-  /* Center horizontally */
-  margin-top: 60px;
-  font-family: Inter, Arial, Helvetica, sans-serif;
-  color: #171d29;
-  min-width: 240px;
-  max-width: 480px;
-}
-
-.redi-step__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  clear: both;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 40px;
-}
-
-.redi-step__item h1 {
-  width: 100%;
-  margin: 53px 49px 16px 17px;
-  font-family: Inter;
+.redi-h4 {
   font-size: 24px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.25;
   letter-spacing: 0.2px;
-  color: #171d29;
 }
 
-/* Make circles that indicate the steps of the form: */
-
-.redi-steps-nav {
-  list-style: none;
-  padding-left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+@media (max-width: 834px) {
+  .redi-h4 {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.15px;
+  }
 }
 
-.redi-steps-nav .redi-steps-nav__step {
-  position: relative;
-  display: flow-root;
-  margin-left: 92px;
+.redi-h5,
+.redi-h6 {
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.15px;
 }
 
-.redi-steps-nav .redi-steps-nav__step:last-child {
-  padding-right: 70px;
+.redi-h6 {
+  font-weight: 400;
 }
 
-.redi-steps-nav .redi-steps-nav__step:last-child .redi-steps-nav__step__line {
-  display: none;
+.redi-app .redi-container {
+  max-width: 1176px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.redi-steps-nav .redi-steps-nav__step .icon-check {
-  display: none;
+@media (max-width: 834px) {
+  .redi-app .redi-container {
+    padding: 0 10px;
+  }
 }
 
-.redi-steps-nav .redi-steps-nav__step .redi-steps-nav__step__line {
-  position: absolute;
-  width: 92px;
-  height: 2px;
-  right: -92px;
-  top: 11px;
-  background-color: #c8c9cc;
-  z-index: 1;
+.redi-app .redi-scroll-lock {
+  overflow: hidden !important;
 }
 
-.redi-steps-nav .redi-steps-nav__step .redi-steps-nav__step__number {
-  width: 40px;
+.redi-app .redi-icon {
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.redi-app .nice-select {
+  max-width: 100%;
   height: 40px;
-  padding: 10px 15px;
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 1.18;
-  letter-spacing: -0.3px;
-  color: #fff;
-  background-color: #c8c9cc;
-  border: none;
-  border-radius: 50%;
-  display: block;
-  margin-top: -8px;
-  z-index: 3;
-}
-
-.redi-steps-nav .redi-steps-nav__step .redi-steps-nav__step__description {
-  display: block;
-  text-align: center;
-  margin-top: 10px;
-  position: absolute;
-  width: 132px;
-  margin-left: -46px;
+  width: 100%;
+  padding: 10px 24px 10px 12px;
+  display: flex;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 1.25;
   letter-spacing: -0.3px;
-  color: #81858b;
-  font-size: 16px;
+  border-radius: 4px;
+  border: solid 1px #c8c9cc;
+  color: var(--on-background-or-surface-1-primary);
+  background-color: var(--on-accent-1-primary);
+  outline: none;
+  transition: none;
 }
 
-/* Mark the active step: */
-
-.redi-steps-nav__step.active .redi-steps-nav__step__number {
-  background-color: #0072ff;
+.redi-app .nice-select::after {
+  width: 6px;
+  height: 6px;
+  margin-top: -5px;
+  transition: none;
 }
 
-.redi-steps-nav__step.active .redi-steps-nav__step__description {
-  color: #171d29;
+.redi-app .nice-select .current {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: inherit;
+  line-height: inherit;
 }
 
-.redi-steps-nav__step.active .redi-steps-nav__step__progress {
-  position: absolute;
-  width: 50%;
-  height: 2px;
-  background-color: #0072ff;
-  -webkit-transition-delay: 200ms;
-          transition-delay: 200ms;
+.redi-app .nice-select-dropdown {
+  width: calc(100% + 2px);
+  left: -1px;
+  transition: none;
+  border-radius: 4px;
+  border: 1px solid #c8c9cc;
+  box-shadow: none;
 }
 
-/* Mark the steps that are finished and valid: */
-
-.redi-steps-nav__step.completed .icon-check {
-  color: #0072ff;
-  width: 40px;
-  height: 40px;
+.redi-app .nice-select .option {
   padding: 10px 12px;
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 1.18;
-  letter-spacing: -0.3px;
-  color: #fff;
-  background-color: #0072ff;
-  border: none;
-  border-radius: 50%;
-  display: block;
-  margin-top: -8px;
-  z-index: 3;
+  line-height: inherit;
 }
 
-.redi-steps-nav__step.completed .redi-steps-nav__step__number {
+.redi-app .nice-select .option.selected {
+  font-weight: 600;
+}
+
+.redi-app .nice-select .option.selected.disabled {
   display: none;
 }
 
-.redi-steps-nav__step.completed .redi-steps-nav__step__description {
-  color: #0072ff;
+.redi-app .nice-select.open::after {
+  border-color: var(--accent-1-primary-1-default);
 }
 
-.redi-steps-nav__step.completed .redi-steps-nav__step__progress {
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: #0072ff;
-}
-
-.redi-place-container {
-  width: 100%;
-}
-
-.redi-places {
-  border-radius: 5px;
-  -webkit-box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.1);
-  border: solid 1px #ededee;
-  background-color: #ffffff;
-  padding: 10px;
+.redi-app .redi-button {
+  padding: 10px 24px;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  transition: 0.3s;
   cursor: pointer;
 }
 
-.redi-places .place-not-selected {
-  height: 30px;
+.redi-app .redi-button.disabled,
+.redi-app .redi-button[disabled] {
+  pointer-events: none;
 }
 
-.redi-places .place-options {
-  display: none;
-}
-
-.redi-places .redi-place {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.redi-places .place-selected .select-place-icon,
-.redi-places .select-place-icon {
-  width: 18px;
-  height: 18px;
-  margin: auto 10px auto;
-  border-radius: 50%;
-  display: block;
-}
-
-.redi-places .place-selected .select-place-icon {
-  font-size: 12px;
+.redi-app .redi-button--primary {
+  font-size: 17px;
   font-weight: 700;
   line-height: 1.18;
   letter-spacing: -0.3px;
-  color: #fff;
-  background-color: #0072ff;
-  border: none;
-  padding: 2px 3px;
+  color: var(--on-accent-1-primary);
+  background-color: var(--accent-1-primary-1-default);
 }
 
-.redi-places .select-place-icon {
-  background-color: #c8c9cc;
-  border: none;
+.redi-app .redi-button--primary.disabled,
+.redi-app .redi-button--primary[disabled] {
+  color: var(--on-background-or-surface-1-primary);
+  background-color: var(--very-light-pink);
 }
 
-.redi-places .select-place-option-icon {
-  width: 18px;
-  height: 18px;
-  margin: auto 10px auto;
+.redi-app .redi-button--primary:hover,
+.redi-app .redi-button--primary:active {
+  background-color: var(--accent-1-primary-2-hover);
+}
+
+.redi-app .redi-button--underline {
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  color: var(--on-background-or-surface-1-primary);
   background-color: transparent;
-  border: 2px solid #0072ff;
-  border-radius: 50%;
-  display: block;
 }
 
-.redi-places .icon-chevron-down,
-.redi-places .icon-chevron-up {
-  margin-left: auto;
+.redi-app .redi-button--underline:hover {
+  color: var(--on-accent-1-primary);
+  background-color: var(--accent-1-primary-1-default);
 }
 
-.redi-places .name {
-  font-family: Inter;
+.redi-app .redi-button--underline:active {
+  color: var(--on-accent-1-primary);
+  background-color: var(--accent-1-primary-2-hover);
+}
+
+.redi-app .redi-button--icon {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 4px;
+  column-gap: 4px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.3px;
+  color: var(--accent-1-primary-1-default);
+  background-color: var(--accent-3-tertiary-2-hover);
+}
+
+.redi-app .redi-button--icon.disabled,
+.redi-app .redi-button--icon[disabled] {
+  background-color: transparent;
+}
+
+.redi-app .redi-button--icon:hover {
+  color: var(--on-accent-1-primary);
+  background-color: var(--accent-1-primary-1-default);
+}
+
+.redi-app .redi-button--icon:active {
+  color: var(--on-accent-1-primary);
+  background-color: var(--accent-1-primary-2-hover);
+}
+
+@media (max-width: 834px) {
+  .redi-app .redi-button--icon {
+    padding: 0;
+    font-size: 14px;
+    flex-direction: row-reverse;
+    font-weight: 400;
+    -moz-column-gap: 4px;
+    column-gap: 4px;
+    background-color: transparent;
+  }
+
+  .redi-app .redi-button--icon .redi-icon {
+    min-width: 16px;
+    height: 16px;
+    width: 16px;
+  }
+}
+
+.redi-app .redi-button--facebook {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 15px;
+  column-gap: 15px;
+  cursor: default;
+  background-color: transparent;
+  border: 0;
+}
+
+.redi-app .redi-button--facebook span {
+  min-width: 230px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 4px;
+  column-gap: 4px;
+  border-radius: 4px;
   font-size: 14px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: -0.3px;
+  color: var(--on-accent-1-primary);
+  background-color: var(--accent-1-primary-1-default);
+  cursor: pointer;
+}
+
+.redi-app .redi-button--facebook span::before {
+  content: '';
+  min-width: 16px;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-image: url(../img/v2/svg/facebook.svg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  filter: brightness(0) invert(1);
+}
+
+.redi-app .redi-button--facebook:not(.active) .redi-icon {
+  display: none;
+}
+
+.redi-app .redi-button--facebook.disabled {
+  pointer-events: none;
+}
+
+@media (max-width: 834px) {
+  .redi-app .redi-button--facebook {
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+  }
+}
+
+.redi-app .redi-checkbox {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.redi-app .redi-checkbox__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset: -999;
+  opacity: 0;
+}
+
+.redi-app .redi-checkbox__input:checked + .redi-checkbox__title::before {
+  border-color: var(--accent-1-primary-1-default) !important;
+  background-color: transparent !important;
+}
+
+.redi-app .redi-checkbox__input:checked + .redi-checkbox__title::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.redi-app .redi-checkbox__title {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 8px;
+  column-gap: 8px;
+  cursor: pointer;
+}
+
+.redi-app .redi-checkbox__title::before {
+  content: '';
+  box-sizing: border-box;
+  height: 20px;
+  min-width: 20px;
+  width: 20px;
+  display: block;
+  border: solid 1px #c8c9cc;
+  background-color: var(--on-accent-1-primary);
+}
+
+.redi-app .redi-checkbox__title::after {
+  content: '';
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-image: url(../img/v2/svg/checkmark.svg);
+  background-repeat: no-repeat;
+  background-size: 80% auto;
+  background-position: center;
+  opacity: 0;
+  visibility: hidden;
+  filter: invert(1);
+}
+
+.redi-app .redi-checkbox:hover .redi-checkbox__title::before {
+  border-color: #ededee;
+  background-color: #ededee;
+}
+
+.redi-app .redi-radio {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.redi-app .redi-radio__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset: -999;
+  opacity: 0;
+}
+
+.redi-app .redi-radio__input:checked + .redi-radio__title::before {
+  border: 4px solid var(--accent-1-primary-1-default) !important;
+  background-color: transparent !important;
+}
+
+.redi-app .redi-radio__title {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 8px;
+  column-gap: 8px;
+  cursor: pointer;
+}
+
+.redi-app .redi-radio__title::before {
+  content: '';
+  box-sizing: border-box;
+  height: 16px;
+  min-width: 16px;
+  width: 16px;
+  display: block;
+  border: solid 1px #c8c9cc;
+  border-radius: 50%;
+  background-color: var(--on-accent-1-primary);
+}
+
+.redi-app .redi-radio:hover .redi-radio__title::before {
+  border-color: #ededee;
+  background-color: #ededee;
+}
+
+.redi-app .redi-link {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 4px;
+  column-gap: 4px;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.43;
   letter-spacing: -0.3px;
-  color: #171d29;
+  color: var(--accent-1-primary-1-default);
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
 }
 
-.redi-places .address {
-  font-family: Inter;
+.redi-app .redi-link .redi-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.redi-app .redi-link:hover {
+  color: var(--accent-1-primary-2-hover);
+}
+
+.redi-app .redi-route:not(.active) {
+  display: none !important;
+}
+
+.redi-app .redi-steps-indicator {
+  display: grid;
+  -moz-column-gap: 7px;
+  column-gap: 7px;
+  grid-template-columns: repeat(4, 135px);
+}
+
+.redi-app .redi-steps-indicator__step {
+  padding: 0;
+  margin: 0;
+  font-size: inherit !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  row-gap: 11px;
+  background-color: transparent;
+  border: 0;
+  position: relative;
+  grid-row: 1;
+  pointer-events: none;
+}
+
+.redi-app .redi-steps-indicator__step:nth-child(1) {
+  grid-column: 4;
+}
+
+.redi-app .redi-steps-indicator__step:nth-child(2) {
+  grid-column: 3;
+}
+
+.redi-app .redi-steps-indicator__step:nth-child(3) {
+  grid-column: 2;
+}
+
+.redi-app .redi-steps-indicator__step:nth-child(4) {
+  grid-column: 1;
+}
+
+.redi-app
+  .redi-steps-indicator__step:not(:first-child)
+  .redi-steps-indicator__circle::before {
+  content: '';
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  background-color: #c8c9cc;
+  z-index: -1;
+}
+
+.redi-app
+  .redi-steps-indicator__step:not(.active)
+  .redi-steps-indicator__circle {
+  color: var(--on-background-or-surface-1-primary);
+  background-color: #c8c9cc;
+}
+
+.redi-app
+  .redi-steps-indicator__step:not(.active)
+  .redi-steps-indicator__title {
+  font-weight: 400;
+  color: #81858b;
+}
+
+.redi-app
+  .redi-steps-indicator__step.active:first-child
+  .redi-steps-indicator__title {
+  color: var(--accent-1-primary-1-default);
+}
+
+.redi-app
+  .redi-steps-indicator__step.active:not(:first-child)
+  .redi-steps-indicator__circle::after {
+  content: '';
+  width: 50%;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  background-color: var(--accent-1-primary-1-default);
+  z-index: -1;
+}
+
+.redi-app .redi-steps-indicator__step.active ~ .redi-steps-indicator__step {
+  pointer-events: all;
+}
+
+.redi-app
+  .redi-steps-indicator__step.active
+  ~ .redi-steps-indicator__step
+  .redi-steps-indicator__circle {
+  font-size: 0;
+  background-image: url(../img/v2/svg/checkmark.svg);
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  background-position: center;
+  color: var(--on-accent-1-primary);
+  background-color: var(--accent-1-primary-1-default);
+}
+
+.redi-app
+  .redi-steps-indicator__step.active
+  ~ .redi-steps-indicator__step
+  .redi-steps-indicator__circle::before {
+  background-color: var(--accent-1-primary-1-default);
+}
+
+.redi-app
+  .redi-steps-indicator__step.active
+  ~ .redi-steps-indicator__step
+  .redi-steps-indicator__title {
+  color: var(--accent-1-primary-1-default);
+}
+
+.redi-app .redi-steps-indicator__circle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.3px;
+  color: var(--on-accent-1-primary);
+  background-color: var(--accent-1-primary-1-default);
+}
+
+.redi-app .redi-steps-indicator__title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  color: var(--on-background-or-surface-1-primary);
+}
+
+@media (max-width: 1176px) {
+  .redi-app .redi-steps-indicator {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .redi-app .redi-steps-indicator {
+    width: calc(100% + 20px);
+    margin: 0 -10px;
+    grid-template-columns: repeat(4, 33.333%);
+    -moz-column-gap: 0;
+    column-gap: 0;
+  }
+
+  .redi-app .redi-steps-indicator__step {
+    row-gap: 6px;
+  }
+
+  .redi-app .redi-steps-indicator__step:nth-child(4) {
+    padding-left: 10px;
+    align-items: flex-start;
+  }
+
+  .redi-app
+    .redi-steps-indicator__step:nth-child(4)
+    .redi-steps-indicator__circle::before {
+    width: 150%;
+    left: 10px;
+  }
+
+  .redi-app
+    .redi-steps-indicator__step:nth-child(4)
+    .redi-steps-indicator__circle::after {
+    left: 10px !important;
+    width: 75% !important;
+  }
+
+  /* зміни */
+
+  .redi-app .redi-steps-indicator__step:first-child {
+    /* padding-right: 10px; */
+    align-items: flex-end;
+  }
+
+  .redi-app
+    .redi-steps-indicator__step.active
+    ~ .redi-steps-indicator__step
+    .redi-steps-indicator__circle {
+    background-size: 15px 15px;
+  }
+
+  .redi-app
+    .redi-steps-indicator[data-redi-current-step='1']
+    .redi-steps-indicator__step:nth-child(2),
+  .redi-app
+    .redi-steps-indicator[data-redi-current-step='2']
+    .redi-steps-indicator__step:nth-child(2) {
+    padding-right: 10px;
+    align-items: flex-end;
+  }
+
+  .redi-app
+    .redi-steps-indicator[data-redi-current-step='1']
+    .redi-steps-indicator__step:nth-child(2)
+    .redi-steps-indicator__circle::before,
+  .redi-app
+    .redi-steps-indicator[data-redi-current-step='2']
+    .redi-steps-indicator__step:nth-child(2)
+    .redi-steps-indicator__circle::before {
+    width: 150%;
+    left: -10px;
+  }
+
+  .redi-app
+    .redi-steps-indicator[data-redi-current-step='2']
+    .redi-steps-indicator__step:nth-child(3)
+    .redi-steps-indicator__circle::after {
+    width: 75%;
+  }
+
+  .redi-app .redi-steps-indicator[data-redi-current-step='3'],
+  .redi-app .redi-steps-indicator[data-redi-current-step='4'] {
+    transform: translate(-33.333vw);
+  }
+
+  .redi-app
+    .redi-steps-indicator[data-redi-current-step='3']
+    .redi-steps-indicator__step:nth-child(3),
+  .redi-app
+    .redi-steps-indicator[data-redi-current-step='4']
+    .redi-steps-indicator__step:nth-child(3) {
+    padding-left: 10px;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .redi-app
+    .redi-steps-indicator[data-redi-current-step='3']
+    .redi-steps-indicator__step:nth-child(2)
+    .redi-steps-indicator__circle::before,
+  .redi-app
+    .redi-steps-indicator[data-redi-current-step='4']
+    .redi-steps-indicator__step:nth-child(2)
+    .redi-steps-indicator__circle::before {
+    width: 150%;
+  }
+
+  .redi-app
+    .redi-steps-indicator[data-redi-current-step='3']
+    .redi-steps-indicator__step:nth-child(2)
+    .redi-steps-indicator__circle::after,
+  .redi-app
+    .redi-steps-indicator[data-redi-current-step='4']
+    .redi-steps-indicator__step:nth-child(2)
+    .redi-steps-indicator__circle::after {
+    width: 75%;
+  }
+  /* зміни */
+  .redi-app .redi-steps-indicator[data-redi-current-step='3'] {
+    padding-right: 10px;
+  }
+
+  .redi-app .redi-steps-indicator__circle {
+    width: 21px;
+    height: 21px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: normal;
+  }
+
+  .redi-app .redi-steps-indicator__title {
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: normal;
+  }
+}
+
+.redi-app .redi-place-select {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.redi-app .redi-place-select__body {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.1);
+  border: solid 1px #ededee;
+  background-color: var(--on-accent-1-primary);
+  position: relative;
+  z-index: 1;
+}
+
+.redi-app .redi-place-select .redi-icon {
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #81858b;
+  z-index: 1;
+}
+
+.redi-app .redi-place-select select {
+  display: none !important;
+}
+
+.redi-app .redi-place-select__current {
+  min-height: 48px;
+  width: 100%;
+  padding: 9px 37px 10px 10px;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 8px;
+  column-gap: 8px;
+  cursor: pointer;
+}
+
+.redi-app .redi-place-select__current .redi-place-select__subtitle,
+.redi-app .redi-place-select__current .redi-place-select__address {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.redi-app .redi-place-select__item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 24px;
+}
+
+.redi-app .redi-place-select__item::before {
+  content: '';
+  box-sizing: border-box;
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  width: 16px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: solid 1px #c8c9cc;
+  border-radius: 50%;
+  background-color: var(--on-accent-1-primary);
+  transition: 0.3s;
+}
+
+.redi-app .redi-place-select__subtitle {
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -0.3px;
+}
+
+.redi-app .redi-place-select__address {
+  margin-top: -3px;
   font-size: 10px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.2;
   letter-spacing: -0.21px;
   color: #81858b;
 }
 
-.redi-places .options {
+.redi-app .redi-place-select__dropdown {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: calc(100% + 2px);
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  overflow: auto;
+  border-radius: 5px;
+  box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.1);
+  border: solid 1px var(--accent-1-primary-1-default);
+  background-color: var(--on-accent-1-primary);
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.redi-app .redi-place-select__list {
+  max-height: 240px;
+  width: 100%;
+  padding: 9px 37px 18px 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  overflow: auto;
+}
+
+.redi-app .redi-place-select__list::-webkit-scrollbar {
+  width: 21px;
+}
+
+.redi-app .redi-place-select__list::-webkit-scrollbar-track {
+  background: #c8c9cc;
+  border: solid var(--on-accent-1-primary);
+  border-width: 44px 19px 26px 0;
+}
+
+.redi-app .redi-place-select__list::-webkit-scrollbar-thumb {
+  background: var(--accent-1-primary-1-default);
+  background-clip: content-box;
+  border: solid transparent;
+  border-width: 44px 19px 26px 0;
+}
+
+.redi-app .redi-place-select__option {
+  cursor: pointer;
+}
+
+.redi-app
+  .redi-place-select__option.highlithed
+  .redi-place-select__item::before {
+  border-color: #ededee;
+  background-color: #ededee;
+}
+
+.redi-app .redi-place-select__option .redi-place-select__item:hover::before {
+  border-color: #ededee;
+  background-color: #ededee;
+}
+
+.redi-app .redi-place-select .selected .redi-place-select__item::before {
+  border: 4px solid var(--accent-1-primary-1-default);
+  background-color: transparent;
+}
+
+.redi-app .redi-place-select.open .redi-icon {
+  color: var(--accent-1-primary-1-default);
+  transform: translateY(-50%) scale(-1);
+}
+
+.redi-app .redi-place-select.open .redi-place-select__dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+.redi-app .redi-reservation-details {
+  max-width: 465px;
+  width: 100%;
+  padding: 26px 38px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  border: solid 1px #c8c9cc;
+  background-color: #f8f8f8;
+  box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.11);
+  position: relative;
+}
+
+.redi-app .redi-reservation-details__title {
+  text-align: center;
+  color: rgba(23, 29, 41, 0.75);
+}
+
+.redi-app .redi-reservation-details .redi-view-reservation {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.redi-app .redi-reservation-details .redi-view-reservation__order-info {
+  margin-top: 35px;
+}
+
+.redi-app .redi-reservation-details__cross-button {
+  padding: 0;
+  margin-left: auto;
+  margin-right: -22px;
+  border: none;
+  background-color: transparent;
+}
+
+.redi-app .redi-reservation-details__cross-button .redi-icon {
+  min-width: 16px;
+  width: 16px;
+  height: 16px;
+  color: var(--accent-1-primary-1-default);
+}
+
+@media (min-width: 835px) {
+  .redi-app .redi-reservation-details {
+    margin: 0 !important;
+  }
+
+  .redi-app .redi-reservation-details .redi-popup__close-button {
+    display: none;
+  }
+}
+
+@media (max-width: 834px) {
+  .redi-app .redi-reservation-details {
+    margin: auto;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 10px 30px 25px;
+  }
+
+  .redi-app .redi-reservation-details .redi-button.redi-popup__close-button {
+    margin-top: 55px;
+    min-width: 230px;
+  }
+}
+
+.redi-app .redi-field {
+  max-width: inherit;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--on-background-or-surface-1-primary);
+}
+
+.redi-app .redi-field__title,
+.redi-app .redi-field__required {
+  width: calc(50% - 4px);
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.redi-app .redi-field__title {
+  text-align: left;
+}
+
+.redi-app .redi-field__required {
+  text-align: right;
+  color: var(--helper-2-warning-primary);
+}
+
+.redi-app .redi-field__input,
+.redi-app .redi-field__textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  border-radius: 4px;
+  border: solid 1px #c8c9cc;
+  color: var(--on-background-or-surface-1-primary);
+  background-color: var(--on-accent-1-primary);
+  outline: none;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.redi-app .redi-field__input::-moz-placeholder,
+.redi-app .redi-field__textarea::-moz-placeholder {
+  color: #81858b;
+}
+
+.redi-app .redi-field__input::placeholder,
+.redi-app .redi-field__textarea::placeholder {
+  color: #81858b;
+}
+
+.redi-app .redi-field__input:focus-visible,
+.redi-app .redi-field__textarea:focus-visible {
+  border-color: var(--accent-1-primary-1-default);
+  background-color: var(--on-accent-1-primary);
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+.redi-app .redi-field__input::-webkit-outer-spin-button,
+.redi-app .redi-field__input::-webkit-inner-spin-button,
+.redi-app .redi-field__textarea::-webkit-outer-spin-button,
+.redi-app .redi-field__textarea::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.redi-app .redi-field__input[type='number'],
+.redi-app .redi-field__textarea[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.redi-app .redi-field__input {
+  height: 40px;
+}
+
+.redi-app .redi-field__textarea {
+  max-height: 95dvh;
+  min-height: 120px;
+  height: 120px;
+  resize: vertical;
+}
+
+.redi-app .redi-field--phone .iti {
+  width: 100%;
+}
+
+.redi-app .redi-field--phone .iti__arrow {
   display: none;
 }
 
-.place-options .redi-place {
-  padding-bottom: 8px;
+.redi-app .redi-field--phone .iti__selected-country-primary {
+  padding: 0 8px 0 12px;
 }
 
-.place-options .redi-place:first-child {
-  padding-top: 8px;
+.redi-app .redi-field--phone .iti__selected-country-primary:hover {
+  background-color: transparent !important;
 }
 
-@media (max-width: 767px) {
-  .redi-steps-nav {
-    list-style: none;
-    padding-left: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+.redi-app .redi-field--phone .iti__search-input {
+  display: none;
+}
+
+.redi-app .redi-field--phone .iti__dropdown-content {
+  height: 236px;
+  padding-bottom: 20px;
+  margin-top: 0;
+  top: 0;
+  left: 1px;
+  border-radius: 5px;
+  box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.1);
+  border: solid 1px var(--accent-1-primary-1-default);
+  background-color: var(--on-accent-1-primary);
+  overflow: hidden;
+}
+
+.redi-app .redi-field--phone .iti__country-list {
+  max-height: 236px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.5px;
+}
+
+.redi-app .redi-field--phone .iti__country-list::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 16px;
+  right: 12px;
+  background-image: url(../img/v2/svg/chevron-up.svg);
+  background-repeat: no-repeat;
+  background-size: 14px auto;
+  background-position: center;
+}
+
+.redi-app .redi-field--phone .iti__country-list::-webkit-scrollbar {
+  width: 21px;
+}
+
+.redi-app .redi-field--phone .iti__country-list::-webkit-scrollbar-track {
+  background: #c8c9cc;
+  border: solid var(--on-accent-1-primary);
+  border-width: 44px 19px 5px 0;
+}
+
+.redi-app .redi-field--phone .iti__country-list::-webkit-scrollbar-thumb {
+  background: var(--accent-1-primary-1-default);
+  background-clip: content-box;
+  border: solid transparent;
+  border-width: 44px 19px 5px 0;
+  min-height: 100px !important;
+}
+
+.redi-app .redi-field--phone .iti__country {
+  padding: 9px 7px;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 6px;
+  column-gap: 6px;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -0.3px;
+  color: var(--on-background-or-surface-1-primary);
+}
+
+.redi-app .redi-field--phone .iti__country:hover {
+  color: var(--accent-1-primary-1-default);
+}
+
+.redi-app .redi-field--phone .iti__flag,
+.redi-app .redi-field--phone .iti__flag-box {
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.redi-app .redi-field--phone .iti__dial-code {
+  color: #81858b;
+}
+
+.redi-app .redi-field--phone .iti__highlight {
+  background-color: transparent !important;
+}
+
+.redi-app .redi-field--select select {
+  position: absolute;
+}
+
+.redi-app .redi-field--rate .redi-field__title {
+  width: 100%;
+}
+
+.redi-app .redi-field--error input,
+.redi-app .redi-field--error textarea {
+  border-color: var(--helper-3-negative-pimary);
+  background-color: var(--helper-6-negative-secondary);
+}
+
+.redi-app .redi-field--error.redi-field--checkbox,
+.redi-app .redi-field--error.redi-field--radios {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid var(--helper-3-negative-pimary);
+}
+
+.redi-app .redi-field--error.redi-field--select .nice-select {
+  border-color: var(--helper-3-negative-pimary);
+  background-color: var(--helper-6-negative-secondary);
+}
+
+.redi-app .redi-message {
+  padding: 9px 14px;
+  display: flex;
+  -moz-column-gap: 9px;
+  column-gap: 9px;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -0.3px;
+  border-radius: 5px;
+  color: var(--on-background-or-surface-1-primary);
+  border: solid 1px var(--helper-2-warning-primary);
+  background-color: #fff6e6;
+}
+
+.redi-app .redi-message__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 4px;
+}
+
+.redi-app .redi-message p {
+  margin-top: 2px;
+}
+
+.redi-app .redi-message .redi-icon {
+  color: var(--helper-2-warning-primary);
+}
+
+.redi-app .redi-message--error {
+  border: solid 1px var(--helper-3-negative-pimary);
+  background-color: #ffece9;
+}
+
+.redi-app .redi-message--error .redi-icon {
+  color: var(--helper-3-negative-pimary);
+}
+
+.redi-app .redi-message--hidden {
+  display: none;
+}
+
+.redi-app .redi-contact-info {
+  max-width: inherit;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.redi-app .redi-contact-info__fields {
+  max-width: inherit;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.redi-app .redi-contact-info .redi-message {
+  margin-top: 0 !important;
+}
+
+.redi-app .redi-popup {
+  margin: auto;
+  max-width: 465px;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px 30px 25px;
+}
+
+.redi-app .redi-popup-container {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  overflow: auto;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.redi-app .redi-popup-container:not(.active) {
+  display: none;
+}
+
+.redi-app .redi-ranges {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 22px;
+}
+
+.redi-app .redi-range {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.redi-app .redi-range__head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  -moz-column-gap: 8px;
+  column-gap: 8px;
+}
+
+.redi-app .redi-range__title {
+  margin-right: auto;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.15px;
+  color: var(--on-background-or-surface-1-primary);
+}
+
+.redi-app .redi-range__message {
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: var(--helper-2-warning-primary);
+}
+
+.redi-app .redi-range__body {
+  display: flex;
+  align-items: center;
+  gap: 24px 8px;
+}
+
+.redi-app .redi-range__slider {
+  width: 100%;
+  margin-top: -24px;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.redi-app .redi-range__labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.redi-app .redi-range__label {
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  text-align: right;
+  color: #c8c9cc;
+}
+
+.redi-app .redi-range__label.active {
+  color: var(--on-background-or-surface-1-primary);
+}
+
+.redi-app .redi-range__inner {
+  width: 100%;
+  height: 12px;
+}
+
+.redi-app .redi-range__line {
+  height: 4px;
+  border-radius: 4px;
+  background-color: #ededee;
+  position: relative;
+}
+
+.redi-app .redi-range__progress {
+  max-width: 100%;
+  position: absolute;
+  left: 0%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: var(--accent-1-primary-1-default);
+}
+
+.redi-app .redi-range__range-input {
+  width: 100%;
+  height: 4px;
+  margin: 0;
+  position: absolute;
+  /* left: 0; */
+  background: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.redi-app .redi-range__range-input:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.redi-app .redi-range__range-input::-moz-range-thumb {
+  -moz-appearance: none;
+  height: 24px;
+  width: 12px;
+  pointer-events: auto;
+  border-radius: 2px;
+  box-shadow: 0 4px 12px 0 var(--surface-1-accent);
+  border: solid 1px rgba(23, 29, 41, 0.12);
+  background-color: var(--on-accent-1-primary);
+}
+
+.redi-app .redi-range__range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 24px;
+  width: 12px;
+  pointer-events: auto;
+  border-radius: 2px;
+  box-shadow: 0 4px 12px 0 var(--surface-1-accent);
+  border: solid 1px rgba(23, 29, 41, 0.12);
+  background-color: var(--on-accent-1-primary);
+}
+
+.redi-app .redi-range__field {
+  height: 40px;
+  width: 165px;
+  padding: 4px 15px 4px 18px;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 4px;
+  column-gap: 4px;
+  border-radius: 5px;
+  box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.1);
+  border: solid 1px #ededee;
+  background-color: var(--on-accent-1-primary);
+}
+
+.redi-app .redi-range__input {
+  margin-right: auto;
+  width: 101px;
+  height: 100%;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.15px;
+  color: var(--on-background-or-surface-1-primary);
+}
+
+.redi-app .redi-range__input[type='number'] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.redi-app .redi-range__input[type='number']::-webkit-inner-spin-button,
+.redi-app .redi-range__input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.redi-app .redi-range__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.redi-app .redi-range__field-button {
+  min-width: 16px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  color: #81858b;
+}
+
+.redi-app .redi-range__field-button .redi-icon {
+  min-width: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.redi-app .redi-range__field-button:hover {
+  color: var(--accent-1-primary-2-hover);
+}
+
+.redi-app .redi-range .redi-separator {
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+
+@media (max-width: 450px) {
+  .redi-app .redi-range {
+    row-gap: 24px;
   }
 
-  /* Mark the active step: */
-
-  /* Mark the steps that are finished and valid: */
-
-  .redi-steps-nav .redi-steps-nav__step {
+  .redi-app .redi-range__body {
+    flex-wrap: wrap;
+    justify-content: center;
     position: relative;
-    display: flow-root;
-    margin-left: 60px;
   }
 
-  .redi-steps-nav .redi-steps-nav__step:last-child {
-    padding-right: 70px;
-  }
-
-  .redi-steps-nav .redi-steps-nav__step:last-child .redi-steps-nav__step__line {
-    display: none;
-  }
-
-  .redi-steps-nav .redi-steps-nav__step .icon-check {
-    display: none;
-  }
-
-  .redi-steps-nav .redi-steps-nav__step .redi-steps-nav__step__line {
-    position: absolute;
-    width: 60px;
-    height: 2px;
-    right: -60px;
-    top: 11px;
-    background-color: #c8c9cc;
-    z-index: 1;
-  }
-
-  .redi-steps-nav .redi-steps-nav__step .redi-steps-nav__step__number {
-    width: 40px;
-    height: 40px;
-    padding: 10px 15px;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.18;
-    letter-spacing: -0.3px;
-    color: #fff;
-    background-color: #c8c9cc;
-    border: none;
-    border-radius: 50%;
-    display: block;
-    margin-top: -8px;
-    z-index: 3;
-  }
-
-  .redi-steps-nav .redi-steps-nav__step .redi-steps-nav__step__description {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-    position: absolute;
-    width: 100px;
-    margin-left: -30px;
-    line-height: 1.25;
-    letter-spacing: -0.3px;
-    color: #81858b;
-    font-size: 16px;
-  }
-
-  .redi-steps-nav__step.active .redi-steps-nav__step__number {
-    background-color: #0072ff;
-  }
-
-  .redi-steps-nav__step.active .redi-steps-nav__step__description {
-    color: #171d29;
-  }
-
-  .redi-steps-nav__step.active .redi-steps-nav__step__progress {
-    position: absolute;
-    width: 50%;
-    height: 2px;
-    background-color: #0072ff;
-    -webkit-transition-delay: 200ms;
-            transition-delay: 200ms;
-  }
-
-  .redi-steps-nav__step.completed .icon-check {
-    color: #0072ff;
-    width: 40px;
-    height: 40px;
-    padding: 10px 12px;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.18;
-    letter-spacing: -0.3px;
-    color: #fff;
-    background-color: #0072ff;
-    border: none;
-    border-radius: 50%;
-    display: block;
-    margin-top: -8px;
-    z-index: 3;
-  }
-
-  .redi-steps-nav__step.completed .redi-steps-nav__step__number {
-    display: none;
-  }
-
-  .redi-steps-nav__step.completed .redi-steps-nav__step__description {
-    color: #0072ff;
-  }
-
-  .redi-steps-nav__step.completed .redi-steps-nav__step__progress {
-    position: absolute;
+  .redi-app .redi-range__slider {
     width: 100%;
-    height: 2px;
-    background-color: #0072ff;
   }
 
-  .redi-steps-nav {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+  .redi-app .redi-range .redi-separator {
+    margin-right: -27px;
   }
 
-  .redi-steps-nav .redi-steps-nav__step .redi-steps-nav__step__description {
-    font-size: 14px;
+  .redi-app .redi-range__field {
+    margin: 0 auto;
   }
 }
 
-@media (max-width: 767px) and (max-width: 767px) {
-  .redi-steps-nav {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-
-  .redi-steps-nav .redi-steps-nav__step .redi-steps-nav__step__description {
-    font-size: 14px;
+@media (max-width: 834px) {
+  .redi-app .redi-ranges {
+    row-gap: 36px;
   }
 }
 
-@media (max-width: 767px) and (max-width: 425px) {
-  .redi-steps-nav {
-    zoom: 0.8;
+.redi-app .redi-calendar {
+  width: 226px;
+  min-width: 226px;
+  max-width: 226px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: var(--on-accent-1-primary);
+  color: var(--on-background-or-surface-1-primary);
+}
+
+.redi-app .redi-calendar .vanilla-calendar-header {
+  padding: 4px 10px 6px;
+  border-radius: 5px 5px 0 0;
+  background-color: var(--accent-1-primary-1-default);
+}
+
+.redi-app .redi-calendar .vanilla-calendar-month,
+.redi-app .redi-calendar .vanilla-calendar-year {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  text-align: center;
+  color: var(--on-accent-1-primary);
+}
+
+.redi-app .redi-calendar .vanilla-calendar-year {
+  display: none;
+}
+
+.redi-app .redi-calendar .vanilla-calendar-arrow {
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.redi-app .redi-calendar .vanilla-calendar-arrow::before {
+  position: static;
+  width: 16px;
+  height: 16px;
+  display: block;
+  background-image: url(../img/v2/svg/chevron-up.svg);
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: center;
+  filter: brightness(0) invert(1);
+  transform: rotate(-90deg);
+}
+
+.redi-app .redi-calendar .vanilla-calendar-arrow_next::before {
+  transform: rotate(90deg);
+}
+
+.redi-app .redi-calendar .vanilla-calendar-wrapper {
+  justify-content: center;
+  padding: 6px 20px 15px;
+  border-radius: 0 0 5px 5px;
+  background-color: #ededee;
+}
+
+.redi-app .redi-calendar .vanilla-calendar-content {
+  max-width: 226px;
+  width: 100%;
+  row-gap: 6px;
+}
+
+.redi-app .redi-calendar .vanilla-calendar-week {
+  gap: 8px;
+}
+
+.redi-app .redi-calendar .vanilla-calendar-week__day {
+  min-width: unset;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: center;
+  color: var(--on-background-or-surface-1-primary);
+}
+
+.redi-app .redi-calendar .vanilla-calendar-days {
+  gap: 8px;
+}
+
+.redi-app .redi-calendar .vanilla-calendar-day__btn {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  text-decoration: none !important;
+  box-shadow: 0 1px 1px 0 rgba(23, 29, 41, 0.16);
+  color: var(--on-background-or-surface-1-primary);
+  background-color: var(--on-accent-1-primary);
+  border: none;
+}
+
+.redi-app .redi-calendar .vanilla-calendar-day__btn_disabled {
+  color: #81858b !important;
+  background-color: var(--surface-1-accent) !important;
+}
+
+.redi-app
+  .redi-calendar
+  .vanilla-calendar-day__btn_disabled
+  + .vanilla-calendar-day__popup {
+  display: none !important;
+}
+
+.redi-app .redi-calendar .vanilla-calendar-day__btn_today {
+  color: var(--on-accent-1-primary);
+  background-color: var(--accent-1-primary-1-default);
+}
+
+.redi-app .redi-calendar .vanilla-calendar-day__btn_selected {
+  color: var(--on-background-or-surface-1-primary);
+  background-color: var(--on-accent-1-primary);
+  border: solid 1px var(--accent-1-primary-1-default);
+  pointer-events: none !important;
+}
+
+.redi-app
+  .redi-calendar
+  .vanilla-calendar-day__btn_selected.redi-closed
+  + .vanilla-calendar-day__popup,
+.redi-app
+  .redi-calendar
+  .vanilla-calendar-day__btn_selected.redi-part-time
+  + .vanilla-calendar-day__popup {
+  visibility: visible;
+  opacity: 1;
+}
+
+.redi-app .redi-calendar .vanilla-calendar-day__btn.redi-closed {
+  color: var(--on-accent-1-primary);
+  background-color: var(--helper-3-negative-pimary);
+}
+
+.redi-app .redi-calendar .vanilla-calendar-day__btn.redi-part-time {
+  color: var(--on-background-or-surface-1-primary);
+  background-color: var(--helper-2-warning-primary);
+}
+
+.redi-app .redi-calendar .vanilla-calendar-day__popup {
+  max-width: 210px;
+  min-width: 115px;
+  width: -moz-max-content;
+  width: max-content;
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.redi-app .redi-calendar .vanilla-calendar-day__popup::before,
+.redi-app .redi-calendar .vanilla-calendar-day__popup::after {
+  display: none;
+}
+
+.redi-app .redi-calendar .vanilla-calendar-day__popup .redi-message {
+  margin: 0 !important;
+  padding: 5px 10px;
+  display: block;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: normal;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  -moz-column-gap: 0;
+  column-gap: 0;
+}
+
+.redi-app .redi-calendar .vanilla-calendar-day__popup .redi-message__arrow {
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.redi-app
+  .redi-calendar
+  .vanilla-calendar-day__popup
+  .redi-message__arrow::before {
+  content: '';
+  width: 0;
+  height: 0;
+  display: block;
+  border-right: 10px solid var(--helper-2-warning-primary);
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  margin-bottom: -14px;
+}
+
+.redi-app
+  .redi-calendar
+  .vanilla-calendar-day__popup
+  .redi-message__arrow::after {
+  content: '';
+  width: 0;
+  height: 0;
+  display: block;
+  border-right: 10px solid #fff6e6;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  margin-top: -7px;
+  margin-left: 1px;
+}
+
+.redi-app
+  .redi-calendar
+  .vanilla-calendar-day__popup
+  .redi-message--error
+  .redi-message__arrow::before {
+  border-right-color: var(--helper-3-negative-pimary);
+}
+
+.redi-app
+  .redi-calendar
+  .vanilla-calendar-day__popup
+  .redi-message--error
+  .redi-message__arrow::after {
+  border-right-color: #ffece9;
+}
+
+@media (max-width: 834px) {
+  .redi-app .redi-calendar .vanilla-calendar-day__popup {
+    top: unset;
+    left: 50%;
+    bottom: calc(100% + 12px);
+    transform: translateX(-50%);
+  }
+
+  .redi-app .redi-calendar .vanilla-calendar-day__popup .redi-message {
+    padding: 5px 10px;
+  }
+
+  .redi-app .redi-calendar .vanilla-calendar-day__popup .redi-message__arrow {
+    top: unset;
+    bottom: -7px;
+    left: 50%;
+    transform: rotate(-90deg) translateX(-50%);
   }
 }
 
-@media (max-width: 425px) {
-  .redi-steps-nav {
-    zoom: 0.8;
+.redi-app .redi-datepicker {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.redi-app .redi-datepicker__body {
+  display: flex;
+  align-items: center;
+  gap: 16px 75px;
+}
+
+.redi-app .redi-datepicker__description {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.redi-app .redi-datepicker__subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+}
+
+.redi-app .redi-datepicker__items {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.redi-app .redi-datepicker__item {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 8px;
+  column-gap: 8px;
+  /* white-space: nowrap; */
+}
+
+.redi-app .redi-datepicker__item--full .redi-datepicker__circle {
+  background-color: transparent;
+  color: var(--on-background-or-surface-1-primary);
+  border: 1px solid var(--accent-1-primary-1-default);
+}
+
+.redi-app .redi-datepicker__item--part .redi-datepicker__circle {
+  color: var(--on-background-or-surface-1-primary);
+  background-color: var(--helper-2-warning-primary);
+}
+
+.redi-app .redi-datepicker__item--closed .redi-datepicker__circle {
+  background-color: var(--helper-3-negative-pimary);
+}
+
+.redi-app .redi-datepicker__circle {
+  min-width: 21px;
+  width: 21px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 12px;
+  line-height: 21px;
+  letter-spacing: normal;
+  text-align: center;
+  color: var(--on-accent-1-primary);
+  background-color: var(--accent-1-primary-1-default);
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.redi-app .redi-datepicker__text {
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -0.3px;
+}
+
+.redi-app .redi-datepicker + .redi-timepicker {
+  margin-top: 40px;
+}
+
+@media (max-width: 1024px) {
+  .redi-app .redi-datepicker__body {
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+    justify-content: space-between;
+  }
+
+  .redi-app .redi-datepicker__item {
+    white-space: unset;
   }
 }
 
-@media (max-width: 1024px) and (min-width: 768px) {
-  .redi-steps-nav {
-    list-style: none;
+@media (max-width: 834px) {
+  .redi-app .redi-datepicker__body {
+    -moz-column-gap: 60px;
+    column-gap: 60px;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 550px) {
+  .redi-app .redi-datepicker__body {
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .redi-app .redi-datepicker__body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .redi-app .redi-datepicker .redi-calendar {
+    width: 100%;
+    max-width: unset;
+  }
+}
+
+.redi-app .redi-timepicker {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.redi-app .redi-timepicker__body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.redi-app .redi-timepicker__nav {
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.redi-app .redi-timepicker__nav::-webkit-scrollbar {
+  display: none;
+}
+
+.redi-app .redi-timepicker__inner {
+  display: flex;
+  overflow-x: auto;
+}
+
+.redi-app .redi-timepicker__nav-button {
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.3px;
+  color: rgba(23, 29, 41, 0.54);
+  border: solid #ededee;
+  border-width: 0 0 1px;
+  white-space: nowrap;
+  background-color: transparent;
+}
+
+.redi-app .redi-timepicker__nav-button.active {
+  color: var(--accent-1-primary-1-default);
+  border-color: var(--accent-1-primary-1-default);
+}
+
+.redi-app .redi-timepicker__tab {
+  display: grid;
+  grid-template-columns: repeat(5, 90px);
+  gap: 4px;
+}
+
+.redi-app .redi-timepicker__tab:not(.active) {
+  display: none;
+}
+
+.redi-app .redi-timepicker__content {
+  padding: 6px 10px 4px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  border-radius: 4px;
+  border: solid 1px var(--accent-1-primary-1-default);
+  background-color: var(--on-accent-1-primary);
+  cursor: pointer;
+}
+
+.redi-app .redi-timepicker__button {
+  width: 90px;
+  display: flex;
+  position: relative;
+}
+
+.redi-app .redi-timepicker__button input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.redi-app .redi-timepicker__button input:checked + .redi-timepicker__content {
+  color: var(--on-accent-1-primary);
+  border-color: var(--accent-1-primary-1-default);
+  background-color: var(--accent-1-primary-1-default);
+}
+
+.redi-app
+  .redi-timepicker__button
+  input:checked
+  + .redi-timepicker__content
+  .redi-timepicker__message {
+  color: inherit;
+}
+
+.redi-app .redi-timepicker__button input[disabled] + .redi-timepicker__content {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  color: #c8c9cc;
+  border-color: #c8c9cc;
+  background-color: var(--on-accent-1-primary);
+}
+
+.redi-app .redi-timepicker__button--orange .redi-timepicker__content {
+  border-color: var(--helper-2-warning-primary);
+  background-color: var(--helper-5-warning-secondary);
+}
+
+.redi-app .redi-timepicker__button--red .redi-timepicker__content {
+  border-color: var(--helper-3-negative-pimary);
+  background-color: var(--helper-6-negative-secondary);
+}
+
+.redi-app .redi-timepicker__time {
+  min-width: 47px;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+}
+
+.redi-app .redi-timepicker__daytime {
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -0.3px;
+}
+
+.redi-app .redi-timepicker__message {
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: normal;
+}
+
+.redi-app .redi-timepicker__message--red {
+  color: #ff3c00;
+}
+
+@media (max-width: 500px) {
+  .redi-app .redi-timepicker__tab {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .redi-app .redi-timepicker__button,
+  .redi-app .redi-timepicker__content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .redi-app .redi-timepicker__tab {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.redi-app .redi-rating {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.redi-app .redi-rating.redi-rating-to-set .redi-rating__item {
+  cursor: pointer;
+}
+
+.redi-app .redi-rating__body {
+  max-height: 24px;
+  font-size: 24px;
+  line-height: 1;
+  position: relative;
+}
+
+.redi-app .redi-rating__body:before {
+  content: '★★★★★';
+  display: block;
+  color: #c4c4c4;
+  letter-spacing: 2.2px;
+}
+
+.redi-app .redi-rating__items {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.redi-app .redi-rating__item {
+  margin: 0;
+  flex: 0 0 20%;
+  height: 100%;
+  opacity: 0;
+}
+
+.redi-app .redi-rating__active {
+  height: 24px;
+  width: 0;
+  display: flex;
+}
+
+.redi-app .redi-rating__active,
+.redi-app .redi-rating__active:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.redi-app .redi-rating__active:before {
+  content: '★★★★★';
+  width: 100%;
+  height: 100%;
+  letter-spacing: 2.2px;
+  color: #ffbf42;
+}
+
+.redi-app .redi-rate-form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 24px;
+}
+
+.redi-app .redi-hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.redi-app .redi-hero .redi-wrapper {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  row-gap: 24px;
+  position: relative;
+}
+
+.redi-app .redi-hero__content {
+  color: var(--on-accent-1-primary);
+}
+
+.redi-app .redi-hero__content .redi-h1 {
+  font-size: 100px;
+  line-height: normal;
+  letter-spacing: -3px;
+}
+
+.redi-app .redi-hero--overlay {
+  position: relative;
+}
+
+.redi-app .redi-hero--overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 834px) {
+  .redi-app .redi-hero .redi-wrapper {
+    min-height: 137px;
+  }
+
+  .redi-app .redi-hero__content .redi-h1 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 391px) {
+  .redi-app .redi-hero__content .redi-h1 {
+    line-height: 0.8;
+  }
+}
+
+.redi-app .redi-layout {
+  padding: 20px 0 24px;
+  /* overflow: hidden; */
+}
+
+.redi-app .redi-layout__route {
+  display: flex;
+  flex-direction: column;
+}
+
+.redi-app .redi-layout__head {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.redi-app .redi-layout__body {
+  padding-left: 70px;
+}
+
+.redi-app .redi-layout__title {
+  font-size: 30px;
+  line-height: 1.33;
+}
+
+@media (max-width: 834px) {
+  .redi-app .redi-layout__title {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.15px;
+    color: rgba(23, 29, 41, 0.75);
+  }
+}
+
+@media (max-width: 1024px) {
+  .redi-app .redi-layout__body {
     padding-left: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+  }
+}
+
+@media (max-width: 834px) {
+  .redi-app .redi-layout {
+    padding-top: 10px;
   }
 
-  /* Mark the active step: */
+  .redi-app .redi-layout__head {
+    row-gap: 10px;
+  }
+}
 
-  /* Mark the steps that are finished and valid: */
+.redi-app .redi-auth {
+  row-gap: 64px;
+}
 
-  .redi-steps-nav .redi-steps-nav__step {
-    position: relative;
-    display: flow-root;
-    margin-left: 70px;
+.redi-app .redi-auth .redi-layout__body {
+  padding-left: 0;
+}
+
+.redi-app .redi-auth .redi-layout__main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.redi-app .redi-auth .redi-button {
+  max-width: 330px;
+  width: 100%;
+}
+
+.redi-app .redi-auth .redi-button--facebook span {
+  width: 100%;
+}
+
+@media (max-width: 834px) {
+  .redi-app .redi-auth {
+    row-gap: 40px;
   }
 
-  .redi-steps-nav .redi-steps-nav__step:last-child {
-    padding-right: 70px;
-  }
-
-  .redi-steps-nav .redi-steps-nav__step:last-child .redi-steps-nav__step__line {
-    display: none;
-  }
-
-  .redi-steps-nav .redi-steps-nav__step .icon-check {
-    display: none;
-  }
-
-  .redi-steps-nav .redi-steps-nav__step .redi-steps-nav__step__line {
-    position: absolute;
-    width: 70px;
-    height: 2px;
-    right: -70px;
-    top: 11px;
-    background-color: #c8c9cc;
-    z-index: 1;
-  }
-
-  .redi-steps-nav .redi-steps-nav__step .redi-steps-nav__step__number {
-    width: 40px;
-    height: 40px;
-    padding: 10px 15px;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.18;
-    letter-spacing: -0.3px;
-    color: #fff;
-    background-color: #c8c9cc;
-    border: none;
-    border-radius: 50%;
-    display: block;
-    margin-top: -8px;
-    z-index: 3;
-  }
-
-  .redi-steps-nav .redi-steps-nav__step .redi-steps-nav__step__description {
-    display: block;
+  .redi-app .redi-auth .redi-layout__head,
+  .redi-app .redi-auth .redi-layout__main {
+    align-items: center;
     text-align: center;
-    margin-top: 10px;
-    position: absolute;
-    width: 110px;
-    margin-left: -35px;
-    line-height: 1.25;
-    letter-spacing: -0.3px;
-    color: #81858b;
-    font-size: 16px;
   }
 
-  .redi-steps-nav__step.active .redi-steps-nav__step__number {
-    background-color: #0072ff;
+  .redi-app .redi-auth .redi-layout__main {
+    row-gap: 20px;
   }
 
-  .redi-steps-nav__step.active .redi-steps-nav__step__description {
-    color: #171d29;
+  .redi-app .redi-auth .redi-layout__title {
+    max-width: 293px;
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: 0.2px;
+    color: var(--on-background-or-surface-1-primary);
   }
 
-  .redi-steps-nav__step.active .redi-steps-nav__step__progress {
-    position: absolute;
-    width: 50%;
-    height: 2px;
-    background-color: #0072ff;
-    -webkit-transition-delay: 200ms;
-            transition-delay: 200ms;
+  .redi-app .redi-auth .redi-button--facebook {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
+.redi-app .redi-step-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px 60px;
+}
+
+.redi-app .redi-step-form__step {
+  max-width: 465px;
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.redi-app .redi-step-form__step:not(.active) {
+  display: none;
+}
+
+.redi-app .redi-step-form__step[data-redi-step='1'] .redi-step-form__buttons {
+  margin-top: 60px;
+}
+
+.redi-app
+  .redi-step-form__step[data-redi-step='1']
+  .redi-place-select
+  + .redi-ranges {
+  margin-top: 40px;
+}
+
+.redi-app .redi-step-form__step[data-redi-step='3'] .redi-step-form__buttons {
+  margin-top: 20px;
+}
+
+.redi-app .redi-step-form__step[data-redi-step='4'] {
+  max-width: 410px;
+}
+
+@media (min-width: 1025px) {
+  .redi-app .redi-step-form__step[data-redi-step='4'] {
+    margin-top: 115px;
+  }
+}
+
+.redi-app .redi-step-form__step[data-redi-step='4'] .redi-step-form__buttons {
+  margin-top: 40px;
+}
+
+.redi-app
+  .redi-step-form__step[data-redi-step='4']
+  .redi-button--facebook
+  span {
+  min-width: 165px;
+}
+
+.redi-app .redi-step-form__main {
+  display: flex;
+  flex-direction: column;
+}
+
+.redi-app .redi-step-form__head {
+  max-width: 600px;
+  padding-left: 23px;
+}
+
+.redi-app .redi-step-form__nav-button {
+  outline-width: 0;
+}
+
+.redi-app .redi-step-form__nav-button:focus-visible {
+  outline-width: 2px;
+}
+
+.redi-app .redi-step-form__head:not(.active) .redi-steps-indicator {
+  display: none;
+}
+
+.redi-app
+  .redi-step-form__head:not(.active)
+  + .redi-step-form__body
+  .redi-step-form__step {
+  margin-top: 21px;
+}
+
+.redi-app .redi-step-form__head.active > *:not(.redi-steps-indicator) {
+  display: none;
+}
+
+.redi-app .redi-step-form__auth {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.redi-app .redi-step-form__body {
+  padding-left: 71px;
+}
+
+.redi-app .redi-step-form__sidebar {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+@media (min-width: 835px) {
+  .redi-step-form__main {
+    width: 100%;
   }
 
-  .redi-steps-nav__step.completed .icon-check {
-    color: #0072ff;
-    width: 40px;
-    height: 40px;
-    padding: 10px 12px;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.18;
-    letter-spacing: -0.3px;
-    color: #fff;
-    background-color: #0072ff;
-    border: none;
-    border-radius: 50%;
-    display: block;
-    margin-top: -8px;
-    z-index: 3;
+  .redi-step-form__sidebar {
+    max-width: 465px;
+    width: 100%;
+  }
+}
+
+.redi-app .redi-step-form__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: 12px;
+}
+
+.redi-app .redi-step-form__buttons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (min-width: 835px) {
+  .redi-app .redi-step-form__buttons .redi-button--primary {
+    margin-left: auto;
+  }
+}
+
+.redi-app .redi-step-form__congrats {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  color: #81858b;
+}
+
+.redi-app .redi-step-form__congrats .redi-h1,
+.redi-app .redi-step-form__congrats .redi-h2,
+.redi-app .redi-step-form__congrats .redi-h3,
+.redi-app .redi-step-form__congrats .redi-h4,
+.redi-app .redi-step-form__congrats .redi-h5,
+.redi-app .redi-step-form__congrats .redi-h6 {
+  color: var(--on-background-or-surface-1-primary);
+}
+
+.redi-app .redi-step-form .redi-message {
+  margin-bottom: 10px;
+}
+
+.redi-app .redi-step-form__checkmark {
+  margin-bottom: 8px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.1);
+  background-color: var(--on-accent-1-primary);
+}
+
+.redi-app .redi-step-form__checkmark .redi-icon {
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--accent-1-primary-1-default);
+}
+
+@media (min-width: 835px) {
+  .redi-app .redi-step-form__checkmark {
+    display: none;
+  }
+}
+
+@media (min-width: 835px) {
+  .redi-app .redi-step-form .redi-popup__button {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .redi-app .redi-step-form {
+    -moz-column-gap: 30px;
+    column-gap: 30px;
   }
 
-  .redi-steps-nav__step.completed .redi-steps-nav__step__number {
+  .redi-app .redi-step-form__head,
+  .redi-app .redi-step-form__body {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 834px) {
+  .redi-app .redi-step-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .redi-app .redi-step-form .redi-reservation-details {
     display: none;
   }
 
-  .redi-steps-nav__step.completed .redi-steps-nav__step__description {
-    color: #0072ff;
-  }
-
-  .redi-steps-nav__step.completed .redi-steps-nav__step__progress {
-    position: absolute;
+  .redi-app .redi-step-form__head {
+    max-width: unset;
     width: 100%;
-    height: 2px;
-    background-color: #0072ff;
+  }
+
+  .redi-app .redi-step-form__auth {
+    align-items: center;
+    text-align: center;
+  }
+
+  .redi-app .redi-step-form__auth .redi-layout__title {
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: 0.2px;
+    color: var(--on-background-or-surface-1-primary);
+  }
+
+  .redi-app .redi-step-form__auth .redi-button--facebook.active {
+    margin-right: -34px;
+  }
+
+  .redi-app .redi-step-form__congrats {
+    margin-top: 14px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .redi-app .redi-step-form__main {
+    width: 100%;
+    align-items: center;
+  }
+
+  .redi-app .redi-step-form__body {
+    max-width: 600px;
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .redi-app .redi-step-form__step {
+    margin-top: 0;
+  }
+
+  .redi-app .redi-step-form__body {
+    margin-top: 16px;
+  }
+
+  .redi-app .redi-step-form__buttons {
+    order: 2;
+    margin-top: 30px !important;
+    flex-direction: column-reverse;
+    align-items: center;
+    row-gap: 30px;
+  }
+
+  .redi-app .redi-step-form__buttons .redi-button:not(.redi-button--underline) {
+    min-width: 165px;
+  }
+
+  .redi-app .redi-step-form__buttons .redi-button--facebook span {
+    min-width: 165px;
+  }
+
+  .redi-app .redi-step-form__links {
+    padding-top: 0;
+    align-items: center;
+    row-gap: 16px;
+  }
+
+  .redi-app .redi-step-form .redi-message {
+    order: 1;
+    margin-top: 24px;
+    margin-bottom: 0 !important;
   }
 }
 
-@media (max-width: 1024px) and (min-width: 768px) and (max-width: 767px) {
-  .redi-steps-nav {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+.redi-app .redi-view-reservation {
+  row-gap: 55px;
+}
+
+.redi-app .redi-view-reservation .redi-layout__body {
+  display: flex;
+  gap: 40px 215px;
+}
+
+.redi-app .redi-view-reservation .redi-layout__main {
+  max-width: 388px;
+  width: 100%;
+  padding-top: 16px;
+}
+
+.redi-app .redi-view-reservation .redi-layout__sidebar {
+  max-width: 330px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.redi-app .redi-view-reservation__title {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+  color: rgba(23, 29, 41, 0.75);
+}
+
+.redi-app .redi-view-reservation__order-info {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 10px;
+}
+
+.redi-app .redi-view-reservation__contact-info {
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  border-top: 2px solid #c8c9cc;
+}
+
+.redi-app .redi-view-reservation__contact-info:not(.active) {
+  display: none;
+}
+
+.redi-app .redi-view-reservation__item {
+  min-width: 55px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+}
+
+.redi-app .redi-view-reservation__item--comments {
+  align-items: flex-start;
+}
+
+.redi-app .redi-view-reservation__item--comments [data-default-text] {
+  white-space: pre-wrap;
+}
+
+.redi-app .redi-view-reservation__item .redi-icon {
+  color: var(--accent-1-primary-1-default);
+}
+
+.redi-app .redi-view-reservation__item--date,
+.redi-app .redi-view-reservation__item--time,
+.redi-app .redi-view-reservation__item--guests-qty,
+.redi-app .redi-view-reservation__item--childs-qty {
+  width: calc(50% - 5px);
+}
+
+.redi-app .redi-view-reservation__item--place {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.redi-app .redi-view-reservation__item--address {
+  padding-left: 34px;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -0.3px;
+  color: #81858b;
+}
+
+.redi-app .redi-view-reservation__item--address.redi-empty {
+  display: none;
+}
+
+.redi-app .redi-view-reservation__place-name {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.2px;
+}
+
+.redi-app .redi-view-reservation .redi-empty {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  color: var(--very-light-pink);
+}
+
+@media (min-width: 835px) {
+  .redi-app
+    .redi-view-reservation
+    .redi-button[data-redi-route='active_reservations'],
+  .redi-app .redi-view-reservation .redi-button--primary .redi-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .redi-app .redi-view-reservation .redi-layout__body {
+    justify-content: space-between;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+  }
+}
+
+@media (max-width: 834px) {
+  .redi-app .redi-view-reservation {
+    padding-top: 14px;
+    row-gap: 34px;
   }
 
-  .redi-steps-nav .redi-steps-nav__step .redi-steps-nav__step__description {
+  .redi-app .redi-view-reservation .redi-layout__head {
+    text-align: center;
+  }
+
+  .redi-app .redi-view-reservation .redi-layout__body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .redi-app .redi-view-reservation .redi-layout__main {
+    max-width: unset;
+    padding: 0 40px;
+  }
+
+  .redi-app .redi-view-reservation .redi-layout__sidebar {
+    align-items: center;
+    row-gap: 16px;
+  }
+
+  .redi-app .redi-view-reservation .redi-layout__sidebar .redi-button--primary {
+    order: 1;
+    display: flex;
+    align-items: center;
+    -moz-column-gap: 4px;
+    column-gap: 4px;
     font-size: 14px;
+    font-weight: 400;
+    background-color: transparent;
+    padding: 0;
+    color: var(--accent-1-primary-1-default);
+  }
+
+  .redi-app
+    .redi-view-reservation
+    .redi-layout__sidebar
+    .redi-button--primary
+    .redi-icon {
+    min-width: 16px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .redi-app
+    .redi-view-reservation
+    .redi-layout__sidebar
+    .redi-link[data-redi-route='cancel_reservation'] {
+    order: 0;
+  }
+
+  .redi-app
+    .redi-view-reservation
+    .redi-layout__sidebar
+    .redi-link[data-redi-route='active_reservations'] {
+    order: 2;
+  }
+
+  .redi-app .redi-view-reservation__order-info {
+    row-gap: 16px;
+  }
+
+  .redi-app .redi-view-reservation__contact-info {
+    margin-top: 16px;
+    padding-top: 16px;
+    row-gap: 10px;
+  }
+
+  .redi-app .redi-view-reservation__item--address {
+    font-size: 12px;
+    line-height: 1.33;
+  }
+
+  .redi-app .redi-view-reservation__place-name {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.15px;
   }
 }
 
-@media (max-width: 1024px) and (min-width: 768px) and (max-width: 425px) {
-  .redi-steps-nav {
-    zoom: 0.8;
+@media (max-width: 500px) {
+  .redi-app .redi-view-reservation__item {
+    width: 100% !important;
+  }
+}
+
+.redi-app .redi-active-reservations {
+  row-gap: 40px;
+}
+
+.redi-app .redi-active-reservations .redi-layout__head {
+  padding-left: 6px;
+}
+
+.redi-app .redi-active-reservations .redi-layout__body {
+  display: flex;
+  gap: 20px 135px;
+}
+
+.redi-app .redi-active-reservations .redi-layout__main {
+  max-width: 465px;
+  width: 100%;
+}
+
+.redi-app .redi-active-reservations .redi-layout__sidebar {
+  max-width: 330px;
+  width: 100%;
+}
+
+.redi-app .redi-active-reservations .redi-layout__sidebar .redi-button {
+  width: 100%;
+}
+
+.redi-app .redi-active-reservations__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.redi-app .redi-active-reservations__card {
+  width: 100%;
+  padding: 12px 20px 12px 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  border-radius: 5px;
+  border: solid 1px var(--very-light-pink);
+  background-color: var(--on-accent-1-primary);
+  transition: 0.3s;
+}
+
+.redi-app .redi-active-reservations__card:hover {
+  border-color: var(--accent-1-primary-1-default);
+  box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.1);
+}
+
+.redi-app .redi-active-reservations__card:hover .redi-link {
+  color: var(--accent-1-primary-1-default) !important;
+}
+
+.redi-app .redi-active-reservations__card .redi-link {
+  margin-left: auto;
+  color: #81858b !important;
+}
+
+.redi-app .redi-active-reservations__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+}
+
+.redi-app .redi-active-reservations__item .redi-icon {
+  color: var(--accent-1-primary-1-default);
+}
+
+.redi-app .redi-active-reservations__item--date,
+.redi-app .redi-active-reservations__item--time,
+.redi-app .redi-active-reservations__item--guests-qty {
+  width: calc(50% - 5px);
+}
+
+.redi-app .redi-active-reservations__item--childs-qty {
+  width: calc(50% - 50px);
+}
+
+.redi-app .redi-active-reservations__item--place {
+  margin-top: 15px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.redi-app .redi-active-reservations__item--address {
+  padding-left: 34px;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -0.3px;
+  color: #81858b;
+}
+
+.redi-app .redi-active-reservations__place-name {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.2px;
+}
+
+@media (max-width: 1024px) {
+  .redi-app .redi-active-reservations .redi-layout__body {
+    justify-content: space-between;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+  }
+}
+
+@media (max-width: 834px) {
+  .redi-app .redi-active-reservations {
+    padding-top: 14px;
+    row-gap: 16px;
+  }
+
+  .redi-app .redi-active-reservations .redi-layout__head {
+    text-align: center;
+  }
+
+  .redi-app .redi-active-reservations .redi-layout__body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .redi-app .redi-active-reservations .redi-layout__main {
+    max-width: unset;
+  }
+
+  .redi-app .redi-active-reservations__list {
+    width: calc(100% + 6px);
+    margin-right: -6px;
+    max-height: 450px;
+    overflow: auto;
+  }
+
+  .redi-app .redi-active-reservations__list::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 2px;
+  }
+
+  .redi-app .redi-active-reservations__list::-webkit-scrollbar-track {
+    background: #c8c9cc;
+    border-radius: 2px;
+    border-left: 4px solid var(--on-accent-1-primary);
+  }
+
+  .redi-app .redi-active-reservations__list::-webkit-scrollbar-thumb {
+    background: var(--accent-1-primary-1-default);
+    border-left: 4px solid var(--on-accent-1-primary);
+    border-radius: 2px;
+  }
+
+  .redi-app .redi-active-reservations__item--address {
+    font-size: 12px;
+    line-height: 1.33;
+  }
+
+  .redi-app .redi-active-reservations__place-name {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .redi-app .redi-active-reservations__card {
+    padding-bottom: 8px;
+    row-gap: 6px;
+  }
+
+  .redi-app .redi-active-reservations__item--place {
+    margin-top: 4px;
+  }
+
+  .redi-app .redi-active-reservations__item--guests-qty,
+  .redi-app .redi-active-reservations__item--childs-qty {
+    display: none;
+  }
+
+  .redi-app .redi-active-reservations__item--date,
+  .redi-app .redi-active-reservations__item--time {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .redi-app .redi-active-reservations__item--date {
+    margin-right: auto;
+  }
+
+  .redi-app .redi-active-reservations__item--time .redi-icon {
+    display: none;
+  }
+}
+
+.redi-app .redi-cancel-reservation {
+  row-gap: 40px;
+}
+
+.redi-app .redi-update-reservation {
+  row-gap: 40px;
+}
+
+.redi-app .redi-cancel-reservation .redi-layout__head {
+  padding-left: 6px;
+}
+
+.redi-app .redi-cancel-reservation .redi-layout__body {
+  display: flex;
+  gap: 24px 235px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  color: #81858b;
+}
+/* зміни 25,08,24 */
+
+.redi-app .redi-cancel-reservation .redi-layout__main,
+.redi-app .redi-update-reservation .redi-layout__main {
+  max-width: 365px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.redi-app .redi-cancel-reservation .redi-layout__sidebar {
+  max-width: 330px;
+  width: 100%;
+}
+
+.redi-app .redi-cancel-reservation .redi-layout__sidebar .redi-button {
+  width: 100%;
+}
+
+.redi-app .redi-cancel-reservation__form {
+  display: flex;
+  flex-direction: column;
+  /* row-gap: 24px; */
+}
+.redi-app .redi-cancel-reservation__form .redi-field {
+  margin-bottom: 24px;
+}
+
+.redi-app .redi-cancel-reservation__form .redi-message {
+  width: 100%;
+  margin-bottom: 9px;
+}
+
+.redi-app .redi-cancel-reservation__buttons {
+  max-width: 223px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.redi-app .redi-cancel-reservation__buttons .redi-button {
+  min-width: unset;
+  width: 100%;
+}
+
+.redi-app .redi-cancel-reservation--end {
+  padding-top: 80px;
+}
+
+.redi-app .redi-cancel-reservation--end .redi-h1,
+.redi-app .redi-cancel-reservation--end .redi-h2,
+.redi-app .redi-cancel-reservation--end .redi-h3,
+.redi-app .redi-cancel-reservation--end .redi-h4,
+.redi-app .redi-cancel-reservation--end .redi-h5,
+.redi-app .redi-cancel-reservation--end .redi-h6 {
+  color: var(--on-background-or-surface-1-primary);
+}
+
+.redi-app .redi-cancel-reservation--end .redi-layout__body {
+  -moz-column-gap: 135px;
+  column-gap: 135px;
+}
+
+.redi-app .redi-cancel-reservation--end .redi-layout__main {
+  max-width: 465px;
+  row-gap: 16px;
+}
+
+@media (max-width: 834px) {
+  .redi-app .redi-cancel-reservation {
+    padding-top: 14px;
+    row-gap: 20px;
+  }
+
+  .redi-app .redi-cancel-reservation .redi-layout__head {
+    text-align: center;
+  }
+
+  .redi-app .redi-cancel-reservation .redi-layout__body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .redi-app .redi-cancel-reservation .redi-layout__main {
+    max-width: unset;
+    align-items: center;
+  }
+
+  .redi-app .redi-cancel-reservation__form {
+    max-width: 400px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .redi-app .redi-cancel-reservation--end {
+    min-height: calc(100dvh - 150px);
+    justify-content: center;
+  }
+
+  .redi-app .redi-cancel-reservation--end .redi-h3 {
+    font-size: 30px;
+    line-height: 1.33;
+    letter-spacing: normal;
+  }
+}
+
+.redi-app .redi-modify-reservation {
+  row-gap: 40px;
+}
+
+.redi-app .redi-white_list-reservation {
+  row-gap: 40px;
+}
+
+.redi-app .redi-modify-reservation .redi-layout__head {
+  padding-left: 6px;
+}
+
+.redi-app .redi-modify-reservation .redi-layout__body {
+  display: flex;
+  gap: 24px 235px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  color: #81858b;
+}
+
+.redi-app .redi-update-reservation .redi-layout__body {
+  display: flex;
+  gap: 24px 235px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  color: #81858b;
+}
+
+.redi-app .redi-white_list-reservation .redi-layout__body {
+  display: flex;
+  gap: 24px 235px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  color: #81858b;
+}
+
+/* ///зміни 25,08,24//// */
+@media (max-width: 1024px) {
+  .redi-app .redi-cancel-reservation .redi-layout__body,
+  .redi-app .redi-update-reservation .redi-layout__body,
+  .redi-app .redi-white_list-reservation .redi-layout__body {
+    justify-content: space-between;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+  }
+}
+
+.redi-app .redi-modify-reservation .redi-layout__main {
+  max-width: 365px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.redi-app .redi-modify-reservation .redi-layout__sidebar {
+  max-width: 330px;
+  width: 100%;
+}
+
+.redi-app .redi-update-reservation .redi-layout__sidebar {
+  max-width: 330px;
+  width: 100%;
+}
+
+.redi-app .redi-white_list-reservation .redi-layout__sidebar {
+  max-width: 330px;
+  width: 100%;
+}
+
+.redi-app .redi-modify-reservation .redi-layout__sidebar .redi-button {
+  width: 100%;
+}
+
+.redi-app .redi-update-reservation .redi-layout__sidebar .redi-button {
+  width: 100%;
+}
+
+.redi-app .redi-white_list-reservation .redi-layout__sidebar .redi-button {
+  width: 100%;
+}
+
+.redi-app .redi-modify-reservation__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.redi-app .redi-update-reservation__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.redi-app .redi-white_list-reservation__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.redi-app .redi-modify-reservation__form .redi-message {
+  width: 100%;
+}
+
+.redi-app .redi-modify-reservation__buttons {
+  max-width: 223px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.redi-app .redi-update-reservation__buttons {
+  max-width: 223px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.redi-app .redi-modify-reservation__buttons .redi-button {
+  min-width: unset;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .redi-app .redi-modify-reservation .redi-layout__body {
+    justify-content: space-between;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+  }
+}
+
+@media (max-width: 834px) {
+  .redi-app .redi-modify-reservation {
+    padding-top: 14px;
+    row-gap: 20px;
+  }
+  .redi-app .redi-update-reservation {
+    padding-top: 14px;
+    row-gap: 20px;
+  }
+  .redi-app .redi-white_list-reservation {
+    padding-top: 14px;
+    row-gap: 20px;
+  }
+
+  .redi-app .redi-modify-reservation .redi-layout__head {
+    text-align: center;
+  }
+  .redi-app .redi-update-reservation .redi-layout__head {
+    text-align: center;
+  }
+  .redi-app .redi-white_list-reservation .redi-layout__head {
+    text-align: center;
+  }
+
+  .redi-app .redi-modify-reservation .redi-layout__body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .redi-app .redi-update-reservation .redi-layout__body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .redi-app .redi-white_list-reservation .redi-layout__body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .redi-app .redi-modify-reservation .redi-layout__main {
+    max-width: unset;
+    align-items: center;
+  }
+  .redi-app .redi-update-reservation .redi-layout__main {
+    max-width: unset;
+    align-items: center;
+  }
+  .redi-app .redi-white_list-reservation .redi-layout__main {
+    max-width: unset;
+    align-items: center;
+  }
+
+  .redi-app .redi-modify-reservation__form {
+    max-width: 400px;
+    width: 100%;
+    align-items: center;
+  }
+  .redi-app .redi-update-reservation__form {
+    max-width: 400px;
+    width: 100%;
+    align-items: center;
+  }
+  .redi-app .redi-white_list-reservation__form {
+    max-width: 400px;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+.redi-app .redi-find-reservation {
+  row-gap: 40px;
+}
+
+.redi-app .redi-find-reservation .redi-layout__head {
+  padding-left: 6px;
+}
+
+.redi-app .redi-find-reservation .redi-layout__body {
+  display: flex;
+  gap: 235px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  color: #81858b;
+}
+
+.redi-app .redi-find-reservation .redi-layout__main {
+  max-width: 365px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.redi-app .redi-find-reservation__form {
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  row-gap: 8px;
+}
+
+.redi-app .redi-find-reservation__form .redi-button--facebook {
+  width: 100%;
+}
+
+.redi-app .redi-find-reservation__form .redi-button--facebook span {
+  width: 100%;
+}
+
+.redi-app .redi-find-reservation__buttons {
+  margin-top: 38px;
+  max-width: 223px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  row-gap: 20px;
+}
+
+.redi-app .redi-find-reservation__buttons .redi-button {
+  min-width: unset;
+  width: 100%;
+}
+
+div.services-left {
+  display: none;
+  background: var(--accent-1-primary-1-default);
+  padding: 10px;
+  color: var(--on-accent-1-primary);
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  .redi-app .redi-find-reservation .redi-layout__body {
+    justify-content: space-between;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+  }
+}
+
+@media (max-width: 834px) {
+  .redi-app .redi-find-reservation {
+    padding-top: 14px;
+    row-gap: 20px;
+  }
+
+  .redi-app .redi-find-reservation .redi-layout__head {
+    text-align: center;
+  }
+
+  .redi-app .redi-find-reservation .redi-layout__body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .redi-app .redi-find-reservation .redi-layout__main {
+    max-width: unset;
+    align-items: center;
+    row-gap: 24px;
+  }
+
+  .redi-app .redi-find-reservation__buttons {
+    align-items: center;
+    align-self: center;
+    row-gap: 14px;
   }
 }

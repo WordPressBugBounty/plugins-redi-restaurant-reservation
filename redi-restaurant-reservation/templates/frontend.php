@@ -1,5 +1,5 @@
 <!-- ReDi Restaurant Reservation plugin version <?php echo $this->version?> -->
-<!-- Revision: 20241209 -->
+<!-- Revision: 20250212 -->
 <?php require_once(REDI_RESTAURANT_TEMPLATE.'cancel.php');?>
 <?php require_once(REDI_RESTAURANT_TEMPLATE.'modify.php');?>
 <script type="text/javascript">var plugin_name='ReDi Restaurant Reservation version <?php echo $this->version?>';var displayLeftSeats = <?php echo $displayLeftSeats ? 1 : 0; ?>;
@@ -72,14 +72,17 @@ var redirect_to_confirmation_page = '<?php echo $redirect_to_confirmation_page; 
 	</div>
 
 	
-            <input type="hidden" id="placeID" name="placeID" value="<?php echo $places[0]->ID ?>"/>
+         <input type="hidden" id="placeID" name="placeID" value="<?php echo $places[0]->ID ?>"/>
          <?php endif ?>
-
-		 <label for="persons">
-		<?php _e('Guests', 'redi-restaurant-reservation')?>:<span class="redi_required"> *</span></label>
+         <?php 
+         $guestslable = (isset($childrenSelection) && $childrenSelection != 0) ? __('Adult guests', 'redi-restaurant-reservation') : __('Guests', 'redi-restaurant-reservation'); ?>
+		<label for="persons">
+		<?php _e($guestslable, 'redi-restaurant-reservation')?>:<span class="redi_required"> *</span></label>
 		<select name="persons" id="persons" class="redi-reservation-select">
 				<option value="0" selected="selected">
-					<?php _e('No. of Guests', 'redi-restaurant-reservation') ?>
+					<?php echo (isset($childrenSelection) && $childrenSelection != 0) ? 
+						__('Number of adults', 'redi-restaurant-reservation') : 
+						__('Number of guests', 'redi-restaurant-reservation') ?>
                 </option>
 			<?php for ($i = $minPersons; $i != $maxPersons+1; $i++): ?>
 				<option value="<?php echo $i?>" >
@@ -96,11 +99,15 @@ var redirect_to_confirmation_page = '<?php echo $redirect_to_confirmation_page; 
 		</select>
 
 		<?php if ($childrenSelection):?>
-			<label for="children"><?php _e('Children', 'redi-restaurant-reservation')?><?php echo empty($childrenDescription) ? '': ' ' . $childrenDescription?>: <span class="children_description"></span></label>
+			<label for="children"><?php _e('Children', 'redi-restaurant-reservation')?>:<span class="redi_required"> *</span>
+			<br/>
+			<span class="children_description"><?php echo empty($childrenDescription) ? '': ' ' . $childrenDescription?></span></label>
 			
 			<select name="children" id="children" class="redi-reservation-select">
-				<option value="0">0</option>
-				<?php for ($i = 1; $i != $maxPersons+1; $i++): ?>
+				<option value=""><?php _e('Number of children', 'redi-restaurant-reservation') ?></option>
+				<?php $MaxChild = ($MaxChild != "") ? $MaxChild : 50;
+
+				for ($i = 0; $i != $MaxChild+1; $i++): ?>
 					<option value="<?php echo $i?>">
 						<?php echo $i ?>
 					</option>
@@ -248,7 +255,7 @@ var redirect_to_confirmation_page = '<?php echo $redirect_to_confirmation_page; 
                 <div><?php _e('Email', 'redi-restaurant-reservation');?>:</div><?php echo $email ?><br/><br/>
             </div>
         </div>	
-        <div id="name_phone_email_form" <?php if($returned_user):?>style="display:none"<?php endif?>>
+        <div id="name_phone_email_form" <?php if($returned_user):?> style="display:none"<?php endif?>>
 
 			<div data-display-order="-39">
 
@@ -283,16 +290,20 @@ var redirect_to_confirmation_page = '<?php echo $redirect_to_confirmation_page; 
 
 		<!-- custom fields -->
 		<img id="RediCustomFields" style="display: none;" src="<?php echo REDI_RESTAURANT_PLUGIN_URL ?>img/ajax-loader.gif" alt=""/>
-		<div id="custom_fields_container"></div>		
-		<!-- /custom fields -->     
+
 		
-		<div data-display-order="50">
-			<label for="UserComments">
-				<?php _e('Comment', 'redi-restaurant-reservation');?>:
-			</label>
-			<textarea maxlength="250" rows="5" name="UserComments" id="UserComments" cols="20" class="UserComments"></textarea>
+		<div id="custom_fields_container"></div>
+		<?php if( $ShowComment == '' ||  $ShowComment == 1): ?>		
+			<!-- /custom fields -->     
+			<div data-display-order="50">
+				<label for="UserComments">
+					<?php _e('Comment', 'redi-restaurant-reservation');?>:
+				</label>
+				<textarea maxlength="250" rows="5" name="UserComments" id="UserComments" cols="20" class="UserComments"></textarea>
+			</div>
+		<?php endif; ?>
 		</div>
-		</div>
+		
 
 		<?php if ($captcha):?>			
 			<div id="redi-captcha" class="g-recaptcha" data-sitekey="<?php echo $captchaKey ?>"></div>
@@ -334,28 +345,43 @@ var redirect_to_confirmation_page = '<?php echo $redirect_to_confirmation_page; 
 			_e('Your reservation number for reference:', 'redi-restaurant-reservation');
 		endif; ?> <span id="reservation-id" style="font-weight: bold"></span>
     </div>
-	<?php if (isset($step1["all_booked_for_this_duration"])):?>
-		<div id="step2busy" class="redi-reservation-alert-error redi-reservation-alert">
-			
-			<?php if (empty($fullyBookedMessage)):
-				_e('There are no more reservation can be made for this day.', 'redi-restaurant-reservation');
-			else:
-				echo $fullyBookedMessage;
-			endif?>
+		<?php 
 
-		</div>
-		<?php elseif (!isset($step1["all_booked_for_this_duration"]) AND $waitlist): ?>
-		<div id="step2busy" <?php if(!$all_busy):?>style="display: none;clear:both"<?php endif; ?> class="redi-reservation-alert-error redi-reservation-alert">
-			<?php if (empty($fullyBookedMessage)):
-				_e('There are no more reservation can be made for this day.', 'redi-restaurant-reservation');
-			else:
-				echo $fullyBookedMessage;
-			endif?>
+		if (isset($step1["all_booked_for_this_duration"])):?>
+			<div id="step2busy" class="redi-reservation-alert-error redi-reservation-alert">
+				
+				<?php if (empty($fullyBookedMessage)):
+					_e('There are no more reservation can be made for this day.', 'redi-restaurant-reservation');
+				else:
+					echo $fullyBookedMessage;
+				endif?>
 
-			<div name="message-waitlist-form">
-				<?php _e('In case you would like to be notified when someone cancels reservation for this day, please fill <a class="link-waitlist-form">this form</a>.', 'redi-restaurant-reservation');?>
 			</div>
-		</div>
+		<?php elseif ($waitlist == "specific_time" && !isset($step1["all_booked_for_this_duration"]) ): ?>
+			<div id="step2busy" <?php if(!$all_busy):?>style="display: none;clear:both"<?php endif; ?> class="redi-reservation-alert-error redi-reservation-alert">
+				<?php if (empty($fullyBookedMessage)):
+					_e('There are no more reservation can be made for this time.', 'redi-restaurant-reservation');
+				else:
+					echo $fullyBookedMessage;
+				endif?>
+
+				<div name="message-waitlist-form">
+					<?php _e('In case you would like to be notified when someone cancels reservation for this time, please fill <a class="link-waitlist-form">this form</a>.', 'redi-restaurant-reservation');?>
+				</div>
+			</div>
+		<?php elseif (!isset($step1["all_booked_for_this_duration"]) AND $waitlist): ?>
+			<div id="step2busy" <?php if(!$all_busy):?>style="display: none;clear:both"<?php endif; ?> class="redi-reservation-alert-error redi-reservation-alert">
+				<?php if (empty($fullyBookedMessage)):
+					_e('There are no more reservation can be made for this day.', 'redi-restaurant-reservation');
+				else:
+					echo $fullyBookedMessage;
+				endif?>
+
+				<div name="message-waitlist-form">
+					<?php _e('In case you would like to be notified when someone cancels reservation for this day, please fill <a class="link-waitlist-form">this form</a>.', 'redi-restaurant-reservation');?>
+				</div>
+			</div>
+
 		<?php else: ?>
 
 		<div id="step2busy" <?php if(!$all_busy):?>style="display: none;"<?php endif; ?> class="not-waitlist redi-reservation-alert-error redi-reservation-alert">
@@ -430,7 +456,7 @@ if( $userfeedback == 'true') {?>
 		 	</div>
 		 	<div>
 		 		<label for="waitlist-Time">
-				<?php _e('Preferred time', 'redi-restaurant-reservation')?>:</label>
+				<?php _e('Preferred time', 'redi-restaurant-reservation')?>: <b><span id="waitlist-startDatetime-label"></span></b></label>
 				<input type="text" value="" name="waitlist-Time" id="waitlist-Time">
 		 	</div>
 		    <div>

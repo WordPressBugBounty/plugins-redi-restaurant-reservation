@@ -126,6 +126,8 @@ h2
 
     transition: all 0.2s ease-in-out 0s;
 
+    margin-bottom: 20px;
+
 }
 
 
@@ -233,7 +235,7 @@ strong {
 
 #persons, #redi-restaurant-startDate, #redi-restaurant-startTime, #children, #update_persons, #update_children, #placeID {
 
-    width: 175px;
+    width: 250px;
 
     margin-bottom: 20px;
 
@@ -606,4 +608,14 @@ form.userfeedback {
     visibility: visible;
     opacity: 1;
     transition-delay: 0s;
+}
+
+.iti--allow-dropdown input,.iti--allow-dropdown input[type=tel],.iti--allow-dropdown input[type=text],.iti--separate-dial-code input,.iti--separate-dial-code input[type=tel],.iti--separate-dial-code input[type=text] {
+    margin-bottom: 20px !important;
+}
+
+
+.redi-modify-date-time, .redi-modify-date
+{
+    margin-bottom: 20px;
 }

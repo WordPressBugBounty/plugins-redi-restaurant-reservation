@@ -8,7 +8,17 @@ function addSpace(n) {
     });
 }
 
+function waitlistTimeButton($this){
 
+    jQuery('.redi-restaurant-time-button').each(function () {
+        jQuery(this).removeAttr('select');
+    });
+
+   jQuery('#step2busy').show();
+   jQuery('#step3').hide();
+   jQuery($this).attr('select', 'select');
+   return false;
+}
 
 function resetDatepickerToCurrentMonth() {
     var currentDate = new Date();
@@ -163,7 +173,7 @@ jQuery(function () {
         // load calendar information
         {
             jQuery('#large_groups_message').hide();
-
+            jQuery('#redi-date-block').hide();
             if (calendarInitiated) {
                 // if calendar first time navigated, then load available dates
                 loadDateInformation(calendarDateFrom, calendarDateTo);
@@ -297,7 +307,19 @@ jQuery(function () {
             return false;
         }
 
+        if (jQuery(this).hasClass('waitlistTime'))
+        {
+           jQuery('.redi-restaurant-time-button').each(function () {
+                jQuery(this).removeAttr('select');
+            });
 
+           jQuery('#step2busy').show();
+           jQuery('#step3').hide();
+           jQuery(this).attr('select', 'select');
+           return false;
+        }
+
+        jQuery('#step2busy').hide();
         jQuery('.redi-restaurant-time-button').each(function () {
             jQuery(this).removeAttr('select');
         });
@@ -360,8 +382,11 @@ jQuery(function () {
             }
         }
 
-        if (jQuery('#redi-captcha').length && !document.querySelector('.g-recaptcha-response').value) {
-            error += redi_restaurant_reservation.captcha_not_valid + '<br/>';
+        if (jQuery('#redi-captcha').length) {
+            var recaptchaResponse = document.querySelector('.g-recaptcha-response');
+            if (recaptchaResponse && !recaptchaResponse.value) {
+                error += redi_restaurant_reservation.captcha_not_valid + '<br/>';
+            }
         }
 
         let radio_error = 1;
@@ -518,7 +543,7 @@ jQuery(function () {
             return false;
         }
 
-        if (guests == 0 || placeId == 0) {
+        if (guests == 0 || placeId == 0 || isNaN(guests)) {
             return;
         }
 
@@ -618,10 +643,11 @@ jQuery(function () {
             jQuery('#buttons').html('');
 
             if (response['Error'] !== undefined) {
-                if (waitlist == 1) {
+                if (waitlist == 'fully_booked') {
                     jQuery('#step2busy').show();
-                }
-                else {
+                } else if(waitlist == 'specific_time'){
+                    jQuery('#step2busy').show();
+                } else {
                     jQuery('#step1errors').html(response['Error']).show('slow');
                 }
             } else if (response["all_booked_for_this_duration"]) {
@@ -664,84 +690,102 @@ jQuery(function () {
                             var step1buttons_html = '';
                             jQuery('#step1buttons_html').html(step1buttons_html).hide();
 
-                            for (var availability in response) {
+                            for (var availability in response) 
+                            {
+                                if (response[availability]['Name'] !== undefined) 
+                                {
+                                    // Check if display_time_shift is set and matches Name, or if display_time_shift is not set
+                                    var shouldRenderAll = typeof redi_restaurant_reservation.display_time_shift === 'undefined' || !redi_restaurant_reservation.display_time_shift;
+                                    var nameMatches = response[availability]['Name'] && response[availability]['Name'].toLowerCase() === redi_restaurant_reservation.display_time_shift?.toLowerCase();
+                                
+                                    if (shouldRenderAll || nameMatches) {
+                                        // Render available time(s)
+                                        var html = '<div>';
 
-                                // Check if display_time_shift is set and matches Name, or if display_time_shift is not set
-                                var shouldRenderAll = typeof redi_restaurant_reservation.display_time_shift === 'undefined' || !redi_restaurant_reservation.display_time_shift;
-                                var nameMatches = response[availability]['Name'] && response[availability]['Name'].toLowerCase() === redi_restaurant_reservation.display_time_shift?.toLowerCase();
-                            
-                                if (shouldRenderAll || nameMatches) {
-                                    // Render available time(s)
-                                    var html = '<div>';
-
-                                    if (!hidesteps) {
-                                        if (response[availability]['Name']) {
-                                            html += response[availability]['Name'] + ':</br>';
+                                        if (!hidesteps) {
+                                            if (response[availability]['Name']) {
+                                                html += response[availability]['Name'] + ':</br>';
+                                            }
                                         }
-                                    }
 
-                                    if (hidesteps) {
-                                        if (response[availability]['Name'] === null) {
-                                            response[availability]['Name'] = redi_restaurant_reservation.next;
+                                        if (hidesteps) {
+                                            if (response[availability]['Name'] === null) {
+                                                response[availability]['Name'] = redi_restaurant_reservation.next;
+                                            }
+                                            step1buttons_html += '<input id="time_' + (current) + '" value="' + response[availability]['Name'] + '" class="redi-restaurant-button button ';
+                                            html += '<span class="opentime" id="opentime_' + (current) + '" style="display: none">';
                                         }
-                                        step1buttons_html += '<input id="time_' + (current) + '" value="' + response[availability]['Name'] + '" class="redi-restaurant-button button ';
-                                        html += '<span class="opentime" id="opentime_' + (current) + '" style="display: none">';
-                                    }
-                                    var current_button_busy = true;
-                                    for (var current_button_index in response[availability]['Availability']) {
+                                        var current_button_busy = true;
+                                        for (var current_button_index in response[availability]['Availability']) {
 
-                                        var b = response[availability]['Availability'][current_button_index];
-                                        var dispalytime =
-                                            (b['Discount'] == undefined ? '' : b['Discount'] + '<br/>') +
-                                            b['StartTime'] +
-                                            (redi_restaurant_reservation.endreservationtime == 'true' ? ' - ' + b['EndTime'] : '');
+                                            var b = response[availability]['Availability'][current_button_index];
+                                            var dispalytime =
+                                                (b['Discount'] == undefined ? '' : b['Discount'] + '<br/>') +
+                                                b['StartTime'] +
+                                                (redi_restaurant_reservation.endreservationtime == 'true' ? ' - ' + b['EndTime'] : '');
 
-                                        var duration = b['Duration'];
+                                            var duration = b['Duration'];
 
-                                        html += '<button ' +
-                                            'data-reservation-duration="' + duration + '"' +
-                                            'data-time-services-left="' + b['ServicesLeft'] + '"' +
-                                            //+ (b['Available'] ? '' : 'disabled="disabled"')
-                                            (b['Available'] ? '' : ' data-tooltip="' + b['Reason'] + '"') +
-                                            ' class="redi-restaurant-time-button button ' + (b['Available'] ? '' : 'disabled') +
-                                            ' ' + (b['DiscountClass'] ? b['DiscountClass'] : '') +
-                                            '" value="' + b['StartTimeISO'] + '" ' +
-                                            ' ' + (b['Select'] ? 'select="select"' : '') + '>'
-                                            + dispalytime + '</button>';
-                                        if (b['Available']) {
-                                            all_busy = false;
-                                            current_button_busy = false;
+                                            if (waitlist == 'specific_time') {
+                                                html += '<button ' +
+                                                    'data-reservation-duration="' + duration + '"' +
+                                                    'data-time-services-left="' + b['ServicesLeft'] + '"' + 
+                                                    (b['Available'] ? '' : ' data-tooltip="' + b['Reason'] + '"') +
+                                                    ' class="redi-restaurant-time-button button ' +
+                                                    (b['Available'] ? '' : 'disabled') + ' ' +
+                                                    (b['DiscountClass'] ? b['DiscountClass'] : '') +
+                                                    (b['Available'] ? '' : 'waitlistTime')+'" value="' + b['StartTimeISO'] + '" ' +
+                                                    (b['Select'] ? 'select="select"' : '') + ' onclick=" return waitlistTimeButton(this) ">' +
+                                                    dispalytime + '</button>';
+                                            } else {
+                                                html += '<button ' +
+                                                    'data-reservation-duration="' + duration + '"' +
+                                                    'data-time-services-left="' + b['ServicesLeft'] + '"' +
+                                                    (b['Available'] ? '' : ' data-tooltip="' + b['Reason'] + '"') +
+                                                    ' class="redi-restaurant-time-button button ' +
+                                                    (b['Available'] ? '' : 'disabled') + ' ' +
+                                                    (b['DiscountClass'] ? b['DiscountClass'] : '') +
+                                                    '" value="' + b['StartTimeISO'] + '" ' +
+                                                    (b['Select'] ? 'select="select"' : '') + '>' +
+                                                    dispalytime + '</button>';
+                                            }
+
+
+                                            if (b['Available']) {
+                                                all_busy = false;
+                                                current_button_busy = false;
+                                            }
                                         }
-                                    }
 
-                                    if (current_button_busy) {
-                                        let step2busyClone = jQuery('#step2busy').clone();
-                                        if (!step2busyClone.hasClass('not-waitlist')) {
-                                            step2busyClone.removeAttr('id');
-                                            step2busyClone.css("display", "block");
-                                            html += step2busyClone.get(0).outerHTML;
-                                        }
-                                    }
-
-                                    html += '<br clear="all"><div class="services-left"></div></div>';
-
-                                    html += '<br clear="all">';
-                                    if (hidesteps) {
-                                        html += '</span>';
-                                    }
-
-                                    jQuery('#buttons').append(html);
-                                    if (hidesteps) {
                                         if (current_button_busy) {
-                                            step1buttons_html += 'disabled"'; //add class
-                                            step1buttons_html += ' title="' + redi_restaurant_reservation.tooltip + '"';
-                                        } else {
-                                            step1buttons_html += 'available"'; //close class bracket
+                                            let step2busyClone = jQuery('#step2busy').clone();
+                                            if (!step2busyClone.hasClass('not-waitlist')) {
+                                                step2busyClone.removeAttr('id');
+                                                step2busyClone.css("display", "block");
+                                                html += step2busyClone.get(0).outerHTML;
+                                            }
                                         }
-                                        step1buttons_html += ' type="submit">';
+
+                                        html += '<br clear="all"><div class="services-left"></div></div>';
+
+                                        html += '<br clear="all">';
+                                        if (hidesteps) {
+                                            html += '</span>';
+                                        }
+
+                                        jQuery('#buttons').append(html);
+                                        if (hidesteps) {
+                                            if (current_button_busy) {
+                                                step1buttons_html += 'disabled"'; //add class
+                                                step1buttons_html += ' title="' + redi_restaurant_reservation.tooltip + '"';
+                                            } else {
+                                                step1buttons_html += 'available"'; //close class bracket
+                                            }
+                                            step1buttons_html += ' type="submit">';
+                                        }
                                     }
+                                    current++;
                                 }
-                                current++;
                             }
                             jQuery('#buttons').append('</br>');
                             if (jQuery('#persons').val() === 'group' || jQuery('#persons').val() === '0') {
@@ -838,12 +882,19 @@ jQuery(function () {
 
 
     function clickWaitListForm() {
+        var time = "";
+        if( waitlist == 'specific_time' ){
+            time = jQuery('button.redi-restaurant-time-button.waitlistTime[select="select"]').text();
+            jQuery('#waitlist-Time').attr('type','hidden');
+            jQuery('#waitlist-startDatetime-label').text(time);
+        }
         jQuery('#redi-reservation').toggle("slide");
         jQuery('#step2busy').hide();
         jQuery('#step1errors').hide();
         jQuery('.waitlist-form').toggle("slide");
         var valueDate = jQuery('#redi-restaurant-startDate').val();
         jQuery('#redi-waitlist-startDate').val(jQuery('#redi-restaurant-startDateISO').val());
+        jQuery('#waitlist-Time').val(time);
         jQuery('#waitlist-startDate-label').html(valueDate);
         var valuePersons = jQuery('#persons').val();
         jQuery('#waitlist-persons-label').html(valuePersons);
@@ -1071,6 +1122,8 @@ jQuery(function () {
             if (reservation['Error']) {
                 jQuery('#modify-errors').html(reservation['Error']).show('slow');
             } else {
+
+                jQuery('#ChildrenQuantity').val(0);
                 jQuery('#update-success').slideUp();
                 jQuery('#modify-reservation-div').slideUp();
                 jQuery('#update-reservation-div').slideDown();
@@ -1143,6 +1196,7 @@ jQuery(function () {
             ID: jQuery('#redi-restaurant-updateID').val(),
             PlaceReferenceId: jQuery('#updatePlaceReferenceId').val(),
             Quantity: jQuery('#updatePersons').val(),
+            ChildrenQuantity: jQuery('#ChildrenQuantity').val(),
             UserName: jQuery('#updateUserName').val(),
             UserPhone: jQuery('#updateUserPhone').val(),
             UserEmail: jQuery('#updateUserEmail').val(),
@@ -1628,4 +1682,3 @@ Date.createFromString = function (string) {
 
     return new Date(absoluteMs);
 };
-

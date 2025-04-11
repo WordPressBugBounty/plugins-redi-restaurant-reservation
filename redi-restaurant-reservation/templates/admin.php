@@ -126,7 +126,7 @@
        href="admin.php?page=<?php echo $admin_slug ?>&amp;sm=free"><?php _e('Free package settings', 'redi-restaurant-reservation') ?></a>
     <a class="nav-tab <?php if ((isset($_GET['sm']) && $_GET['sm'] == 'cancel')): ?> nav-tab-active<?php endif; ?>"
        href="admin.php?page=<?php echo $admin_slug ?>&amp;sm=cancel"><?php _e('Cancel reservation', 'redi-restaurant-reservation') ?></a>
-	<div class="redi-admin-parent">
+    <div class="redi-admin-parent">
     <?php if (!isset($_GET['sm']) || (isset($_GET['sm']) && $_GET['sm'] == 'free')): ?>
         <div class="redi-admin-right">
 
@@ -167,7 +167,7 @@
                         <img src="<?php echo esc_url(plugin_dir_url(__DIR__).'img/2504845.png'); ?>"><a href="https://wa.me/+3725165285" target="_blank"> +372 51 65 285 (10AM - 10PM UTC)</a>
                     </li>
                     <li>
-                        <img src="<?php echo esc_url(plugin_dir_url(__DIR__).'img/168810.png'); ?>"> <a href="https://profiles.wordpress.org/thecatkin/" target="_blank">Catkin</a> & <a href="https://profiles.wordpress.org/robbyroboter/" target="_blank">Robby Roboter</a>
+                        <img src="<?php echo esc_url(plugin_dir_url(__DIR__).'img/168810.png'); ?>"> <a href="https://profiles.wordpress.org/thecatkin/" target="_blank">Catkin</a>
                     </li>
                     <li>
                         <img src="<?php echo esc_url(plugin_dir_url(__DIR__).'img/rate.png'); ?>"> <a href="https://wordpress.org/support/plugin/redi-restaurant-reservation/reviews/" target="_blank"><?php _e('Rate the plugin, help us grow', 'redi-restaurant-reservation');?></a>
@@ -206,11 +206,43 @@
 
         <?php if (!isset($_GET['sm']) || (isset($_GET['sm']) && $_GET['sm'] == 'free')): ?>
             <form name="redi-restaurant" method="post" id="redi-setting-form">
-            <input type="hidden" name="redi_plugin_nonce" value="<?php echo wp_create_nonce('redi_restaurant_ajax') ?>" />
-            <div class="icon32" id="icon-admin"><br></div>
+                <input type="hidden" name="redi_plugin_nonce" value="<?php echo wp_create_nonce('redi_restaurant_ajax') ?>" />
+                <div class="icon32" id="icon-admin"><br></div>
+             <div>
+                <h2><?php _e('Design theme', 'redi-restaurant-reservation'); ?></h2>
+            </div>
+
+
+            <table class="form-table redi_data_input_table">
+                <tr>
+                        <th scope="row">
+                            <label for="RediTheme">
+                                <?php _e('Select plugin theme', 'redi-restaurant-reservation'); ?>
+                            </label>
+                        </th>
+                        <td style="vertical-align: top;">
+                        <select name="RediTheme">
+                                <option value="Default_v1"
+                                        <?php if ($theme == ReDiTheme::Default_v1): ?>selected="selected" <?php endif; ?>><?php _e('Default theme', 'redi-restaurant-reservation'); ?></option>
+                                <option value="Design25_v2"
+                                        <?php if ($theme == ReDiTheme::Design25_v2): ?>selected="selected" <?php endif; ?>><?php _e('Theme 25 (BETA)', 'redi-restaurant-reservation'); ?></option>
+                            </select>
+                        </td>
+                        <td style="width:75%">
+                            <p class="description">
+                                <?php _e('Choose the appearance of the plugin.', 'redi-restaurant-reservation'); ?><br>
+                                <strong><?php _e('Default Style', 'redi-restaurant-reservation'); ?></strong>: <?php _e('Adapts to your website\'s theme, ensuring seamless integration. However, some adjustments may be needed to match your design preferences.', 'redi-restaurant-reservation'); ?><br>
+                                <strong><?php _e('Design25 (BETA)', 'redi-restaurant-reservation'); ?></strong>: <?php _e('A pre-designed style requiring minimal customization for a polished look. Please note that this option is still in beta testing.', 'redi-restaurant-reservation'); ?>
+                                <?php _e('Please contact info@reservationdiary.eu for any issues in this theme.', 'redi-restaurant-reservation'); ?>
+                            </p>
+                        </td>
+                </tr>
+            </table>
+
+
             <div>
-            <h2><?php _e('Data Input Appearance', 'redi-restaurant-reservation'); ?></h2>
-        </div>
+                <h2><?php _e('Data Input Appearance', 'redi-restaurant-reservation'); ?></h2>
+            </div>
             <p><a href="javascript:;" data-id="sGzJlJrxhtk" class="button-primary1 redi_video_btn"><?php _e("Video Tutorial", "redi-restaurant-reservation") ?></a></p>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/sGzJlJrxhtk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:none;"></iframe>
 
@@ -220,7 +252,7 @@
                             <label for="EnableCancelForm">
                                 <?php _e('Enable cancel form', 'redi-restaurant-reservation'); ?>
                             </label>
-                        </td>
+                        </th>
                         <td style="vertical-align: top;">
                             <input type="checkbox" name="EnableCancelForm" id="EnableCancelForm"
                                    value="1" <?php if (isset($EnableCancelForm) && $EnableCancelForm) echo 'checked="checked"' ?>>
@@ -263,7 +295,7 @@
                             </p>
                         </td>
                     </tr>
-					<tr>
+                    <tr>
                         <th scope="row">
                             <label for="EnableSocialLogin">
                                 <?php _e('Enable social network login', 'redi-restaurant-reservation'); ?>
@@ -436,31 +468,53 @@
                             </p>
                         </td>
                     </tr>
-	                <tr>
+                    <tr>
                         <th scope="row" style="width:25%;">
                             <label for="ChildrenSelection"><?php _e('Сhildren selection', 'redi-restaurant-reservation'); ?> </label>
                         </th>
                         <td>
                             <input type="checkbox" name="ChildrenSelection" id="ChildrenSelection"
-                                   value="1" <?php if (isset($childrenSelection) && $childrenSelection) echo 'checked="checked"' ?>>	
+                                   value="1" <?php if (isset($childrenSelection) && $childrenSelection) echo 'checked="checked"' ?>>    
                         </td>
                         <td>
                             <p class="description">
                                 <?php _e('Enable/Disable children dropdown', 'redi-restaurant-reservation');?>
                             </p>
                         </td>
-                    </tr>					
-					<tr>
-						<th></th>
-						<td>
-							<input id="ChildrenDescription" type="text" value="<?php echo $childrenDescription ?>" name="ChildrenDescription"/>
-						</td>
-						<td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="width:25%;">
+                            <label for="MaxChild"><?php _e('Max children per reservation', 'redi-restaurant-reservation'); ?> </label>
+                        </th>
+                        <td>
+                            <select name="MaxChild" id="MaxChild">
+                                <option value=""><?php _e('Please select the maximum number of children.', 'redi-restaurant-reservation'); ?> </option>
+                                <?php foreach (range(1, 50) as $current): ?>
+
+                                    <option value="<?php echo $current ?>"
+                                            <?php if (isset($MaxChild) && $current == $MaxChild): ?>selected="selected"<?php endif; ?>>
+                                        <?php echo $current ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </td>
+                        <td>
+                            <p class="description">
+                                <?php _e('Limits the maximum number of children per reservation', 'redi-restaurant-reservation');?>
+                            </p>
+                        </td>
+                    </tr>               
+                    <tr>
+                        <th></th>
+                        <td>
+                            <input id="ChildrenDescription" type="text" value="<?php echo $childrenDescription ?>" name="ChildrenDescription"/>
+                        </td>
+                        <td>
                             <p class="description">
                                 <?php _e('Description for children dropdown', 'redi-restaurant-reservation'); ?>
                             </p>
                         </td>
-					</tr>
+                    </tr>
                 </table>
 
                     <h2><?php _e('Available Time Appearance', 'redi-restaurant-reservation'); ?></h2>
@@ -518,7 +572,7 @@
                     </tr>
                     <?php endif; ?>
 
-					<!--- show end reservation time starts -->
+                    <!--- show end reservation time starts -->
                     <tr style="width: 250px">
                         <th scope="row">
                             <label for="EndReservationTime">
@@ -527,9 +581,9 @@
                         </th>
                         <td style="vertical-align: top;">
                            
-							 <input type="checkbox" name="EndReservationTime" id="EndReservationTime"
+                             <input type="checkbox" name="EndReservationTime" id="EndReservationTime"
                                    value="true"  <?php checked( $endreservationtime, 'true' , true); ?> >
-								
+                                
                         </td>
                         <td style="width:75%">
                             <p class="description">
@@ -537,22 +591,22 @@
                             </p>
                         </td>
                     </tr>  
-					<!--- show end reservation time ends -->
-					<tr>
-						<th scope="row">
-							<label for="DisplayLeftSeats">
-								<?php _e('Display left seats', 'redi-restaurant-reservation'); ?>
-							</label>
-						</th>
-						<td style="vertical-align: top;">
-							<input type="checkbox" name="DisplayLeftSeats" id="DisplayLeftSeats" value="1" <?php if (isset($displayLeftSeats) && $displayLeftSeats) echo 'checked="checked"' ?>>
-						</td>
-						<td style="width:75%">
-							<p class="description">
-								<?php _e('If checkbox is checked then seats left will be shown under selected time.', 'redi-restaurant-reservation'); ?>
-							</p>
-						</td>
-					</tr>
+                    <!--- show end reservation time ends -->
+                    <tr>
+                        <th scope="row">
+                            <label for="DisplayLeftSeats">
+                                <?php _e('Display left seats', 'redi-restaurant-reservation'); ?>
+                            </label>
+                        </th>
+                        <td style="vertical-align: top;">
+                            <input type="checkbox" name="DisplayLeftSeats" id="DisplayLeftSeats" value="1" <?php if (isset($displayLeftSeats) && $displayLeftSeats) echo 'checked="checked"' ?>>
+                        </td>
+                        <td style="width:75%">
+                            <p class="description">
+                                <?php _e('If checkbox is checked then seats left will be shown under selected time.', 'redi-restaurant-reservation'); ?>
+                            </p>
+                        </td>
+                    </tr>
                     <tr>
                         <th scope="row">
                             <label for="AlternativeTimeStep">
@@ -589,10 +643,10 @@
                                 <?php 
                                         // Translators: %d is the number of minutes for the time step option in the dropdown menu
                                          if ($alternativeTimeStep == 120): ?>selected="selected" <?php endif; ?>><?php printf(__('%d min', 'redi-restaurant-reservation'), 120); ?></option>
-								<option value="180"
+                                <option value="180"
                                 <?php 
                                         // Translators: %d is the number of minutes for the time step option in the dropdown menu
-                                         if ($alternativeTimeStep == 180): ?>selected="selected" <?php endif; ?>><?php printf(__('%d min', 'redi-restaurant-reservation'), 180); ?></option>		
+                                         if ($alternativeTimeStep == 180): ?>selected="selected" <?php endif; ?>><?php printf(__('%d min', 'redi-restaurant-reservation'), 180); ?></option>        
                             </select>
                         </td>
                         <td style="width:75%">
@@ -608,8 +662,8 @@
                             </label>
                         </th>
                         <td style="vertical-align: top;">
-							<textarea maxlength="250" name="FullyBookedMessage" id="FullyBookedMessage" rows="5"
-                                      cols="40"><?php echo $fullyBookedMessage ?></textarea>	
+                            <textarea maxlength="250" name="FullyBookedMessage" id="FullyBookedMessage" rows="5"
+                                      cols="40"><?php echo $fullyBookedMessage ?></textarea>    
                         </td>
                         <td style="width:75%; vertical-align: top;">
                             <p class="description">
@@ -622,22 +676,25 @@
                     <tr>
                         <th scope="row">
                             <label for="WaitList">
-                                <?php _e('Enable Wait List', 'redi-restaurant-reservation'); ?>
+                                <?php _e('Wait List Setting', 'redi-restaurant-reservation'); ?>
                             </label>
                         </th>
                         <td style="vertical-align: top;">
-                            <input type="checkbox" name="WaitList" id="WaitList"
-                                   value="1" <?php if (isset($waitlist) && $waitlist) echo 'checked="checked"' ?>>
+                            <select name="WaitList" id="WaitList">
+                                <option value="disabled" <?php selected($waitlist, 'disabled'); ?>><?php _e('Disabled', 'redi-restaurant-reservation'); ?></option>
+                                <option value="specific_time" <?php selected($waitlist, 'specific_time'); ?>><?php _e('When specific time is not available', 'redi-restaurant-reservation'); ?></option>
+                                <option value="fully_booked" <?php selected($waitlist, 'fully_booked'); ?>><?php _e('When fully booked', 'redi-restaurant-reservation'); ?></option>
+                            </select>
                         </td>
                         <td style="width:75%">
                             <p class="description">
-                                <?php _e('When this option is enabled, guest will have an opportunity to fill out Wait List form in case it\'s fully booked. Then if someone cancels reservation, this guest can be contacted and offered a reservation.', 'redi-restaurant-reservation'); ?>
+                                <strong><?php _e('Disabled', 'redi-restaurant-reservation'); ?>:</strong> <?php _e('Do not allow guests to fill the Wait List form.', 'redi-restaurant-reservation'); ?><br>
+                                <strong><?php _e('When specific time is not available', 'redi-restaurant-reservation'); ?>:</strong> <?php _e('Allow users to fill the Wait List when their preferred time is unavailable.', 'redi-restaurant-reservation'); ?><br>
+                                <strong><?php _e('When fully booked', 'redi-restaurant-reservation'); ?>:</strong> <?php _e('Allow users to fill the Wait List when all time slots for the day are booked.', 'redi-restaurant-reservation'); ?>
                             </p>
                         </td>
                     </tr>
-
-
-                                        </table>
+                </table>
 
                     <h2><?php _e('Reservation Form settings', 'redi-restaurant-reservation'); ?></h2>
                     <p><a href="javascript:;" data-id="_fhxq-RshgU" class="button-primary1 redi_video_btn"><?php _e("Video Tutorial", "redi-restaurant-reservation") ?></a></p>
@@ -645,7 +702,7 @@
                     <table class="form-table redi_reservation_form_table">
 
 
-					<!--- first/last name starts -->
+                    <!--- first/last name starts -->
                     <tr style="width: 250px">
                         <th scope="row">
                             <label for="EnableFirstLastName">
@@ -653,10 +710,10 @@
                             </label>
                         </th>
                         <td style="vertical-align: top;">                         
-							
-							  <input type="checkbox" name="EnableFirstLastName" id="EnableFirstLastName"
+                            
+                              <input type="checkbox" name="EnableFirstLastName" id="EnableFirstLastName"
                                    value="true"  <?php checked( $enablefirstlastname, 'true' , true); ?> >
-								   
+                                   
                         </td>
                         <td style="width:75%">
                             <p class="description">
@@ -664,8 +721,8 @@
                             </p>
                         </td>
                     </tr>  
-					<!--- first/last name ends -->
-					<!--- phone number with country code starts -->
+                    <!--- first/last name ends -->
+                    <!--- phone number with country code starts -->
                     <tr style="width: 250px">
                         <th scope="row">
                             <label for="CountryCode">
@@ -673,9 +730,9 @@
                             </label>
                         </th>
                         <td style="vertical-align: top;">
-							 <input type="checkbox" name="CountryCode" id="CountryCode"
+                             <input type="checkbox" name="CountryCode" id="CountryCode"
                                    value="true"  <?php checked( $countrycode, 'true' , true); ?> >
-								
+                                
                         </td>
                         <td style="width:75%">
                             <p class="description">
@@ -683,8 +740,8 @@
                             </p>
                         </td>
                     </tr>  
-					<!--- phone number with country code ends -->
-					<tr>
+                    <!--- phone number with country code ends -->
+                    <tr>
                         <th scope="row">
                             <label for="Captcha">
                                 <?php _e('Captcha', 'redi-restaurant-reservation'); ?>
@@ -700,40 +757,51 @@
                             </p>
                         </td>
                     </tr>
-					<tr>
-						<th scope="row">
+                    <tr>
+                        <th scope="row">
                         <label for="CaptchaKey">
                                 <?php _e('Captcha key', 'redi-restaurant-reservation'); ?>
                             </label>
 
                         </th>
-						<td>
-							<input id="CaptchaKey" type="text" value="<?php echo $captchaKey ?>" name="CaptchaKey"/>
-						</td>
-						<td>
+                        <td>
+                            <input id="CaptchaKey" type="text" value="<?php echo $captchaKey ?>" name="CaptchaKey"/>
+                        </td>
+                        <td>
                             <p class="description">
                                 <?php _e('Obtain your captcha key from Google.', 'redi-restaurant-reservation'); ?> <a target='_blank' href='https://www.google.com/recaptcha/admin/create'><?php _e('Visit Google site', 'redi-restaurant-reservation'); ?></a>
                             </p>
                         </td>
-					</tr>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="Iscomments">
+                                <?php   _e('Show comments', 'redi-restaurant-reservation'); ?>
+                        <td>
+                            <input type="checkbox" name="ShowComment" id="Iscomments" value="1" <?php if ($ShowComment == "" || $ShowComment == 1) echo 'checked="checked"' ?>>
+                        </td>
+                        <td>
+                            <p class="description"><?php  _e('Allows to show or hide comments section on the reservation form. Enabled by default. If you see that your guests misuse the comments section, disable it.', 'redi-restaurant-reservation'); ?> </p>
+                        </td>
+                    </tr>
 
                     <tr>
-						<th scope="row">
+                        <th scope="row">
                         <label for="MandatoryCancellationReason">
                                 <?php _e('Mandatory Cancellation Reason', 'redi-restaurant-reservation'); ?>
                             </label>
 
                         </th>
-						<td>
+                        <td>
                             <input type="checkbox" name="MandatoryCancellationReason" id="MandatoryCancellationReason"
-                                   value="1" <?php if (isset($mandatoryCancellationReason) && $mandatoryCancellationReason) echo 'checked="checked"' ?>>						
+                                   value="1" <?php if (isset($mandatoryCancellationReason) && $mandatoryCancellationReason) echo 'checked="checked"' ?>>                        
                                 </td>
-						<td>
+                        <td>
                             <p class="description">
                                 <?php _e('Force users to provide a reason when canceling reservation.', 'redi-restaurant-reservation'); ?>
                             </p>
                         </td>
-					</tr>
+                    </tr>
 
 
                     </table>

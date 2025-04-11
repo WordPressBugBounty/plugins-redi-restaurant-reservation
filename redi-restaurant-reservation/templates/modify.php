@@ -25,11 +25,15 @@
 	<br/>
 	<div id="update-reservation-form">
 		<form method="post" action="?jquery_fail=true">		
-			<p><?php _e('Date', 'redi-restaurant-reservation')?>: <span class="redi-modify-date" id="updateDateFrom"></span></p>
-			<p><?php _e('Time', 'redi-restaurant-reservation')?>: <span class="redi-modify-time" id="updateTimeFrom"></span></p>
-			<p>
+			<div class="redi-modify-date-time">
+				<?php _e('Date', 'redi-restaurant-reservation')?>: <div class="redi-modify-date" id="updateDateFrom"></div>
+			</div>
+			<div class="redi-modify-date-time">
+				<?php _e('Time', 'redi-restaurant-reservation')?>: <div class="redi-modify-time" id="updateTimeFrom"></div>
+			</div>
+
 				<label for="updatePersons">
-					<?php _e('Persons', 'redi-restaurant-reservation')?>:
+				<?php _e('Number of guests', 'redi-restaurant-reservation') ?>
 				</label>
 				<select name="updatePersons" id="updatePersons" class="redi-reservation-select">
 					<?php for ($i = $minPersons; $i != $maxPersons+1; $i++): ?>
@@ -38,7 +42,20 @@
 						</option>
 					<?php endfor?>
 				</select>
-			</p>
+			<?php /* if ($childrenSelection):?>
+				<label for="ChildrenQuantity"><?php _e('Children', 'redi-restaurant-reservation')?>:
+					<br/>
+			<span class="children_description"><?php echo empty($childrenDescription) ? '': ' ' . $childrenDescription?></span></label>
+				<select name="ChildrenQuantity" id="ChildrenQuantity" class="redi-reservation-select">
+					<?php $MaxChild = ($MaxChild != "") ? $MaxChild : 50;
+					for ($i = 0; $i != $MaxChild+1; $i++): ?>
+						<option value="<?php echo $i?>">
+							<?php echo $i ?>
+						</option>
+					<?php endfor?>          
+				</select>
+			
+		<?php endif */ ?>
 			<div>
 				<label for="updateUserName"><?php _e('Name', 'redi-restaurant-reservation');?>:<span class="redi_required"> *</span></label>
 				<input type="text" value="" name="updateUserName" id="updateUserName">

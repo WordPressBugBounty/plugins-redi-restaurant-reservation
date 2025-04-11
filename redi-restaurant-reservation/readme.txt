@@ -1,8 +1,8 @@
-﻿=== ReDi Restaurant Reservation ===
+﻿=== ReDi Restaurant Reservation - Instant Availability & Confirmation ===
 Contributors: thecatkin
 Tags: Best WordPress restaurant reservation plugin, Restaurant reservation system, Table booking, Online reservation, Restaurant booking plugin
 Requires at least: 5.0.0
-Tested up to: 6.6
+Tested up to: 6.7.2
 Stable tag: trunk
 License: GPLv2 or later
 Get your restaurant booming with the ReDi Reservation plugin! Simplify bookings, offer instant confirmations, and customize settings. Try today!
@@ -54,7 +54,7 @@ The benefits of using a restaurant reservation system, such as ReDi, are numerou
 The ReDi Restaurant Reservation plugin works well for all types of businesses, including little cafés, bars, and large restaurants. The plugin includes several helpful functions and highlights.
 
 = INSTANT CONFIRMATION =
-Checking and confirming availability in an instant without any delays. This ReDi feature is one in its category, other reservation plugins are missing this availability. That’s why it makes ReDi stand out in the market.
+Checking and confirming availability in an instant without any delays. This restaurant reservation plugin feature is one in its category, other reservation plugins are missing this availability. That’s why it makes ReDi stand out in the market.
 
 = RESERVATION FORM =
 Reservation form available for all devices (mobile, tablet, PC, etc.), allowing visitors to view all of the available reservations for that day.
@@ -69,7 +69,7 @@ Establish a specified timeframe from which bookings can no longer be accepted.
 = EMAIL CONFIRMATION =
 Fully customizable and multilingual email templates to send instant confirmation letters to clients.
 
-* All these features prove Redi is not a simple reservation solution, but powerful software that allows checking various aspects before making a confirmation, such as: 
+* All these features prove ReDi Restaurant Reservation plugion is not a simple reservation solution, but powerful software that allows checking various aspects before making a confirmation, such as: 
 * Is the restaurant open on that day/hour?
 * Is the restaurant's capacity enough for receiving guests?
 * Can the kitchen serve guests without delays?
@@ -238,32 +238,32 @@ When plugin is activated, new page is automatically created and you can make you
 In case you have any problems with plugin installation or you need some customization, please don't hesitate to contact us by email: <a href="mailto:info@reservationdiary.eu">info@reservationdiary.eu</a>
 
 == Screenshots ==
-01. Example of plugin first page installed into default theme. When plugin is activated, new "Reservation" page is created. Step 1: Requests from user to select reservation date and time, and number of seats. User has to click on a button "Check available time". System will query online database for available places at specified time and shows result.
-02. Example of calendar control.
-03. Example of time control.
-04. Step 2: On this step user is requested to select available time if any.
-05. Step 3: Once user selects available reservation time, user will be requested to fill reservation form with contact information and custom fields.
-06. Reservation confirmation screen. At this time user has to receive confirmation email. Same time restaurant owner receives list of all upcoming reservations.
-07. Setup screen with number of seats available, maximum persons per reservation, opening times and days of the week.
-08. Setup screen with info on the restaurant including name, address, country, phone, email, URL
-09. List of upcoming reservations on Mobile/Tablet PC (Available only for Basic package users). Demo version can be accessed by this link: <a href="http://upcoming.reservationdiary.eu/en/Entry2/89a08039-2c68-47c4-978c-3acb3e9989ea" target="_blank">Open demo version</a>
-10. Detailed reservation information on Mobile/Tablet PC (Available only for Basic package users). Photo is taken from Facebook public profile. Photo, Visits and Rating are available only by request.
-11. Cancel reservation from Tablet PC version
-12. Configuration for maximum available seats for online reservation by week day. (Available only for Basic package users)
-13. Setting for custom fields that user should fill during reservation
-14. List of Time shifts (Available only for Basic package users)
-15. Open/close time for time shift (Available only for Basic package users)
-16. Time before reservation for time shift by weekday (Available only for Basic package users)
-17. Step 1: Select place, date and time (Multiple places available only for Basic package users)
-18. Blocked Time list. (Available only for Basic package users)
-19. Edit Blocked time. (Available only for Basic package users)
-20. Step 1: Setup Goal with Google Analytics Tracking Code (google analytics/Conversions/Goals/Overview/Set up goals/New goal). 
-21. Step 2: Setup Goal details (Category: ReDi Restaurant Reservation, Action: Reservation confirmed)
-22. Cancel reservation page for clients.
-23. Step 1: Display all available time grouped by Opening Times (Available only for Basic package users)
-24. List of all emails available for customization
-25. Example of Email customization page
-26. Change reservation from Tablet PC version
+1.	Example of the plugin's first page installed on a default theme. When the plugin is activated, a new "Reservation" page is automatically created. Step 1: The user selects a restaurant, specifies the number of adults and children, and clicks on the "Next Step" button to proceed.
+2.	Example of the calendar control used for selecting available dates.
+3.	On this step, the user is requested to select an available time slot if any are available.
+4.	Once the user selects a reservation time, they will be asked to fill out a reservation form with contact details and any custom fields required by the restaurant.
+5.	Reservation confirmation screen. At this stage, the user receives a confirmation email, while the restaurant owner gets a list of all upcoming reservations.
+6.	Cancel reservation page for clients, allowing them to manage and cancel their bookings.
+7.	Step 1: Modify reservation. The user can find an existing reservation by entering any available details such as reservation number, phone number, email, or name.
+8.	Step 2: Modify reservation. The user can update reservation details as needed.
+9.	Modify a reservation from the Tablet PC version, allowing users to adjust bookings conveniently on a tablet.
+10.	Setup screen for configuring the number of available seats, the maximum number of persons per reservation, and the restaurant’s opening times and days of the week.
+11.	Setup screen for entering restaurant details, including name, address, country, phone number, email, and website URL.
+12.	List of upcoming reservations on Mobile/Tablet PC, available only for Basic package users. Demo version can be accessed by this link: <a href="http://upcoming.reservationdiary.eu/en/Entry2/89a08039-2c68-47c4-978c-3acb3e9989ea" target="_blank">Open demo version</a>.
+13.	Detailed reservation information on Mobile/Tablet PC, available only for Basic package users. The profile photo is retrieved from the user's Facebook public profile. Additional details such as photo, visit history, and rating are available upon request.
+14.	Cancel reservation from the Tablet PC version, providing users with an easy way to manage cancellations on a tablet.
+15.	Configuration for setting the maximum number of available seats for online reservations by weekday, available only for Basic package users.
+16.	Setting for defining custom fields that users must fill in during the reservation process.
+17.	List of time shifts available for reservations, accessible only to Basic package users.
+18.	Open and close time configuration for different time shifts, available only for Basic package users.
+19.	Time restrictions before reservation for each time shift by weekday, available only for Basic package users.
+20.	Blocked time list management, available only for Basic package users.
+21.	Edit blocked time settings, allowing changes to restricted time slots, available only for Basic package users.
+22.	Step 1: Set up a goal in Google Analytics using the tracking code. Navigate to Google Analytics > Conversions > Goals > Overview > Set up goals > New goal.
+23.	Step 2: Configure goal details in Google Analytics with Category set to "ReDi Restaurant Reservation" and Action set to "Reservation Confirmed."
+24.	List of all email templates available for customization to fit specific business needs.
+25.	Example of the email customization page, showing how email notifications can be tailored.
+
 
 == Upgrade Notice ==
 
@@ -273,6 +273,10 @@ In case you have any problems with plugin installation or you need some customiz
 * Added filter by open time name when provided as a parameter in the shortcode
 * Added the ability to place custom fields in any order on the reservation form, including before the first field
 * Fixed issue with the waitlist
++ Changed languages from generic to languages with locales
++ Added dropdown for children reservation
++ Added signing in to waitlist for specific time
++ Added new Theme: Design25 (BETA)
 
 = 24.1015
 * Changed tooltip styles for disabled times, so that information can be shown on mobiles as well

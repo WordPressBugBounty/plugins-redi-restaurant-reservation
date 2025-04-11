@@ -440,7 +440,7 @@
                                 <?php _e('Duration of reservation in minutes. This is the time allocated for each reservation so the reservation system can calculate availability. Enter here average time that guests stays in.', 'redi-restaurant-reservation'); ?>
                             </p>
                         </td>
-                    </tr>
+        </tr>
 		<tr>
 			<th style="vertical-align: top;">
 				<label for="MinTimeBeforeReservation">

@@ -8,7 +8,7 @@
     Author URI: https://landing.reservationdiary.eu
     License: GPLv3 & Proprietary License
     Text Domain: redi-restaurant-reservation
-    Domain Path: /lang
+    Domain Path: /languages
  */
 if (!defined('REDI_RESTAURANT_PLUGIN_URL')) {
     define('REDI_RESTAURANT_PLUGIN_URL', plugin_dir_url(__FILE__));
@@ -52,6 +52,17 @@ if (!class_exists('ReDiRestaurantReservation')) {
             const Disabled = 'Disabled';
         }
     }
+
+    if (!class_exists('ReDiTheme'))
+    {
+        class ReDiTheme
+        {
+            const Default_v1 = 'Default_v1';
+            const Design25_v2 = 'Design25_v2';
+            const DesignR25_v3 = 'DesignR25_v3';
+        }
+    }
+
     if (!class_exists('EmailContentType')) {
         class EmailContentType
         {
@@ -131,7 +142,8 @@ if (!class_exists('ReDiRestaurantReservation')) {
 
             register_activation_hook(__FILE__, array($this, 'activate'));
             register_deactivation_hook(__FILE__, array($this, 'deactivate'));
-            register_uninstall_hook(__FILE__, 'uninstall'); // static
+
+            register_uninstall_hook(__FILE__, array('ReDiRestaurantReservation', 'uninstall')); // static
 
             add_action('admin_enqueue_scripts', array($this, 'admin_setting_design'));
 
@@ -228,7 +240,7 @@ if (!class_exists('ReDiRestaurantReservation')) {
                 }
 
                 $settings_url = get_admin_url( null, 'admin.php?page=' . $settings_page);
-                array_unshift( $links, '<a href="' . $settings_url . '" title="' . __( 'Settins', 'redi-restaurant-reservation' ) . '">' . __( 'Settings', 'redi-restaurant-reservation' ) . '</a>' );
+                array_unshift( $links, '<a href="' . $settings_url . '" title="' . __( 'Settings', 'redi-restaurant-reservation' ) . '">' . __( 'Settings', 'redi-restaurant-reservation' ) . '</a>' );
                 $links['help'] = '<a target ="_blank" href="https://redi.atlassian.net/wiki/spaces/REDIPLUGINDOCS/overview" title="' . __( 'View the help documentation for ReDi Restaurant Reservations plugin', 'redi-restaurant-reservation' ) . '">' . __( 'Help', 'redi-restaurant-reservation' ) . '</a>';
 	    	}
     
@@ -300,7 +312,7 @@ if (!class_exists('ReDiRestaurantReservation')) {
             $plugin_data = get_plugin_data(__FILE__);
             $plugin_version = $plugin_data['Version'];
 
-            return $plugin_version;
+            return $plugin_version . '-' . $this->GetOption('Theme', ReDiTheme::Default_v1);
         }
 
         /**
@@ -310,11 +322,12 @@ if (!class_exists('ReDiRestaurantReservation')) {
         function get_options()
         {
             if (!$options = get_option($this->optionsName)) {
+                $options = []; // Default values
                 update_option($this->optionsName, $options);
             }
             $this->options = $options;
         }
-
+        
         private function register($email,$consentContact)
         {
             $new_account = array(); 
@@ -388,6 +401,8 @@ if (!class_exists('ReDiRestaurantReservation')) {
 
         /**
          * Saves the admin options to the database.
+         *
+         * @return bool True if the option was successfully updated, false otherwise.
          */
         function saveAdminOptions()
         {
@@ -616,8 +631,11 @@ if (!class_exists('ReDiRestaurantReservation')) {
                 $MaxGuestsPerMonth = (int)self::GetPost('MaxGuestsPerMonth');
                 $minPersons = (int)self::GetPost('MinPersons');
                 $maxPersons = (int)self::GetPost('MaxPersons');
+                $ShowComment = self::GetPost('ShowComment');
+                $MaxChild = self::GetPost('MaxChild');
                 $largeGroupsMessage = self::GetPost('LargeGroupsMessage');
                 $emailFrom = self::GetPost('EmailFrom');
+                $theme = self::GetPost('RediTheme');
                 $email = self::GetPost('Email');
                 $restro_name = self::GetPost('Name');
                 $report = self::GetPost('Report', Report::Full);
@@ -675,6 +693,11 @@ if (!class_exists('ReDiRestaurantReservation')) {
                     $form_valid = false;
                 }
 
+                if ($childrenSelection == '1' && ($MaxChild == '0' || empty($MaxChild))) {
+                    $errors[] = '<a href="#MaxChild">' . __('Please select value from "Max children per reservation"', 'redi-restaurant-reservation') . '</a>';
+                    $form_valid = false;
+                }
+
                 if ($IsSubscription != false) {
                     if (empty($SubscriptionEmail)) {
                         $errors[] = '<a href="#SubscriptionEmail">' . __('"Subscription Email" Field should be filled.', 'redi-restaurant-reservation') . '</a>';
@@ -725,7 +748,7 @@ if (!class_exists('ReDiRestaurantReservation')) {
                         'MaxTimeBeforeReservation' => self::GetPost('MaxTime'),
                         'MaxTimeBeforeReservationType' => self::GetPost('MaxTimeBeforeReservationType'),
                         'ReservationDuration' => $reservationTime,
-                        'Version' => $this->version,
+                        'Version' => self::plugin_get_version(),
                         'ContactPersonName' => $SubscriptionName,
                         'ContactPersonEmail' => $SubscriptionEmail,
                         'ContactConsent' => $IsSubscription
@@ -809,6 +832,12 @@ if (!class_exists('ReDiRestaurantReservation')) {
                     $this->options['CountryCode'] = $countrycode;
                     $this->options['MinPersons'] = $minPersons;
                     $this->options['MaxPersons'] = $maxPersons;
+                    if(isset($ShowComment) && $ShowComment != ""){
+                        $this->options['ShowComment'] = $ShowComment;
+                    } else{
+                        $this->options['ShowComment'] = 0;
+                    }
+                    $this->options['MaxChild'] = $MaxChild;
                     $this->options['LargeGroupsMessage'] = $largeGroupsMessage;
                     $this->options['EmailFrom'] = $emailFrom;
                     $this->options['Email'] = $email;
@@ -829,6 +858,7 @@ if (!class_exists('ReDiRestaurantReservation')) {
                     $this->options['CaptchaKey'] = $captchaKey;
                     $this->options['MandatoryCancellationReason'] = $mandatoryCancellationReason;
                     $this->options['lang_path'] = $lang_path;
+                    $this->options['Theme'] = $theme;
 
                     if(!empty($lang_path)){                     
                         $upload_dir = wp_upload_dir();
@@ -961,9 +991,13 @@ if (!class_exists('ReDiRestaurantReservation')) {
 
                 $minPersons = $this->GetOption('MinPersons', 1);
                 $maxPersons = $this->GetOption('MaxPersons', 10);
+                $ShowComment = $this->GetOption('ShowComment');
+                $MaxChild = $this->GetOption('MaxChild');
+                
                 $alternativeTimeStep = $this->GetOption('AlternativeTimeStep', 30);
                 $largeGroupsMessage = $this->GetOption('LargeGroupsMessage', '');
                 $emailFrom = $this->GetOption('EmailFrom', ReDiSendEmailFromOptions::ReDi);
+                $theme = $this->GetOption('Theme', 'Default_v1');
                 $email = $this->GetOption('Email','');
                 $restro_name = $this->GetOption('Name','');
                 $report = $this->GetOption('Report', Report::Full);
@@ -1102,17 +1136,41 @@ if (!class_exists('ReDiRestaurantReservation')) {
 
         function init_sessions()
         {
-            if (function_exists('load_plugin_textdomain')) {
-                add_filter('load_textdomain_mofile', array($this, 'language_files'), 10, 2);
+            self::load_plugin_translations();
+        }
 
-                $uploads_path = plugin_dir_path( __FILE__ ). 'lang';
-                $lang_path = $this->GetOption('lang_path', '');
+        function load_plugin_translations() {
+            // Define the text domain and the path to the plugin's languages directory
+            $textdomain = 'redi-restaurant-reservation';
+            $plugin_path = dirname(plugin_basename(__FILE__)) . '/languages/';
+        
+            // Get the current locale (e.g., fr_CA, de_AT, etc.)
+            $locale = get_locale();
+        
+            // Check if the locale contains a region (e.g., fr_CA, de_AT)
+            if (strpos($locale, '_') !== false) {
+            // Split the locale into language and region parts
+            list($language, $region) = explode('_', $locale);
+        
+            // Check if there's a specific translation for the full locale (e.g., fr_CA, de_AT)
+            $locale_file = $plugin_path . 'redi-restaurant-reservation-' . $locale . '.mo';
+        
+            // If the specific locale file doesn't exist, fallback to the base language (e.g., fr_FR, de_DE)
+            if (!file_exists(WP_PLUGIN_DIR . '/' . $locale_file)) {
+                // Fallback to the base language locale (e.g., fr_CA -> fr_FR, de_AT -> de_DE)
+                $locale_file = $plugin_path . 'redi-restaurant-reservation-' . $language . '_' . strtoupper($language) . '.mo';
+            }
+            } else {
+            // If no region is specified, just use the locale as it is
+                $locale_file = $plugin_path . 'redi-restaurant-reservation-' . $locale . '.mo';
+            }
+        
+            // Load the plugin translations from the plugin's languages directory
+            load_plugin_textdomain($textdomain, false, $plugin_path);
 
-                if(isset($lang_path)){
-                    $uploads_path = WP_CONTENT_DIR . '/uploads/redi-translate/'.$lang_path;
-                }
-                load_plugin_textdomain('redi-restaurant-reservation', false, $uploads_path);
-                load_plugin_textdomain('redi-restaurant-reservation-errors', false,$uploads_path);
+            // Load the translation file if it exists
+            if (file_exists(WP_PLUGIN_DIR . '/' . $locale_file)) {
+                load_textdomain($textdomain, WP_PLUGIN_DIR . '/' . $locale_file);
             }
         }
 
@@ -1249,21 +1307,20 @@ if (!class_exists('ReDiRestaurantReservation')) {
 
         public static function uninstall()
         {
-            self::deletePage(true);
             self::deleteOptions();
         }
 
-        private function deletePage($hard = false)
+        public static function deletePage($hard = false)
         {
             $id = get_option(self::$name . '_page_id');
-            if ($id && $hard == true) {
-                wp_delete_post($id, true);
-            } elseif ($id && $hard == false) {
-                wp_delete_post($id);
+            
+            if ($id) 
+            {
+                wp_delete_post($id, $hard);
             }
         }
 
-        private function deleteOptions()
+        public static function deleteOptions()
         {
             delete_option(self::$name . '_page_title');
             delete_option(self::$name . '_page_name');
@@ -1275,7 +1332,14 @@ if (!class_exists('ReDiRestaurantReservation')) {
         public function shortcode($attributes)
         {
             if (is_array($attributes) && is_array($this->options)) {
-                $this->options = array_merge($this->options, $attributes);
+                // Convert all keys to have only the first letter capitalized
+                $formattedAttributes = [];
+                foreach ($attributes as $key => $value) {
+                    $formattedKey = ucfirst(strtolower($key)); // Convert to lowercase first, then capitalize
+                    $formattedAttributes[$formattedKey] = $value;
+                }
+            
+                $this->options = array_merge($this->options, $formattedAttributes);
             }
 
             ob_start();
@@ -1283,43 +1347,121 @@ if (!class_exists('ReDiRestaurantReservation')) {
             wp_enqueue_style('jquery_ui');
             wp_enqueue_script('moment');
 
-            wp_register_style('jquery-ui-custom-style',
-                REDI_RESTAURANT_PLUGIN_URL . 'css/custom-theme/jquery-ui-1.8.18.custom.css');
-            wp_enqueue_style('jquery-ui-custom-style');
-            wp_enqueue_script('jquery-ui-datepicker');
-            wp_register_script('datetimepicker',
-                REDI_RESTAURANT_PLUGIN_URL . 'lib/datetimepicker/js/jquery-ui-timepicker-addon.js',
-                array('jquery', 'jquery-ui-core', 'jquery-ui-slider', 'jquery-ui-datepicker'));
-            wp_enqueue_script('datetimepicker');
-
-            wp_register_script('datetimepicker-lang',
-                REDI_RESTAURANT_PLUGIN_URL . 'lib/datetimepicker/js/jquery.ui.i18n.all.min.js');
-            wp_enqueue_script('datetimepicker-lang');
-
-            wp_register_script('timepicker-lang',
-                REDI_RESTAURANT_PLUGIN_URL . 'lib/timepicker/i18n/jquery-ui-timepicker.all.lang.js');
-            wp_enqueue_script('timepicker-lang');
-
-            wp_register_script('reginaltimepicker-lang',
-                REDI_RESTAURANT_PLUGIN_URL . 'lib/timepicker/i18n/jquery-ui-i18n.min.js');
-            wp_enqueue_script('reginaltimepicker-lang');
-
-            if ($this->GetOption('CountryCode', true))
+            if ($this->GetOption("Theme", ReDiTheme::Default_v1) == ReDiTheme::Default_v1) 
             {
-                wp_register_style('intl-tel-custom-style',
-                    REDI_RESTAURANT_PLUGIN_URL . 'lib/intl-tel-input-16.0.0/build/css/intlTelInput.min.css');
-                wp_enqueue_style('intl-tel-custom-style');  
-                wp_register_script('intl-tel-input',
-                    REDI_RESTAURANT_PLUGIN_URL . 'lib/intl-tel-input-16.0.0/build/js/utils.js');
-                wp_enqueue_script('intl-tel-input');
-                wp_register_script('intl-tel',
-                    REDI_RESTAURANT_PLUGIN_URL . 'lib/intl-tel-input-16.0.0/build/js/intlTelInput.min.js');
-                wp_enqueue_script('intl-tel');
+                    wp_register_style('jquery-ui-custom-style',
+                    REDI_RESTAURANT_PLUGIN_URL . 'css/custom-theme/jquery-ui-1.8.18.custom.css');
+                wp_enqueue_style('jquery-ui-custom-style');
+                wp_enqueue_script('jquery-ui-datepicker');
+                wp_register_script('datetimepicker',
+                    REDI_RESTAURANT_PLUGIN_URL . 'lib/datetimepicker/js/jquery-ui-timepicker-addon.js',
+                    array('jquery', 'jquery-ui-core', 'jquery-ui-slider', 'jquery-ui-datepicker'));
+                wp_enqueue_script('datetimepicker');
+
+                wp_register_script('datetimepicker-lang',
+                    REDI_RESTAURANT_PLUGIN_URL . 'lib/datetimepicker/js/jquery.ui.i18n.all.min.js');
+                wp_enqueue_script('datetimepicker-lang');
+
+                wp_register_script('timepicker-lang',
+                    REDI_RESTAURANT_PLUGIN_URL . 'lib/timepicker/i18n/jquery-ui-timepicker.all.lang.js');
+                wp_enqueue_script('timepicker-lang');
+
+                wp_register_script('reginaltimepicker-lang',
+                    REDI_RESTAURANT_PLUGIN_URL . 'lib/timepicker/i18n/jquery-ui-i18n.min.js');
+                wp_enqueue_script('reginaltimepicker-lang');
+
+                if ($this->GetOption('CountryCode', true) && null === $this->GetOption("skin"))
+                {
+                    wp_register_style('intl-tel-custom-style',
+                        REDI_RESTAURANT_PLUGIN_URL . 'lib/intl-tel-input-16.0.0/build/css/intlTelInput.min.css');
+                    wp_enqueue_style('intl-tel-custom-style');  
+                    wp_register_script('intl-tel-input',
+                        REDI_RESTAURANT_PLUGIN_URL . 'lib/intl-tel-input-16.0.0/build/js/utils.js');
+                    wp_enqueue_script('intl-tel-input');
+                    wp_register_script('intl-tel',
+                        REDI_RESTAURANT_PLUGIN_URL . 'lib/intl-tel-input-16.0.0/build/js/intlTelInput.min.js');
+                    wp_enqueue_script('intl-tel');
+                }
             }
+            // v2
+            else if ($this->GetOption("Theme", ReDiTheme::Default_v1) == ReDiTheme::Design25_v2) {
+                wp_register_style(
+                    'intl-tel-input-v23-css',
+
+                    REDI_RESTAURANT_PLUGIN_URL . 'lib/v2/intl-tel-input-23.0.0/css/intlTelInput.css'
+                );
+
+                wp_enqueue_style('intl-tel-input-v23-css');
+
+                wp_register_script(
+                    'intl-tel-input-v23',
+
+                    REDI_RESTAURANT_PLUGIN_URL . 'lib/v2/intl-tel-input-23.0.0/js/intlTelInput.min.js'
+                );
+
+                wp_enqueue_script('intl-tel-input-v23');
+
+                wp_register_style(
+                    'nice-select2-css',
+
+                    REDI_RESTAURANT_PLUGIN_URL . 'lib/v2/nice-select2/nice-select2.min.css'
+                );
+
+                wp_enqueue_style('nice-select2-css');
+
+                wp_register_script(
+                    'nice-select2',
+
+                    REDI_RESTAURANT_PLUGIN_URL . 'lib/v2/nice-select2/nice-select2.js'
+                );
+
+                wp_enqueue_script('nice-select2');
+
+                wp_register_style(
+                    'vanilla-calendar-css',
+
+                    REDI_RESTAURANT_PLUGIN_URL . 'lib/v2/vanilla-calendar/vanilla-calendar.layout.min.css'
+                );
+
+                wp_enqueue_style('vanilla-calendar-css');
+
+                wp_register_script(
+                    'vanilla-calendar',
+
+                    REDI_RESTAURANT_PLUGIN_URL . 'lib/v2/vanilla-calendar/vanilla-calendar.min.js'
+                );
+
+                wp_enqueue_script('vanilla-calendar');
+            }
+            else if ($this->GetOption("Theme", ReDiTheme::Default_v1) == ReDiTheme::DesignR25_v3) {
+                // Load React build files from the plugin folder
+                wp_enqueue_script(
+                    'redi-react-app',
+                    REDI_RESTAURANT_PLUGIN_URL . 'react-form/index.js',
+                    array(), // No dependencies
+                    '1.0',
+                    true // Load in footer
+                );
+
+                wp_enqueue_style(
+                    'redi-react-app-theme',
+                    REDI_RESTAURANT_PLUGIN_URL . 'react-form/theme-variables.css',
+                    array(),
+                    '1.0'
+                );
+
+                wp_enqueue_style(
+                    'redi-react-app-css',
+                    REDI_RESTAURANT_PLUGIN_URL . 'react-form/index.css',
+                    array(),
+                    '1.0'
+                );
+            }
+
 
             $stylefile = 'restaurant.css';
             
-            if ($this->GetOption("skin") == 'v2')
+            if ($this->GetOption("Theme", ReDiTheme::Default_v1) == ReDiTheme::Design25_v2)
             {
                 $stylefile = 'redi-style_v2.css';
             }
@@ -1418,6 +1560,8 @@ if (!class_exists('ReDiRestaurantReservation')) {
                 'jquery'
             ),self::plugin_get_version(), true);
 
+
+            if ($this->GetOption("Theme", ReDiTheme::Default_v1) == ReDiTheme::Default_v1) {
             wp_localize_script('restaurant',
                 'redi_restaurant_reservation',
                 array( // URL to wp-admin/admin-ajax.php to process the request
@@ -1449,14 +1593,73 @@ if (!class_exists('ReDiRestaurantReservation')) {
                     'rest_url' => rest_url('redi-restuaurant-api/v1/')
                 ));
 
-                if ($this->GetOption("skin") == 'v2')
-                {
+                wp_enqueue_script('restaurant');            
+
+            }
+            else if ($this->GetOption("Theme", ReDiTheme::Default_v1) == ReDiTheme::Design25_v2) {
+
+                    wp_localize_script(
+                        'restaurant_v2',
+
+                        'redi_restaurant_reservation',
+
+                        array( // URL to wp-admin/admin-ajax.php to process the request
+
+                            'ajaxurl' => admin_url('admin-ajax.php'),
+
+                            'id_missing' => __('Reservation number can\'t be empty', 'redi-restaurant-reservation'),
+
+                            'name_missing' => __('Name can\'t be empty', 'redi-restaurant-reservation'),
+
+                            'fname_missing' => __('First Name can\'t be empty', 'redi-restaurant-reservation'),
+
+                            'lname_missing' => __('Last Name can\'t be empty', 'redi-restaurant-reservation'),
+
+                            'personalInf' => __('Name or Phone or Email can\'t be empty', 'redi-restaurant-reservation'),
+
+                            'email_missing' => __('Email can\'t be empty', 'redi-restaurant-reservation'),
+
+                            'phone_missing' => __('Phone can\'t be empty', 'redi-restaurant-reservation'),
+
+                            'phone_not_valid' => __('Phone number is not valid', 'redi-restaurant-reservation'),
+
+                            'reason_missing' => __('Reason can\'t be empty', 'redi-restaurant-reservation'),
+
+                            'next' => __('Next', 'redi-restaurant-reservation'),
+
+                            'tooltip' => __('This time is fully booked', 'redi-restaurant-reservation'),
+
+                            'error_fully_booked' => __('There are no more reservations can be made for selected day.', 'redi-restaurant-reservation'),
+
+                            'time_not_valid' => __('Provided time is not in valid format.', 'redi-restaurant-reservation'),
+
+                            'captcha_not_valid' => __('Captcha is not valid.', 'redi-restaurant-reservation'),
+
+                            'available_seats' => __('Available seats', 'redi-restaurant-reservation'),
+
+                            'unexpected_error' => __('Apologies for the inconvenience, but we encountered an issue while trying to make your reservation. It seems there was a technical glitch on our end. Our team is actively working to resolve this issue. Please try again in a few minutes, and if the problem persists, feel free to reach out to our customer support for assistance. Additionally, if you could please send a screenshot of the error message to {emailLink}, it would greatly help us in diagnosing and resolving the issue more efficiently. We appreciate your patience and cooperation. Response:', 'redi-restaurant-reservation'),
+
+                            // data
+
+                            'enablefirstlastname' => $this->GetOption('EnableFirstLastName'),
+
+                            'endreservationtime' => $this->GetOption('EndReservationTime'),
+
+                            'countrycode' => $this->GetOption('CountryCode', true),
+
+                            'cancel_reason_mandatory' => $this->GetOption('MandatoryCancellationReason', true),
+
+                            'locale' => get_locale(),
+
+                            'apikeyid' => $apiKeyId
+
+                        )
+                    );
+            
                     wp_enqueue_script('restaurant_v2');            
                 }
-                else
-                {
-                    wp_enqueue_script('restaurant');            
-                }
+            
+            
 
             if (file_exists(plugin_dir_path(__FILE__) . 'js/maxpersonsoverride.js')) {
                 wp_register_script('maxpersonsoverride', REDI_RESTAURANT_PLUGIN_URL . 'js/maxpersonsoverride.js', array(
@@ -1505,9 +1708,9 @@ if (!class_exists('ReDiRestaurantReservation')) {
             
             $minPersons = $this->GetOption('MinPersons', 1);
             $maxPersons = $this->GetOption('MaxPersons', 10);
-
             $largeGroupsMessage = $this->extractTranslatedContent($this->GetOption('LargeGroupsMessage', ''), self::lang());
             $emailFrom = $this->GetOption('EmailFrom', ReDiSendEmailFromOptions::ReDi);
+            $theme = $this->GetOption('Theme', ReDiTheme::Default_v1);
             $report = $this->GetOption('Report', Report::Full);
             $thanks = $this->GetOption('Thanks');
             $manualReservation = $this->GetOption('ManualReservation');
@@ -1515,6 +1718,8 @@ if (!class_exists('ReDiRestaurantReservation')) {
             $EnableCancelForm = $this->GetOption('EnableCancelForm', 0);
             $EnableModifyReservations = $this->GetOption('EnableModifyReservations', 0);
             $userfeedback = $this->GetOption('userfeedback', 'true');
+            $ShowComment = $this->GetOption('ShowComment');
+            $MaxChild = $this->GetOption('MaxChild');
             $EnableSocialLogin = $this->GetOption('EnableSocialLogin');
             $fullyBookedMessage = $this->extractTranslatedContent($this->GetOption('FullyBookedMessage', ''), self::lang());
             $captcha = $this->GetOption('Captcha');
@@ -1619,9 +1824,11 @@ if (!class_exists('ReDiRestaurantReservation')) {
 
             $template = 'frontend.php';
 
-            if ($this->GetOption("skin") == 'v2')
-            {
+            if ($this->GetOption("Theme", ReDiTheme::Default_v1) == ReDiTheme::Design25_v2) {
                 $template = 'frontend_v2.php';
+            }
+            else if ($this->GetOption("Theme", ReDiTheme::Default_v1) == ReDiTheme::DesignR25_v3) {
+                $template = 'frontend_v3.php';
             }
 
             if (file_exists(get_stylesheet_directory() . '/redi-restaurant-reservation/' . $template))
@@ -1998,6 +2205,7 @@ if (!class_exists('ReDiRestaurantReservation')) {
                         if ($children > 0)
                         {
                             $comment .= __('Children', 'redi-restaurant-reservation') . ': ' . $children . '<br/>';
+                            $persons += $children;
                         }
 
                         if (!empty($comment)) {
@@ -2016,23 +2224,24 @@ if (!class_exists('ReDiRestaurantReservation')) {
 
                         $params = array(
                             'reservation' => array(
-                                'StartTime' => $startTimeISO,
-                                'EndTime' => $endTimeISO,
-                                'Quantity' => $persons,
-                                'UserName' => sanitize_text_field(self::GetPost('UserName')),
-                                'FirstName' => sanitize_text_field(self::GetPost('UserName')),
-                                'LastName' => sanitize_text_field(self::GetPost('UserLastName')),
-                                'UserEmail' => sanitize_email(self::GetPost('UserEmail')),
-                                'UserComments' => $comment,
-                                'UserPhone' => sanitize_text_field(self::GetPost('UserPhone')),
-                                'UserProfileUrl' => $user_profile_image,
-                                'Name' => 'Person',
-                                'Lang' => str_replace('_', '-', self::GetPost('lang')),
-                                'CurrentTime' => $currentTimeISO,
-                                'Version' => $this->version,
-                                'PrePayment' => 'false',
-                                'Source' => 'HOMEPAGE',
-                                'Admin' => is_user_logged_in() && current_user_can('manage_options')
+                            'StartTime' => $startTimeISO,
+                            'EndTime' => $endTimeISO,
+                            'Quantity' => $persons,
+                            'ChildrenQuantity' => $children,
+                            'UserName' => sanitize_text_field(self::GetPost('UserName')),
+                            'FirstName' => sanitize_text_field(self::GetPost('UserName')),
+                            'LastName' => sanitize_text_field(self::GetPost('UserLastName')),
+                            'UserEmail' => sanitize_email(self::GetPost('UserEmail')),
+                            'UserComments' => $comment,
+                            'UserPhone' => sanitize_text_field(self::GetPost('UserPhone')),
+                            'UserProfileUrl' => $user_profile_image,
+                            'Name' => 'Person',
+                            'Lang' => str_replace('_', '-', self::GetPost('lang')),
+                            'CurrentTime' => $currentTimeISO,
+                            'Version' => self::plugin_get_version(),
+                            'PrePayment' => 'false',
+                            'Source' => 'HOMEPAGE',
+                            'Admin' => is_user_logged_in() && current_user_can('manage_options')
                             )
                         );
                         if (isset($this->options['EmailFrom']) && $this->options['EmailFrom'] == ReDiSendEmailFromOptions::Disabled ||
@@ -2099,9 +2308,9 @@ case 'cancel':
                     $reservation = $this->redi->findReservation( str_replace( '_', '-', self::GetPost( 'lang' ) ), preg_replace( '/[^0-9]/', '', self::GetPost( 'ID' )));
 
                     if( isset( $reservation['Error'] ) 
-                        || ( strtolower( self::GetPost( 'Email' ) ) != strtolower( $reservation['Email'] )
-                            && self::GetPost( 'Phone' ) != $reservation['Phone'] 
-                            && strtolower( self::GetPost( 'Name' ) ) != strtolower( $reservation['Name'] ) ) 
+                        || ( strtolower(sanitize_email(self::GetPost('Email'))) != strtolower( $reservation['Email'] )
+                            && str_replace([' '], '', sanitize_text_field(self::GetPost('Phone'))) != $reservation['Phone'] 
+                            && strtolower(sanitize_text_field(self::GetPost('Name'))) != strtolower($reservation['Name'])) 
                     ) 
                     {
                         $data = [
@@ -2149,8 +2358,9 @@ case 'cancel':
                         'EndTime' => self::GetPost('EndTime'),
                         'UserPhone' => sanitize_text_field(self::GetPost('UserPhone')),
                         'Quantity' => self::GetPost('Quantity'),
+                        'ChildrenQuantity' => self::GetPost('ChildrenQuantity'),
                         'Name' => 'Person',
-                        'Version' => $this->version,
+                        'Version' => self::plugin_get_version(),
                         'Source' => 'HOMEPAGE',
                         'Parameters' => $this->objectToArray($reservation["Parameters"])
                     ];
@@ -2376,7 +2586,7 @@ case 'cancel':
             'PlaceReferenceId' => $reservation["PlaceReferenceId"],
             'Name' => 'Person',
             'DontNotifyClient' => 'true',
-            'Version' => $this->version,
+            'Version' => self::plugin_get_version(),
             'Source' => 'HOMEPAGE',
             'Parameters' => $this->objectToArray($reservation["Parameters"])
             ];
@@ -2404,7 +2614,7 @@ case 'cancel':
             if (self::GetPost('Email')) {
                 $personalInformation = urlencode(sanitize_email(self::GetPost('Email')));
             } elseif (self::GetPost('Phone')) {
-                $personalInformation = urlencode(sanitize_text_field(self::GetPost('Phone')));
+                $personalInformation = urlencode(str_replace([' '], '', sanitize_text_field(self::GetPost('Phone'))));
             } elseif (self::GetPost('Name')) {
                 $personalInformation = urlencode(sanitize_text_field(self::GetPost('Name')));
             }
