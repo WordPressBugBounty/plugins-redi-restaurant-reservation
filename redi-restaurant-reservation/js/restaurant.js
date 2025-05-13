@@ -536,14 +536,17 @@ jQuery(function () {
 
 
     function loadDateInformation(from, to) {
-        var placeId = jQuery('#placeID').val();
-        var guests = parseInt(jQuery('#persons').val()) + (jQuery('#children').val() === undefined ? 0 : parseInt(jQuery('#children').val()));
 
         if (!calendarInitiated) {
             return false;
         }
 
-        if (guests == 0 || placeId == 0 || isNaN(guests)) {
+        var placeId = jQuery('#placeID').val();
+        var adults = parseInt(jQuery('#persons').val());
+        var children = jQuery('#children').val()
+
+
+        if (adults == 0 || placeId == 0 || isNaN(adults) || jQuery('#children') != undefined && children == '') {
             return;
         }
 
@@ -552,7 +555,8 @@ jQuery(function () {
         if (date_information.find(o =>
             o.month === from.format('YYYY-MM')
             && o.placeId == placeId
-            && o.guests == guests) == null) {
+            && o.adults == adults
+            && o.children == children) == null) {
             var isDatapickerOpen = jQuery('#ui-datepicker-div').css('display');
 
             jQuery('#redi-restaurant-startDate').hide();
@@ -560,6 +564,7 @@ jQuery(function () {
             jQuery('#step1errors').hide();
             jQuery('#date_info_load').show();
             jQuery('#date_info_load').focus();
+            jQuery('#step2').hide();
 
             var data = {
                 action: 'redi_restaurant-submit',
@@ -568,7 +573,8 @@ jQuery(function () {
                 to: to.format('YYYY-MM-DD'),
                 placeID: placeId,
                 apikeyid: apikeyid,
-                guests: guests,
+                adults: adults,
+                children: (jQuery('#children').val() ? +jQuery('#children').val() : null)
             };
 
             jQuery.post(redi_restaurant_reservation.ajaxurl, data, function (response) {
@@ -589,8 +595,9 @@ jQuery(function () {
                             {
                                 month: fromDate.format('YYYY-MM'),
                                 data: dates,
-                                placeId: placeId,
-                                guests: guests
+                                placeId,
+                                adults,
+                                children
                             }
                         );
 
@@ -607,8 +614,6 @@ jQuery(function () {
                 }
             });
         }
-
-
 
         jQuery('#redi-date-block').show();
     }
@@ -632,7 +637,8 @@ jQuery(function () {
             startTime: jQuery('#redi-restaurant-startTime-alt').val(),
             startDateISO: jQuery('#redi-restaurant-startDateISO').val(),
             duration: jQuery("#duration").val(),
-            persons: +jQuery('#persons').val() + (jQuery('#children').val() ? +jQuery('#children').val() : 0),
+            adults: +jQuery('#persons').val(),
+            children: (jQuery('#children').val() ? +jQuery('#children').val() : null),
             lang: locale,
             timeshiftmode: timeshiftmode,
             apikeyid: apikeyid,

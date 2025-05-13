@@ -22,7 +22,6 @@
         <p class="calendly_image"><a href="https://calendly.com/reservationdiary/demo?month=2023-04" target="_blank"><img style="width: 100px;" src="<?php echo esc_url(plugin_dir_url(__DIR__)."img/Consultation.png"); ?>" alt="<?php _e('Calendly', 'redi-restaurant-reservation'); ?>"></a>    
         </p>
         <div class="social_my_list">
-    			<a href="skype:thecatkin?chat"><img src="<?php echo esc_url(plugin_dir_url(__DIR__).'img/skype.svg'); ?>" alt="<?php _e('skype', 'redi-restaurant-reservation'); ?>"></a>
                 <a href="https://www.facebook.com/ReDiReservation" target="_blank"><img src="<?php echo esc_url(plugin_dir_url(__DIR__)."img/facebook.svg"); ?>" alt="<?php _e('facebook', 'redi-restaurant-reservation'); ?>"></a>
                 <a href="https://wa.me/+3725165285" target="_blank"><img src="<?php echo esc_url(plugin_dir_url(__DIR__)."img/whatsapp.svg"); ?>" alt="<?php _e('whatsapp', 'redi-restaurant-reservation'); ?>"></a>
         </div>

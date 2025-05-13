@@ -158,16 +158,10 @@
                         <img src="<?php echo esc_url(plugin_dir_url(__DIR__).'img/email.png'); ?>"><a target="_blank" href="mailto:info@reservationdiary.eu">info@reservationdiary.eu</a>
                     </li>
                     <li>
-                        <img src="<?php echo esc_url(plugin_dir_url(__DIR__).'img/179338.png'); ?>"><a target="_blank" href="skype:thecatkin?chat">thecatkin</a>
-                    </li>
-                    <li>
                         <img src="<?php echo esc_url(plugin_dir_url(__DIR__).'img/mobile.png'); ?>"><a target="_blank" href="tel:+3725165285">+372 51 65 285 (10AM - 10PM UTC)</a>
                     </li>
                     <li>
                         <img src="<?php echo esc_url(plugin_dir_url(__DIR__).'img/2504845.png'); ?>"><a href="https://wa.me/+3725165285" target="_blank"> +372 51 65 285 (10AM - 10PM UTC)</a>
-                    </li>
-                    <li>
-                        <img src="<?php echo esc_url(plugin_dir_url(__DIR__).'img/168810.png'); ?>"> <a href="https://profiles.wordpress.org/thecatkin/" target="_blank">Catkin</a>
                     </li>
                     <li>
                         <img src="<?php echo esc_url(plugin_dir_url(__DIR__).'img/rate.png'); ?>"> <a href="https://wordpress.org/support/plugin/redi-restaurant-reservation/reviews/" target="_blank"><?php _e('Rate the plugin, help us grow', 'redi-restaurant-reservation');?></a>
@@ -464,7 +458,7 @@
                         <td style="width:75%; vertical-align: top;">
                             <p class="description">
                                 <?php _e('If this field is filled, the drop down menu of persons would show "Large Groups" and upon selection, the specified message would appear.', 'redi-restaurant-reservation'); ?>
-                                <?php _e('In case you need to show it in multiple languages, then use following format [lang]Text[/lang]. Example: [en]Text[/en][es]Texto[/es]', 'redi-restaurant-reservation'); ?>
+                                <?php _e('In case you need to show it in multiple languages, then use following format [locale]Text[/locale]. Example: [en_US]Text[/en_US][es_ES]Texto[/es_ES]', 'redi-restaurant-reservation'); ?>
                             </p>
                         </td>
                     </tr>
@@ -512,6 +506,7 @@
                         <td>
                             <p class="description">
                                 <?php _e('Description for children dropdown', 'redi-restaurant-reservation'); ?>
+                                <?php _e('In case you need to show it in multiple languages, then use following format [locale]Text[/locale]. Example: [en_US]Text[/en_US][es_ES]Texto[/es_ES]', 'redi-restaurant-reservation'); ?>
                             </p>
                         </td>
                     </tr>
@@ -668,7 +663,7 @@
                         <td style="width:75%; vertical-align: top;">
                             <p class="description">
                                 <?php _e('Text that will be displayed when there are no available time for selected day/time.', 'redi-restaurant-reservation'); ?>
-                                <?php _e('In case you need to show it in multiple languages, then use following format [lang]Text[/lang]. Example: [en]Text[/en][es]Texto[/es]', 'redi-restaurant-reservation'); ?>
+                                <?php _e('In case you need to show it in multiple languages, then use following format [locale]Text[/locale]. Example: [en_US]Text[/en_US][es_ES]Texto[/es_ES]', 'redi-restaurant-reservation'); ?>
                             </p>
                         </td>
                     </tr>
@@ -776,9 +771,9 @@
                     <tr>
                         <th>
                             <label for="Iscomments">
-                                <?php   _e('Show comments', 'redi-restaurant-reservation'); ?>
+                            <?php   _e('Show comments', 'redi-restaurant-reservation'); ?>
                         <td>
-                            <input type="checkbox" name="ShowComment" id="Iscomments" value="1" <?php if ($ShowComment == "" || $ShowComment == 1) echo 'checked="checked"' ?>>
+                        <input type="checkbox" name="ShowComment" id="Iscomments" value="1" <?php if (isset($ShowComment) && $ShowComment) echo 'checked="checked"' ?>>
                         </td>
                         <td>
                             <p class="description"><?php  _e('Allows to show or hide comments section on the reservation form. Enabled by default. If you see that your guests misuse the comments section, disable it.', 'redi-restaurant-reservation'); ?> </p>

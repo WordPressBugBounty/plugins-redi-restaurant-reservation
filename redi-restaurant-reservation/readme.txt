@@ -2,7 +2,7 @@
 Contributors: thecatkin
 Tags: Best WordPress restaurant reservation plugin, Restaurant reservation system, Table booking, Online reservation, Restaurant booking plugin
 Requires at least: 5.0.0
-Tested up to: 6.7.2
+Tested up to: 6.8.1
 Stable tag: trunk
 License: GPLv2 or later
 Get your restaurant booming with the ReDi Reservation plugin! Simplify bookings, offer instant confirmations, and customize settings. Try today!
@@ -269,14 +269,19 @@ In case you have any problems with plugin installation or you need some customiz
 
 == Changelog ==
 
+= 25.0513
+* Changed language options from generic to locale-specific versions
+* Added dropdown for selecting number of children in reservation
+* Adults and children values are now sent independently to the reservation API, allowing separate handling
+* Added ability to sign up for the waitlist at a specific time
+* Added new theme: Design25 (BETA)
+* Added option to enable/disable the Comments field
+* Fixed XSS vulnerability in Admin settings
+
 = 24.1209
 * Added filter by open time name when provided as a parameter in the shortcode
 * Added the ability to place custom fields in any order on the reservation form, including before the first field
 * Fixed issue with the waitlist
-+ Changed languages from generic to languages with locales
-+ Added dropdown for children reservation
-+ Added signing in to waitlist for specific time
-+ Added new Theme: Design25 (BETA)
 
 = 24.1015
 * Changed tooltip styles for disabled times, so that information can be shown on mobiles as well

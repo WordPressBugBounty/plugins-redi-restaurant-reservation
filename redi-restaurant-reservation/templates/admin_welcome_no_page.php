@@ -38,7 +38,7 @@
                         <?php } ?>
                     </div>
                     <div class="redi-body-button">
-                        <a href="<?php echo add_query_arg('no_page', 'true', $_SERVER['REQUEST_URI']); ?>" class="account_activation" >Next</a>
+                        <a href="<?php echo add_query_arg('no_page', 'true', esc_url($_SERVER['REQUEST_URI'])); ?>" class="account_activation" ><?php _e('Next', 'redi-restaurant-reservation'); ?></a>
                     </div>
                 </div>
             <?php } ?>

@@ -13,7 +13,7 @@
             </div>
             <div class="redi-setting-body">
                 <p><?php _e('ReDi restaurant reservation plugin is ready to use', 'redi-restaurant-reservation'); ?> </p>
-                <p><?php _e('Your API key is :', 'redi-restaurant-reservation'); ?> <b><?php echo $this->ApiKey; ?></b> </p>
+                <p><?php _e('Your API key is', 'redi-restaurant-reservation'); ?>: <b><?php echo $this->ApiKey; ?></b> </p>
 
                 <p><?php _e('Next step is to configure the plugin, please watch following videos and click on Next to open Settings page', 'redi-restaurant-reservation'); ?></p>
                 <div>
@@ -25,7 +25,6 @@
                     <p class="calendly_image"><a href="https://calendly.com/reservationdiary/demo?month=2023-04" target="_blank"><img style="width: 100px;" src="<?php echo esc_url(plugin_dir_url(__DIR__)."img/Consultation.png"); ?>" alt="<?php _e('Calendly', 'redi-restaurant-reservation'); ?>"></a>    
                     </p>
                     <div class="social_my_list">
-                        <a href="skype:thecatkin?chat"><img src="<?php echo esc_url(plugin_dir_url(__DIR__).'img/skype.svg'); ?>" alt="<?php _e('skype', 'redi-restaurant-reservation'); ?>"></a>
                         <a href="https://www.facebook.com/ReDiReservation" target="_blank"><img src="<?php echo esc_url(plugin_dir_url(__DIR__)."img/facebook.svg"); ?>" alt="<?php _e('facebook', 'redi-restaurant-reservation'); ?>"></a>
                         <a href="https://wa.me/+3725165285" target="_blank"><img src="<?php echo esc_url(plugin_dir_url(__DIR__)."img/whatsapp.svg"); ?>" alt="<?php _e('whatsapp', 'redi-restaurant-reservation'); ?>"></a>
                     </div>
@@ -33,7 +32,7 @@
                     </p>
 
                     <div class="redi-body-button">
-                        <a href="<?php echo get_admin_url( null, 'admin.php?page=redi-restaurant-reservation-settings'); ?>" >Next</a>
+                        <a href="<?php echo get_admin_url( null, 'admin.php?page=redi-restaurant-reservation-settings'); ?>" ><?php _e('Next', 'redi-restaurant-reservation'); ?></a>
                     </div>
 
                 </div>

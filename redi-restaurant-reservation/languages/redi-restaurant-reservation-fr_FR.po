@@ -1082,7 +1082,7 @@ msgstr ""
 #, fuzzy
 msgid ""
 "In case you need to show it in multiple languages, then use following format "
-"[lang]Text[/lang]. Example: [en]Text[/en][es]Texto[/es]"
+"[locale]Text[/locale]. Example: [en_US]Text[/en_US][es_ES]Texto[/es_ES]"
 msgstr ""
 "Si vous avez besoin de l’afficher en plusieurs langues, utilisez le format "
 "suivant [lang]Text[/lang]. Exemple : [fr]Text[/en][es]Texto[/es]"

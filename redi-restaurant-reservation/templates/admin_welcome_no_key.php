@@ -21,7 +21,7 @@
                     </div>
                     <div class="addapi_key_message"><p><?php _e('If you have already an API key, you can skip this step and provide API key on next step.', 'redi-restaurant-reservation'); ?></p></div>
                     <div class="redi-body-button">
-                        <a type="submit" class="email_form_skip" data-type="email-skip" href="<?php echo get_admin_url(); ?>/admin.php?page=<?php echo $currentScreen->parent_base; ?>&email_skip=true">Skip</a>
+                        <a type="submit" class="email_form_skip" data-type="email-skip" href="<?php echo get_admin_url(); ?>/admin.php?page=<?php echo $currentScreen->parent_base; ?>&email_skip=true"><?php _e('Skip', 'redi-restaurant-reservation'); ?></a>
                         <input type="submit" class="account_activation" data-type="email" value="Next"><span id="loading"></span>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                             <?php } ?>
                         </div>
                         <div class="redi-body-button">
-                            <input type="submit" class="account_activation" data-type="key" value="Next"><span id="loading"></span>
+                            <input type="submit" class="account_activation" data-type="key" value="<?php _e('Next', 'redi-restaurant-reservation'); ?>"><span id="loading"></span>
                         </div>
                     </div>
                 <?php } ?>
